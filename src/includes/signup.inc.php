@@ -12,32 +12,32 @@
 		
 		if( emptyInputSignup($fullname, $email, $username, $password, $passwordRepeat) !== false )
 		{
-			header("location: ../sign_up.php?error=emptyinput");
+			header("location: ../signup.php?error=emptyinput");
 			exit();
 		}
 		if( invalidUsername($username) !== false )
 		{
-			header("location: ../sign_up.php?error=invalidusername");
+			header("location: ../signup.php?error=invalidusername");
 			exit();
 		}
 		if( invalidEmail($email) !== false )
 		{
-			header("location: ../sign_up.php?error=invalidemail");
+			header("location: ../signup.php?error=invalidemail");
 			exit();
 		}
 		if( passwordsMatch($password, $passwordRepeat) !== false )
 		{
-			header("location: ../sign_up.php?error=passwordmismatch");
+			header("location: ../signup.php?error=passwordmismatch");
 			exit();
 		}
 		if( usernameExists($conn, $username) !== false )
 		{
-			header("location: ../sign_up.php?error=usernametaken");
+			header("location: ../signup.php?error=usernametaken");
 			exit();
 		}
 		if( emailExists($conn, $email) !== false )
 		{
-			header("location: ../sign_up.php?error=emailregistered");
+			header("location: ../signup.php?error=emailregistered");
 			exit();
 		}
 	}
