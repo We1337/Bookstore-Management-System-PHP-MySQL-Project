@@ -77,7 +77,7 @@
 		
 		if( !mysqli_stmt_prepare($stmt, $sql) )
 		{
-			header("location: ../sign_up.php?error=stmtfailed");
+			header("location: ../signup.php?error=stmtfailed");
 			exit();
 		}
 		
@@ -106,7 +106,7 @@
 		
 		if( !mysqli_stmt_prepare($stmt, $sql) )
 		{
-			header("location: ../sign_up.php?error=stmtfailed");
+			header("location: ../signup.php?error=stmtfailed");
 			exit();
 		}
 		
@@ -135,7 +135,7 @@
 		
 		if ( !mysqli_stmt_prepare($stmt, $sql) )
 		{
-			header("location: ../sign_up.php?error=stmtfailed");
+			header("location: ../signup.php?error=stmtfailed");
 			exit();
 		}
 		
@@ -145,7 +145,7 @@
 		
 		mysqli_stmt_execute($stmt);
 		mysqli_stmt_close($stmt);
-		header("location: ../sign_up.php?error=none");
+		header("location: ../index.php?error=none");
 		exit();
 	}
 	
