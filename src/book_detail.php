@@ -1,14 +1,10 @@
 <?php
     include("includes/header.php");
-
     include("includes/connection.php");
 
     $bid = $_GET['id'];
-
     $book_query = "SELECT * FROM book, category WHERE b_cat = cat_id AND b_id = $bid";
-
     $book_res = mysqli_query($link, $book_query);
-
     $book_row = mysqli_fetch_assoc($book_res);
 ?>
 
