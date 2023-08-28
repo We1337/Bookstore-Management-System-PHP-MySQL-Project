@@ -2,36 +2,47 @@
 	include("includes/header.php");
 ?>
 
-<div id="content">
-	<div class="post">
-		<h2 class="title"><a href="#">Latest Books</a></h2>
-		<p class="meta"></p>
-		<div class="entry">
+<main>
 
-			<?php
-				include("includes/connection.php");
+  	<section class="py-5 text-center container">
+    	<div class="row py-lg-5">
+      		<div class="col-lg-6 col-md-8 mx-auto">
+        		<h1 class="fw-light">Bookstore</h1>
+        		<p class="lead text-body-secondary">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+      		</div>
+    	</div>
+  	</section>
 
-				$lq = "SELECT * FROM book ORDER BY b_id DESC LIMIT 0,9";
-				$lres = mysqli_query($link, $lq);
+	<?php
+		include("includes/connection.php");
 
-				while($lrow = mysqli_fetch_assoc($lres))
-				{
-					echo '
-						<div class="book_box">
-							<a href="book_detail.php?id='.$lrow['b_id'].'">
-								<img src="'.$lrow['b_img'].'">
-								<h2>'.$lrow['b_nm'].'</h2>
-								<p>Rs. '.$lrow['b_price'].'</p>
-							</a>
-						</div>';
-				}
-			?>
-				
-			<div style="clear:both;"></div>
+		$lq = "SELECT * FROM book ORDER BY b_id DESC LIMIT 0,9";
+		$lres = mysqli_query($link, $lq);
+	?>
 
-		</div>
+	<div class="album py-5 bg-body-tertiary">
+    	<div class="container">
+        	<div class="row">
+            	<?php while ($lrow = mysqli_fetch_assoc($lres)) { ?>
+                	<div class="col-md-4">
+                    	<a href="book_detail.php?id=<?php echo $lrow['b_id']; ?>">
+                        	<div class="card shadow-sm">
+                            	<img class="bd-placeholder-img card-img-top" width="100" height="500" src="<?php echo $lrow['b_img']; ?>">
+                            	<div class="card-body">
+                                	<div class="d-flex justify-content-between align-items-center">
+                                    	<small class="text-body-secondary"><?php echo $lrow['b_nm']; ?></small>
+                                    	<small class="text-body-secondary">$ <?php echo $lrow['b_price']; ?></small>
+                                	</div>
+                            	</div>
+                        	</div>
+                    	</a>
+                	</div>
+            	<?php } ?>
+        	</div>
+    	</div>
 	</div>
-</div><!-- end #content -->
+
+</main>
 
 <?php
 	include("includes/footer.php");
