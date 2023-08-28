@@ -13,14 +13,34 @@
 
 <div id="content">
 	<div class="post">
-		<h2 class="title"><a href="#"><?php echo $book_row['cat_nm']; ?></a></h2>
-		<p class="meta"></p>
+
+		<header class="d-flex justify-content-center py-3">
+        	<h3 class="nav-item"><?php echo $book_row['cat_nm']; ?></h3>
+    	</header>
+
+
+		<div class="container px-4 py-5" id="custom-cards">
+    		<h2 class="pb-2 border-bottom">Custom cards</h2>
+
+    		<div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+      			<div class="col">
+        			<div class="card card-cover h-100 text-bg-dark shadow-lg" style="background: url('<?php echo $book_row['b_img']; ?>');">
+          				<div class="d-flex flex-column h-100 p-100 pb-3 text-shadow-1">
+            
+          				</div>
+        			</div>
+      			</div>
+    		</div>
+
+  		</div>
+
+
 
 		<div class="entry">
 			<table class="book_detail" width="100%" border="0px">
 				<tr valign="top">
 					<td width="48%">
-						<img class="book_img" src="<?php echo $book_row['b_img']; ?>" width="280px" height="350px">
+						<img class="book_img" src="" width="280px" height="350px">
 					</td>
 
 					<td>
