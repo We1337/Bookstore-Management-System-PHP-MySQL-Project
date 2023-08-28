@@ -12,49 +12,47 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width", initial-scale=1.0>
 
-		<link rel="stylesheet" type="text/css" href="style.css">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
 	</head>
 	<body>
-		<div id="logo">
-			<h1><a href="#">Bookstore Management System</a></h1>
-		</div>
-		<!-- end #logo -->
 		
-		<div id="header">
-			<div id="menu">
-				<ul>
-					<li><a href="index.php" class="first">Home</a></li>
-				
-					<?php 
+		<header class="p-3 text-bg-dark">
+    		<div class="container">
+      			<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        			<a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          				<svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+        			</a>
 
-						if(isset($_SESSION['client']['status']))
-						{
-							echo '<li class="current_page_item"><a href="logout.php">Logout</a></li>';
-						}
-						else
-						{
-							echo '<li><a href="login.php">Login</a></li>';
-							echo '<li class="current_page_item"><a href="register.php">Register</a></li>';
-						}
+        			<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          				<li><a href="index.php" class="nav-link px-2 text-secondary">Home</a></li>
+          				<li><a href="contact.php" class="nav-link px-2 text-white">Contact Us</a></li>
+          				<li><a href="cart.php" class="nav-link px-2 text-white">Cart</a></li>
+          				<li><a href="#" class="nav-link px-2 text-white">About</a></li>
+        			</ul>
 
-					?>
-				
-					<li><a href="contact.php">Contact Us</a></li>
-					<li><a href="cart.php">Cart</a></li>
-				</ul>
-			</div>
-			<!-- end #menu -->
-			<div id="search">
-				<form method="get" action="search.php">
-					<fieldset>
-						<input type="text" name="s" id="search-text" size="15" placeholder="Search" />
-						<input type="submit" id="search-submit" value="GO" />
-					</fieldset>
-				</form>
-			</div>
-			<!-- end #search -->
-		</div>
-		<!-- end #header -->
+					<form method="get" action="search.php" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 d-flex align-items-center" role="search">
+  						<input type="text" name="s" class="form-control form-control-dark text-bg-dark me-2" placeholder="Search..." aria-label="Search">
+  						<button type="submit" id="search-submit" value="GO" class="btn btn-primary">Search</button>
+					</form>
+
+        			<div class="text-end">
+						<?php
+							if(isset($_SESSION['client']['status']))
+							{
+								echo '<button type="button" class="btn btn-outline-light me-2">Logout</button>';
+							}
+							else
+							{
+          						echo '<a href="login.php"><button type="button" class="btn btn-outline-light me-2">Login</button></a>';
+          						echo '<a href="register.php"><button type="button" class="btn btn-warning">Sign-up</button></a>';
+							}
+		  				?>
+       		 		</div>
+      			</div>
+    		</div>
+  		</header>
+
 		<!-- end #header-wrapper -->
 		<div id="page">
