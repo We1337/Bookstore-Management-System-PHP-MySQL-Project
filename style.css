@@ -236,10 +236,6 @@ a img {
 	text-decoration: none;
 	text-transform: capitalize;
 	font-size: 30px;
-	color: #618C04;
-}
-
-.post .date {
 }
 
 .post .meta {
@@ -255,10 +251,8 @@ a img {
 
 .post .meta span {
 	display: block;
-	margin-top: -10px;
+	margin-top: -100px;
 }
-
-.post .meta a { }
 
 .post .entry {
 	margin-bottom: 10px;
@@ -271,7 +265,6 @@ a img {
 	height: 20px;
 	margin: 0px 0px 0px 0px; 
 	padding: 4px 0px 0px 40px;
-	background: url(images/img03.gif) no-repeat left top;
 	text-decoration: none;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 11px;
@@ -286,7 +279,6 @@ a img {
 	height: 18px;
 	margin: 0px; 
 	padding: 3px 0px 0px 40px;
-	background: url(images/img07.gif) no-repeat left top;
 	text-decoration: none;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 11px;
@@ -296,72 +288,18 @@ a img {
 }
 
 /* Sidebar */
-
 #sidebar {
 	float: left;
-	width: 240px;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
+	width: 260px;
+	padding-top: 5%;
 }
 
 #sidebar ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
 	line-height: normal;
 }
 
-#sidebar li {
-	margin-bottom: 30px;
-	padding: 0 0 10px 0px;
-}
-
-#sidebar li ul {
-	margin: 0px 14px;
-}
-
 #sidebar li li {
-	margin: 0;
-	padding: 12px 0px;
-	border-bottom: 1px solid #E9E8DD;
-	background: url(images/img08.gif) no-repeat left 18px;
-}
-
-#sidebar li li a {
-	padding: 0px 0px 0px 20px;
-	font-weight: normal;
-	color: #808080;
-}
-
-#sidebar li li a:hover {
-	color: #77B003;
-}
-
-#sidebar p {
-	margin: 0;
-	padding: 0px 14px;
-}
-
-#sidebar h2 {
-	height: 30px;
-	margin: 0 0 10px 0px;
-	padding: 6px 0 2px 14px;
-	background: url(images/img05.gif) repeat-x left top;
-	text-transform: capitalize;
-	font-size: 18px;
-	font-weight: normal;
-	color: #618C04;
-}
-
-
-#sidebar p {
-	line-height: 200%;
-}
-
-#sidebar a {
-	text-align: left;
-	text-decoration: none;
-	font-weight: bold;
+	padding: 10px 0px;
 }
 
 /* Calendar */
