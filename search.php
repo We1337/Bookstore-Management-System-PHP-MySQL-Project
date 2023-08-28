@@ -4,10 +4,12 @@
 
 <div id="content">
 	<div class="post">
-		<h2 class="title"><a href="#">Search : <?php echo $_GET['s']; ?></a></h2>
-		<p class="meta"></p>
-		<div class="entry">
 
+		<header class="d-flex justify-content-center py-3">
+        	<h3 class="nav-item">Search: <?php echo $_GET['s']; ?></h3>
+    	</header>
+
+		<div class="entry">
 			<?php
 				include("includes/connection.php");
 
@@ -16,24 +18,34 @@
 				$blq = "SELECT * FROM book WHERE b_nm LIKE '%$s%'";
 
 				$blres = mysqli_query($link, $blq);
-
-				while($blrow = mysqli_fetch_assoc($blres))
-				{
-					echo '
-						<div class="book_box">
-							<a href="book_detail.php?id='.$blrow['b_id'].'">
-								<img src="'.$blrow['b_img'].'">
-								<h2>'.$blrow['b_nm'].'</h2>
-								<p>Rs. '.$blrow['b_price'].'</p>
-							</a>
-						</div>';
-				}
 			?>
+
+			<div class="album py-5 bg-body-tertiary">
+				<div class="container">
+					<div class="row">
+						<?php while ($blrow = mysqli_fetch_assoc($blres)) { ?>
+							<div class="col-md-4">
+								<a href="book_detail.php?id=<?php echo $blrow['b_id']; ?>">
+									<div class="card shadow-sm">
+										<img class="bd-placeholder-img card-img-top" width="50" height="400" src="<?php echo $blrow['b_img']; ?>">
+										<div class="card-body">
+											<div class="d-flex justify-content-between align-items-center">
+												<small class="text-body-secondary"><?php echo $blrow['b_nm']; ?></small>
+												<small class="text-body-secondary">$ <?php echo $blrow['b_price']; ?></small>
+											</div>
+										</div>
+									</div>
+								</a>
+							</div>
+						<?php } ?>
+					</div>
+				</div>
+			</div>
 				
 			<div style="clear:both;"></div>
 		</div>
 	</div>
-</div><!-- end #content -->
+</div>
 
 <?php
 	include("includes/footer.php");
