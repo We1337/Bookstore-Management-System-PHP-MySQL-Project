@@ -42,7 +42,7 @@
 
 		//image validation
 
-		$upper=strtoupper(substr($_FILES['b_img']['name'],-4));
+		$upper = strtoupper(substr($_FILES['b_img']['name'],-4));
 
 		
 		if(!empty($_SESSION['error']))
