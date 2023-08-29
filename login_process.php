@@ -28,7 +28,7 @@
 				$_SESSION['client']['id'] = $row['r_id'];
 				$_SESSION['client']['status'] = true;
 
-				header("location:index.php");
+				header("location:index.php?message=loginsuccess");
 			}
 			else
 			{
