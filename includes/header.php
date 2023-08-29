@@ -41,7 +41,7 @@
 						<?php
 							if(isset($_SESSION['client']['status']))
 							{
-								echo '<button type="button" class="btn btn-outline-light me-2">Logout</button>';
+								echo '<a href="logout.php"><button type="button" class="btn btn-outline-light me-2">Logout</button></a>';
 							}
 							else
 							{
