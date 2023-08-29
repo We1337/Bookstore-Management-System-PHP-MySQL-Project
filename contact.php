@@ -2,65 +2,73 @@
 	include("includes/header.php");
 ?>
 
-<div id="content">
-	<div class="post">
-		<h2 class="title"><a href="#">Contact Us</a></h2>
-		<p class="meta"></p>
-		<div class="entry">	
-			<table border="0" width="100%">
-				<tr valign="top">
-					<td width="100%">
-						<form class="contact" action="contact_process.php" method="post">
-							
-							Full Name :<br>
-							<input type="text" name="fnm" class="txt">	
-							<?php
-								if(isset($_SESSION['error']['fnm']))
-								{
-									echo '<font color="red">'.$_SESSION['error']['fnm'].'</font>';
-								}
-							?>
-							<br><br>
+<div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog" id="modalSignin">
+  	<div class="modal-dialog" role="document">
+    	<div class="modal-content rounded-4 shadow">
 
-							Mobile No :<br>
-							<input type="text" name="mno" class="txt">
-							<?php
-								if(isset($_SESSION['error']['mno']))
-								{
-									echo '<font color="red">'.$_SESSION['error']['mno'].'</font>';
-								}
-							?>
-							<br><br>
+      		<div class="modal-header p-5 pb-4 border-bottom-0">
+        		<h1 class="fw-bold mb-0 fs-2">Contact Us</h1>
+      		</div>
 
-							E-Mail ID :<br>
-							<input type="email" name="email" class="txt">
-							<?php
-								if(isset($_SESSION['error']['email']))
-								{
-									echo '<font color="red">'.$_SESSION['error']['email'].'</font>';
-								}
-							?>
-							<br><br>
+      		<div class="modal-body p-5 pt-0">
+        		<form class="contact" action="contact_process.php" method="POST">
+          			<div class="form-floating mb-3">
+            			<input type="text" name="fnm" class="form-control rounded-3" id="floatingInput" placeholder="Full Name">
+            			<label for="floatingInput">Full Name</label>
+						<?php
+							if(isset($_SESSION['error']['fnm']))
+							{
+								echo '  <div class="alert alert-danger" role="alert">
+  											'.$_SESSION['error']['fnm'].'
+										</div>';
+							}
+						?>
+          			</div>
+					<div class="form-floating mb-3">
+						<input type="text" name="mno" class="form-control rounded-3" id="floatingInput" placeholder="Mobile Number">
+						<label for="floatingInput">Mobile Number</label>
+						<?php
+							if(isset($_SESSION['error']['mno']))
+							{
+								echo '	<div class="alert alert-danger" role="alert">
+											'.$_SESSION['error']['mno'].'
+										</div>';
+							}
+						?>
+					</div>
+          			<div class="form-floating mb-3">
+            			<input type="email" name="email" class="form-control rounded-3" id="floatingInput" placeholder="E-mail">
+            			<label for="floatingInput">E-mail</label>
+						<?php
+							if(isset($_SESSION['error']['email']))
+							{
+								echo '	<div class="alert alert-danger" role="alert">
+											'.$_SESSION['error']['email'].'
+										</div>';
+							}
+						?>
+          			</div>
+					<div class="form-floating mb-3">
+						<textarea type="txt" name="msg" class="form-control rounded-3" id="floatingInput" placeholder="Full Name"></textarea>
+						<label for="floatingInput">Message</label>
+						<?php
+							if(isset($_SESSION['error']['msg']))
+							{
+								echo '	<div class="alert alert-danger" role="alert">
+											'.$_SESSION['error']['msg'].'
+										</div>';
+							}
+							unset($_SESSION['error']);
+						?>
+					</div>
+					
+          			<button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit" value="Submit">Submit</button>
+        		</form>
+      		</div>
 
-							Message :<br>
-							<textarea class="txt" name="msg"></textarea>
-							<?php
-								if(isset($_SESSION['error']['msg']))
-								{
-									echo '<font color="red">'.$_SESSION['error']['msg'].'</font>';
-								}
-								unset($_SESSION['error']);
-							?>
-							<br><br>
-
-							<input type="submit" class="btn" value="Submit">
-						</form>
-					</td>
-				</tr>
-			</table>
-		</div>
-	</div>
-</div><!-- end #content -->
+    	</div>
+  	</div>
+</div>
 
 <?php
 	include("includes/footer.php");
