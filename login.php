@@ -2,43 +2,44 @@
 	include("includes/header.php");
 ?>
 
-<div id="content">
-	<div class="post">
-		<h2 class="title"><a href="#">Login</a></h2>
-		<p class="meta"></p>
-		<div class="entry">
-			<form class="login" action="login_process.php" method="post">
-					
-				User Name :<br>
-				<input type="text" name="unm" class="txt"><br><br>
+<div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog" id="modalSignin">
+  	<div class="modal-dialog" role="document">
+    	<div class="modal-content rounded-4 shadow">
+      		<div class="modal-header p-5 pb-4 border-bottom-0">
+        		<h1 class="fw-bold mb-0 fs-2">Login</h1>
+      		</div>
 
-				Password :<br>
-				<input type="password" name="pwd" class="txt"><br><br>
-
-				<?php
-					if(!empty($_SESSION['error']))
-					{
-						foreach($_SESSION['error'] as $er)
+      		<div class="modal-body p-5 pt-0">
+        		<form class="login" action="login_process.php" method="POST">
+					<?php
+						if(!empty($_SESSION['error']))
 						{
-							echo '<font color="red">'.$er.'</font><br>';
+							foreach($_SESSION['error'] as $er)
+							{
+								echo '<div class="alert alert-info" role="alert">'.$er.'</div>';
+							}
+							unset($_SESSION['error']);
 						}
-						unset($_SESSION['error']);
-					}
-				?>
-				<br>
+					?>	
+          			<div class="form-floating mb-3">
+            			<input name="unm" type="text" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com">
+            			<label for="floatingInput">Email address or ID</label>
+          			</div>
+          			<div class="form-floating mb-3">
+            			<input name="pwd" type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
+            			<label for="floatingPassword">Password</label>
+          			</div>
+          			<button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit" value="Login">Login</button>
+		    		<a href="register.php" class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" role="button">Registration</button>
+					<a href="forget_password.php" class="w-100 py-2 mb-2 btn btn-outline-primary rounded-3" role="button">Forget Password?</a>
 
-				<input type="submit" class="btn" value="Login">
-				<a href="admin/index.php" style="text-decoration: none; margin-left: 83px" class="btn" value="Admin Login">Admin Login</a>
-
-				<p class="login_link">
-					<a href="forget_password.php" style="text-decoration: none">Forget Password ?</a>
-					<a href="register.php" style="margin-left: 100px;text-decoration: none">Register</a>
-				</p>
-
-			</form>
-		</div>
-	</div>
-</div><!-- end #content -->
+					<h2 class="fs-5 fw-bold mb-3">For Admins</h2>
+          			<a href="admin/index.php" class="w-100 py-2 mb-2 btn btn-outline-primary rounded-3" role="button">Admin Login</a>
+        		</form>
+      		</div>
+    	</div>
+  	</div>
+</div>
 
 <?php
 	include("includes/footer.php");
