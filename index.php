@@ -4,6 +4,21 @@
 
 <main>
 
+	<?php	
+		if($_GET['message'] === "success")
+		{
+			echo '<div class="alert alert-success" role="alert">Message have been delivered.</div>';
+		}
+		else if($_GET['message'] === "error")
+		{
+			echo '<div class="alert alert-danger" role="alert">Please try again leter.</div>';
+		}
+		else if($_GET['message'] === "loginsuccess")
+		{
+			echo '<div class="alert alert-success" role="alert">Welcome! Successfully logined';
+		}
+	?>
+
   	<section class="py-5 text-center container">
     	<div class="row py-lg-5">
       		<div class="col-lg-6 col-md-8 mx-auto">
