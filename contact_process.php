@@ -14,7 +14,7 @@
 		
 		if(empty($mno))
 		{
-			$_SESSION['error']['mno'] = "Please enter Full Name";
+			$_SESSION['error']['mno'] = "Please enter Mobile Number";
 		}
 		else if(!empty($mno))
 		{
@@ -36,10 +36,8 @@
 
 		if(!empty($error))
 		{
-			foreach($error as $er)
-			{
-				echo '<font color="red">'.$er.'</font><br>';
-			}
+			header("Location:contact.php?message=error");
+			exit;
 		}
 		else
 		{
@@ -47,15 +45,17 @@
 
 			$t = time();
 
-			$q = "insert into contact(c_fnm,c_mno,c_email,c_msg,c_time) values('$fnm','$mno','$email','$msg','$t')";
+			$q = "INSERT INTO contact(c_fnm, c_mno, c_email, c_msg, c_time) VALUES ('$fnm', '$mno', '$email', '$msg', '$t')";
 
 			mysqli_query($link, $q);
 
-			header("location:contact.php");
+			header("Location:index.php?message=success");
+			exit;
 		}
 	}
 	else
 	{
-		header("location:contact.php");
+		header("location:contact.php?message=error");
+		exit;
 	}
 ?>
