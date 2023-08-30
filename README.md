@@ -25,11 +25,11 @@ The Bookstore Management System is designed to eliminate paperwork hassles and p
 - Scope for adding a help module, online payment, and multilingual features in the future.
 
 **Technologies Used:**
-- Wamp Server
+- Apache2 Server
 - MySQL
 - PHPMyAdmin
 - Browser
-- PHP, jQuery, Bootstrap, HTML, CSS
+- PHP, Bootstrap, HTML, CSS
 
 **Limitations:**
 - No online payment option.
