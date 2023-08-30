@@ -2,7 +2,7 @@
 	
 	session_start();
 
-	if(! empty($_POST))
+	if(!empty($_POST))
 	{
 		extract($_POST);
 		$_SESSION['error'] = array();
@@ -25,7 +25,7 @@
 		{
 			$_SESSION['error']['pwd'] = "Password isn't Match";
 		}
-		else if(strlen($pwd)<8)
+		else if(strlen($pwd) < 8)
 		{
 			$_SESSION['error']['pwd'] = "Please Enter Minimum 8 Digit Password";
 		}
@@ -65,7 +65,7 @@
 			}
 		}
 
-		if(! empty($_SESSION['error']))
+		if(!empty($_SESSION['error']))
 		{
 			header("location:register.php");
 		}
