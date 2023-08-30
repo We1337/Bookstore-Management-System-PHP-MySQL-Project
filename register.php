@@ -10,7 +10,7 @@
       		</div>
 
       		<div class="modal-body p-5 pt-0">
-        		<form class="" action="register_process.php" method="POST">
+        		<form action="register_process.php" method="POST">
 
 					<?php
 						if(isset($_GET['register']))
