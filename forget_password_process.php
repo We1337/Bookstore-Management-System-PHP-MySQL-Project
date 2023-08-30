@@ -2,7 +2,6 @@
 
 	session_start();
 
-	include("includes/connection.php");
 
 	if(!empty($_POST))
 	{
@@ -36,19 +35,19 @@
 			$_SESSION['error']['pwd'] = "Password isn't Match";
 		}
 
-		$q = "SELECT * FROM register WHERE r_unm='$unm'";
-
-		$res = mysqli_query($link, $q);
-
-		$row = mysqli_fetch_assoc($res);
-
 		if(!empty($_SESSION['error']))
 		{
 			header("location:forget_password.php");
 		}
 		else
 		{
-			echo "good";
+			include("includes/connection.php");
+
+			$q = "SELECT * FROM register WHERE r_unm='$unm'";
+
+			$res = mysqli_query($link, $q);
+
+			$row = mysqli_fetch_assoc($res);
 		}
 	}
 	else
