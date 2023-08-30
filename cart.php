@@ -4,64 +4,65 @@
 
 <div id="content">
 	<div class="post">
-		<h2 class="title"><a href="#">Cart</a></h2>
+		<br>
+		<h2 class="title text-center">Cart</h2>
 	
-		<p class="meta"></p>
-
-		<div class="entry">
+		<div class="container">
 				
 			<form action="addtocart.php" method="post">
-				<table class="cart" cellspacing="0" border="0" width="100%">
-					<tr align="center">
-						<th width="7%">No</th>
-						<th width="30%">Name</th>
-						<th width="20%">Image</th>
-						<th width="15%">Qty</th>
-						<th width="10%">Price</th>
-						<th width="10%">Rate</th>
-						<th width="7%">Remove</th>
-					</tr>
+				<table class="table" cellspacing="0" border="0" width="100%">
+					<thead class="thead-dark">
+    					<tr>
+      						<th scope="col">No</th>
+      						<th scope="col">Name</th>
+      						<th scope="col">Image</th>
+      						<th scope="col">Qty</th>
+							<th scope="col">Price</th>
+							<th scope="col">Rate</th>
+							<th scope="col">Remove</th>
+    					</tr>
+  					</thead>
+					<tbody>
+						<?php
+							$count = 1;
+							$total = 0;
 
-					<?php
-
-						$count = 1;
-						$total = 0;
-
-						if(isset($_SESSION['cart']))
-						{
-							foreach($_SESSION['cart'] as $id => $val)
+							if(isset($_SESSION['cart']))
 							{
-								$rate = $val['qty'] * $val['price'];
-								$total = $total + $rate;
+								foreach($_SESSION['cart'] as $id => $val)
+								{
+									$rate = $val['qty'] * $val['price'];
+									$total = $total + $rate;
 
-								echo '
-									<tr>
-										<td>'.$count.'</td>
-										<td>'.$val['nm'].'</td>
-										<td><img src="'.$val['img'].'" width="80" height="60"></td>
-										<td><input type="number" min="1" value="'.$val['qty'].'" style="width: 50px" name="'.$id.'"></td>
-										<td>'.$val['price'].'</td>
-										<td>'.$rate.'</td>
-										<td><a style="color: red;text-decoration:none;" href="addtocart.php?id='.$id.'">X</a></td>
-									</tr>';
+									echo '
+										<tr>
+											<td>'.$count.'</td>
+											<td>'.$val['nm'].'</td>
+											<td><img src="'.$val['img'].'" width="50" height="70"></td>
+											<td><input type="number" min="1" value="'.$val['qty'].'" style="width: 50px" name="'.$id.'"></td>
+											<td>'.$val['price'].'</td>
+											<td>'.$rate.'</td>
+											<td><a style="color: red;text-decoration:none;" href="addtocart.php?id='.$id.'">X</a></td>
+										</tr>';
 
-								$count++;
+									$count++;
+								}
 							}
-						}
-					?>
+						?>
+					</tbody>
 
-					<tr style="font-weight: bold;">
+					<tr>
 						<td colspan="5">Total : </td>
-						<td colspan="2">Rs. <?php echo $total; ?></td>
+						<td colspan="2">KZT. <?php echo $total; ?></td>
 					</tr>
 
 				</table>
 
 				<div align="center" style="margin-top: 20px">
-					<input type="submit" value="Re-calculate" class="btn_refresh">
+					<input type="submit" value="Re-calculate" class="btn btn-primary">
 					
 					<?php 
-						echo '<a href="order.php?total='.$total.'" name="button" style="font-family: open sans;" style="margin-left: 10px">Confirm & Submit Order</a>'
+						echo '<a class="btn btn-outline-primary" href="order.php?total='.$total.'" name="button" >Confirm & Submit Order</a>'
 					?>
 				</div>
 			</form>
