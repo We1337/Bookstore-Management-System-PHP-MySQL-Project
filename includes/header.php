@@ -45,8 +45,8 @@
 							}
 							else
 							{
-          						echo '<a href="login.php"><button type="button" class="btn btn-outline-light me-2">Login</button></a>';
-          						echo '<a href="register.php"><button type="button" class="btn btn-warning">Sign-up</button></a>';
+          						echo '<a href="login.php"><button type="button" class="btn btn-outline-light me-2">Sign in</button></a>';
+          						echo '<a href="register.php"><button type="button" class="btn btn-warning">Sign up</button></a>';
 							}
 		  				?>
        		 		</div>
