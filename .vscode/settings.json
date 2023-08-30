@@ -12,6 +12,20 @@
             "name": "database",
             "database": "bms",
             "username": "root"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "bookstore",
+            "database": "bookstoredatabase",
+            "username": "root",
+            "askForPassword": true
         }
     ]
 }
