@@ -16,7 +16,7 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `database`
+-- Database: `bookstoredatabase`
 --
 
 -- --------------------------------------------------------
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `a_unm` VARCHAR(30) NOT NULL,
   `a_pwd` VARCHAR(30) NOT NULL,
   PRIMARY KEY (`a_id`)
-) ENGINE = InnoDB  DEFAULT CHARSET = utf8_general_ci AUTO_INCREMENT = 2;
+) ENGINE = InnoDB  DEFAULT CHARSET = latin1 AUTO_INCREMENT = 2;
 
 --
 -- Dumping data for table `admin`
@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `book` (
   `b_img` VARCHAR(50) NOT NULL,
   `b_time` INT(20) NOT NULL,
   PRIMARY KEY (`b_id`)
-) ENGINE = InnoDB  DEFAULT CHARSET = utf8_general_ci AUTO_INCREMENT = 27;
+) ENGINE = InnoDB  DEFAULT CHARSET = latin1 AUTO_INCREMENT = 27;
 
 --
 -- Dumping data for table `book`
@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `category` (
   `cat_id` INT(10) NOT NULL AUTO_INCREMENT,
   `cat_nm` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`cat_id`)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8_general_ci AUTO_INCREMENT = 22;
+) ENGINE = InnoDB DEFAULT CHARSET = latin1 AUTO_INCREMENT = 22;
 
 --
 -- Dumping data for table `category`
@@ -113,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `contact` (
   `c_msg` LONGTEXT NOT NULL,
   `c_time` VARCHAR(20) NOT NULL,
   PRIMARY KEY (`c_id`)
-) ENGINE = InnoDB  DEFAULT CHARSET = utf8_general_ci AUTO_INCREMENT = 14;
+) ENGINE = InnoDB  DEFAULT CHARSET = latin1 AUTO_INCREMENT = 14;
 
 --
 -- Dumping data for table `contact`
@@ -140,7 +140,7 @@ CREATE TABLE IF NOT EXISTS `order` (
   `o_mobile` VARCHAR(11) NOT NULL,
   `o_rid` INT(8) NOT NULL,
   PRIMARY KEY (`o_id`)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8_general_ci AUTO_INCREMENT = 41;
+) ENGINE = InnoDB DEFAULT CHARSET = latin1 AUTO_INCREMENT = 41;
 
 --
 -- Dumping data for table `order`
@@ -166,7 +166,7 @@ CREATE TABLE IF NOT EXISTS `register` (
   `r_answer` VARCHAR(50) NOT NULL,
   `r_time` VARCHAR(20) NOT NULL,
   PRIMARY KEY (`r_id`)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8_general_ci AUTO_INCREMENT = 6;
+) ENGINE = InnoDB DEFAULT CHARSET = latin1 AUTO_INCREMENT = 6;
 
 --
 -- Dumping data for table `register`
