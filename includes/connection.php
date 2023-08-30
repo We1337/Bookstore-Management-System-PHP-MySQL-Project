@@ -1,6 +1,6 @@
 <?php
 
-	$link = mysqli_connect("localhost","root","dedsec","bms");
+	$link = mysqli_connect("localhost","root","DedSec44678@","bookstoredatabase");
 
 	// Check connection
 	if ($link -> connect_errno) 
