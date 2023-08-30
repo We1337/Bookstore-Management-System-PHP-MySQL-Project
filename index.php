@@ -23,7 +23,7 @@
     	<div class="row py-lg-5">
       		<div class="col-lg-6 col-md-8 mx-auto">
         		<h1 class="fw-light">Bookstore</h1>
-        		<p class="lead text-body-secondary">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+        		<p class="lead text-body-secondary">A Bookstore Management System aims to eliminate paperwork and streamline book-related tasks. It centralizes all activities and allows for multi-tasking. Records are kept securely, and the system prioritizes user experience. Continuous improvement is a priority.</p>
       		</div>
     	</div>
   	</section>
