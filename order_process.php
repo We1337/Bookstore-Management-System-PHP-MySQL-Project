@@ -2,33 +2,29 @@
 
 	session_start();
 
-	include("includes/connection.php");
-
 	if(!empty($_POST))
 	{
 		extract($_POST);
-		extract($_SESSION);
-
 		$_SESSION['error'] = array();
 
 		if(empty($fnm))
 		{
-			$_SESSION['error'][] = "Enter Full Name";
+			$_SESSION['error']['fnm'] = "Enter Full Name";
 		}
 
 		if(empty($add))
 		{
-			$_SESSION['error'][] = "Enter Full Address";
+			$_SESSION['error']['add'] = "Enter Full Address";
 		}
 
 		if(empty($pc))
 		{
-			$_SESSION['error'][] = "Enter City Pincode";
+			$_SESSION['error']['pc'] = "Enter City Pincode";
 		}
 
 		if(empty($city))
 		{
-			$_SESSION['error'][] = "Enter City";
+			$_SESSION['error']['city'] = "Enter City";
 		}
 
 		if(empty($state))
@@ -38,11 +34,11 @@
 
 		if(empty($mno))
 		{
-			$_SESSION['error'][] = "Enter Mobile Number";
+			$_SESSION['error']['mno'] = "Enter Mobile Number";
 		}
 		else if(!is_numeric($mno))
 		{
-			$_SESSION['error'][] = "Enter Mobile Number in Numbers";
+			$_SESSION['error']['mno'] = "Enter Mobile Number in Numbers";
 		}
 
 		if(!empty($_SESSION['error']))
@@ -51,9 +47,11 @@
 		}
 		else
 		{
+			include("includes/connection.php");
+
 			$rid = $_SESSION['client']['id'];
 
-			$q = "INSERT INTO `bms`.`order` (`o_id`, `o_name`, `o_address`, `o_pincode`, `o_city`, `o_state`, `o_mobile`, `o_rid`) VALUES (NULL,'$fnm', '$add', '$pc', '$city', '$state', '$mno', '$rid')";
+			$q = "INSERT INTO `bookstoredatabase`.`order` (`o_id`, `o_name`, `o_address`, `o_pincode`, `o_city`, `o_state`, `o_mobile`, `o_rid`) VALUES (NULL,'$fnm', '$add', '$pc', '$city', '$state', '$mno', '$rid')";
 
 			$res = mysqli_query($link, $q);
 
