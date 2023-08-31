@@ -62,7 +62,7 @@
 					<input type="submit" value="Re-calculate" class="btn btn-primary">
 					
 					<?php 
-						echo '<a class="btn btn-outline-primary" href="order.php?total='.$total.'" name="button" >Confirm & Submit Order</a>'
+						echo '<a class="btn btn-outline-success" href="order.php?total='.$total.'" name="button" >Confirm & Submit Order</a>'
 					?>
 				</div>
 			</form>
