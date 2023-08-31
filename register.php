@@ -110,7 +110,8 @@
           			</div>
 
           			<button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit" value="Register">Sign up</button>
-					<button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Sign in</button>
+					<a href="login.php" class="w-100 mb-2 btn btn-lg rounded-3 btn-primary">Sign in</a>
+					
         		</form>
       		</div>
     	</div>
