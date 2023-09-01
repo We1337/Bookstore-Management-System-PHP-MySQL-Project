@@ -1,1 +1,1 @@
-select count(*) from register;
+select count(*) from `order`;
