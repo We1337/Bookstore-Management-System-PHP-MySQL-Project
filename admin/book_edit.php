@@ -2,7 +2,7 @@
     include("includes/header.php");
     include("../includes/connection.php");
 
-    $cq = "SELECT * FROM book WHERE b_id=".$_GET['id'];
+    $cq = "SELECT * FROM book WHERE b_id = ".$_GET['id'];
 
     $res = mysqli_query($link, $cq);
 
@@ -105,19 +105,12 @@
                                     ?>
 
                                 </div>
-                                <!-- /.col-lg-6 (nested) -->
                             </div>
-                            <!-- /.row (nested) -->
                         </div>
-                        <!-- /.panel-body -->
                     </div>
-                    <!-- /.panel -->
                 </div>
-                <!-- /.col-lg-12 -->
             </div>
-            <!-- /.row -->
         </div>
-        <!-- /#page-wrapper -->
 
 <?php
     include("includes/footer.php");

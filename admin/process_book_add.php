@@ -37,7 +37,7 @@
 		{	
 			$_SESSION['error']['b_img'] = "Error uploading file";
 		}	
-		else if(!(strtoupper(substr($_FILES['b_img']['name'],-4))==".JPG" || strtoupper(substr($_FILES['b_img']['name'],-5))==".JPEG"|| strtoupper(substr($_FILES['b_img']['name'],-4))==".GIF"))
+		else if(!(strtoupper(substr($_FILES['b_img']['name'],-4)) == ".JPG" || strtoupper(substr($_FILES['b_img']['name'],-5)) == ".JPEG"|| strtoupper(substr($_FILES['b_img']['name'],-4))==".GIF"))
 		{	
 			$_SESSION['error']['b_img'] = "wrong file  type";
 		}	
@@ -56,7 +56,7 @@
 		
 			//move_uploaded_file($_FILES['b_img']['tmp_name'],"../book_img/".$img_nm);
 
-			move_uploaded_file($_FILES['b_img']['tmp_name'],"../book_img/".$_FILES['b_img']['name']);
+			move_uploaded_file($_FILES['b_img']['tmp_name'], "../book_img/".$_FILES['b_img']['name']);
 			$b_img = "book_img/".$_FILES['b_img']['name'];
 
 			$q = "INSERT INTO book(b_nm,b_cat,b_desc,b_price,b_img,b_time) VALUES ('$bnm',$cat,'$desc',$price,'$b_img','$t')";

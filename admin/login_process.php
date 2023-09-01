@@ -17,11 +17,11 @@
 		}
 		else
 		{
-			$q="SELECT * FROM admin WHERE a_unm='$unm' AND a_pwd='$pwd'";
+			$q = "SELECT * FROM admin WHERE a_unm = '$unm' AND a_pwd = '$pwd'";
 
-			$res=mysqli_query($link, $q);
+			$res = mysqli_query($link, $q);
 
-			$row=mysqli_fetch_assoc($res);
+			$row = mysqli_fetch_assoc($res);
 
 			if(!empty($row))
 			{

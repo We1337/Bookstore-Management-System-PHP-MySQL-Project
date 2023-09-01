@@ -4,7 +4,7 @@
 	
 	include("../includes/connection.php");
 
-	$query = "delete from book where book_id =".$_GET['id'];
+	$query = "delete from book where book_id = ".$_GET['id'];
 
 	$result = mysqli_query($link, $query);
 

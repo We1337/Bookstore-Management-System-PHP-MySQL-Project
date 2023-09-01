@@ -8,7 +8,7 @@
 		
 		if(empty($cat))
 		{
-			$_SESSION['error'][]="Please enter Category Name";
+			$_SESSION['error'][] = "Please enter Category Name";
 			header("location:category_edit.php?id=$id");
 		}
 		else

@@ -4,7 +4,7 @@
 	
 	include("../includes/connection.php");
 
-	$query = "DELETE FROM category WHERE cat_id =".$_GET['id'];
+	$query = "DELETE FROM category WHERE cat_id = ".$_GET['id'];
 
 	$result = mysqli_query($link, $query);
 
