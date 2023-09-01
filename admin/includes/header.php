@@ -26,10 +26,13 @@
             <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="index.php">Admin Panel</a>
+
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                         <span class="navbar-toggler-icon"></span>
                     </button>
+
                     <div class="collapse navbar-collapse" id="collapsibleNavbar">
+
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Category</a>
@@ -50,8 +53,14 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="users_view.php">View Users</a>
+                            </li> 
+                            <li class="nav-item">
+                                <a class="nav-link" href="users_view.php">Order</a>
                             </li>  
+
+                            <a href="logout.php"><button type="button" class="btn btn-outline-light me-2">Logout</button></a>
                         </ul>
+
                     </div>
                 </div>
             </nav>
