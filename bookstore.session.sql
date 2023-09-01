@@ -1,1 +1,1 @@
-show tables;
+select count(*) from register;
