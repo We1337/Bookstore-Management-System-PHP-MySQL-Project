@@ -10,75 +10,58 @@
 <!DOCTYPE html>
 <html>
 
-<head>
+    <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="https://getbootstrap.com/docs/5.3/assets/img/favicons/favicon.ico" type="image/x-icon">
 
-    <title>Login</title>
-
-    <!-- Core CSS - Include with every page -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
-
-    <!-- SB Admin CSS - Include with every page -->
-    <link href="css/sb-admin.css" rel="stylesheet">
-
-</head>
+        <title>Login</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    
+    </head>
 
 <body>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-md-offset-4">
-                <div class="login-panel panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Please Sign In</h3>
-                    </div>
-                    <div class="panel-body">
-                        
-                        <form role="form" action="login_process.php" method="post">
-                            <fieldset>
+    <div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog" id="modalSignin">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content rounded-4 shadow">
 
-                                <div class="form-group">
-                                    <input class="form-control" placeholder="User Name" name="unm" type="text" autofocus>
-                                </div>
-
-                                <div class="form-group">
-                                    <input class="form-control" placeholder="Password" name="pwd" type="password" value="">
-                                </div>
-
-                                <?php
-                                    if(!empty($_SESSION['error']))
-                                    {
-                                        foreach($_SESSION['error'] as $er)
-                                        {
-                                            echo '<span style="display: block;text-align: center;padding-bottom: 10px;" class="error">'.$er.'</span>';
-                                        }
-                                        unset($_SESSION['error']);
-                                    }
-                                ?>
-                        
-                                <!-- Change this to a button or input when using this as a form -->
-                                <button type="submit" class="btn btn-lg btn-success btn-block">
-                                    Login
-                                </button>
-
-                            </fieldset>
-                        </form>
-                    </div>
+                <div class="modal-header p-5 pb-4 border-bottom-0">
+                    <h1 class="fw-bold mb-0 fs-2">Admin login</h1>
                 </div>
+
+                <div class="modal-body p-5 pt-0">
+                    <form class="login" action="login_process.php" method="POST">
+                        
+                        <div class="form-floating mb-3">
+                            <input name="unm" type="text" class="form-control rounded-3" id="floatingInput" placeholder="Admin name">
+                            <label for="floatingInput">Admin name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input name="pwd" type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword">Password</label>
+                        </div>
+
+                        <?php
+                            if(!empty($_SESSION['error']))
+                            {
+                                foreach($_SESSION['error'] as $er)
+                                {
+                                    echo '<span style="display: block;text-align: center;padding-bottom: 10px;" class="error">'.$er.'</span>';
+                                }
+                                unset($_SESSION['error']);
+                            }
+                        ?>
+
+                        <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Login</button>
+                    </form>
+                </div>
+
             </div>
         </div>
     </div>
-
-    <!-- Core Scripts - Include with every page -->
-    <script src="js/jquery-1.10.2.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
-
-    <!-- SB Admin Scripts - Include with every page -->
-    <script src="js/sb-admin.js"></script>
 
 </body>
 
