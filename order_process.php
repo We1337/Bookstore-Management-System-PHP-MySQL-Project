@@ -43,7 +43,7 @@
 
 		if(!empty($_SESSION['error']))
 		{
-			header("location:order.php");
+			header("location:order.php=wentwrong");
 		}
 		else
 		{
@@ -51,15 +51,16 @@
 
 			$rid = $_SESSION['client']['id'];
 
-			$q = "INSERT INTO `bookstoredatabase`.`order` (`o_id`, `o_name`, `o_address`, `o_pincode`, `o_city`, `o_state`, `o_mobile`, `o_rid`) VALUES (NULL,'$fnm', '$add', '$pc', '$city', '$state', '$mno', '$rid')";
+			$q = "INSERT INTO `bookstoredatabase`.`order` (`o_id`, `o_name`, `o_address`, `o_pincode`, `o_city`, `o_state`, `o_mobile`, `o_rid`, `o_total_price`, `o_list_books`) VALUES 
+			(NULL, '$fnm', '$add', '$pc', '$city', '$state', '$mno', '$rid', '$totalprice', '$totalbooks')";
 
 			$res = mysqli_query($link, $q);
 
-			header("location:order.php?order");
+			header("location:order.php?order=success");
 		}
 	}
 	else
 	{
-		header("location:order.php");
+		header("location:order.php=empty");
 	}
 ?>

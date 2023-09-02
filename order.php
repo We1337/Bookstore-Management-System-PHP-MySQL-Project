@@ -1,5 +1,8 @@
 <?php
 	include("includes/header.php");
+	
+	$total = $_GET['total'];
+	$books = $_GET['books'];
 ?>
 
 <div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog" id="modalSignin">
@@ -15,7 +18,7 @@
 					<?php
 						if(isset($_GET['order']))
 						{
-							echo '<font style="color:red">Order Successfully Placed</font><br><br>';
+							echo '<font style="color:green">Order Successfully Placed</font><br><br>';
 						}
 					?>
 
@@ -78,6 +81,7 @@
 
 					<div class="form-floating mb-3">
 						<input name="mno" type="text" class="form-control rounded-3" placeholder="Mobile Number">
+						
 						<label>Mobile Number</label>
 						<?php
 							if(isset($_SESSION['error']['mno']))
@@ -86,6 +90,9 @@
 							}
 						?>
 					</div>
+
+					<input name="totalprice" type="hidden" value="<?php echo intval($total) ?>">
+					<input name="totalbooks" type="hidden" value="<?php echo $books ?>">
 
 					<button type="submit" name="sub" class="btn btn-outline-primary">Confirm & Proceed</button>
 							
