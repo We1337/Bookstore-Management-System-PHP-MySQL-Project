@@ -139,7 +139,7 @@ CREATE TABLE IF NOT EXISTS `order` (
   `o_state` VARCHAR(30) NOT NULL,
   `o_mobile` VARCHAR(11) NOT NULL,
   `o_rid` INT(8) NOT NULL,
-  `o_total_price` VARCHAR(50) NOT NULL,
+  `o_total_price` INT(50) NOT NULL,
   `o_list_books` LONGTEXT NOT NULL,
   PRIMARY KEY (`o_id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = latin1 AUTO_INCREMENT = 41;
@@ -148,8 +148,9 @@ CREATE TABLE IF NOT EXISTS `order` (
 -- Dumping data for table `order`
 --
 
-INSERT INTO `order` (`o_id`, `o_name`, `o_address`, `o_pincode`, `o_city`, `o_state`, `o_mobile`, `o_rid`) VALUES
-(39, 'Dhaval Makwana', 'Mahuva', 125478, 'nuihu', 'Gujarat', 123456789, 1, '500000', 'book_id: 15-12, book_id: 16-10');
+INSERT INTO `order` (`o_id`, `o_name`, `o_address`, `o_pincode`, `o_city`, `o_state`, `o_mobile`, `o_rid`, `o_total_price`, `o_list_books`) VALUES
+(39, 'Dhaval Akal', 'Mahuva', 125478, 'nuihu', 'Gujarat', 123456789, 1, 500000, 'book_id-amout: 15-12, book_id-amout: 16-10'),
+(40, 'Dhaval Makwana', 'Mahuva', 125478, 'nuihu', 'Gujarat', 123456789, 1, 500000, 'book_id-amout: 15-12, book_id-amout: 16-10');
 
 -- --------------------------------------------------------
 
