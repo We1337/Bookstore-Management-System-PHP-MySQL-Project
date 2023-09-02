@@ -26,6 +26,8 @@
 						<?php
 							$count = 1;
 							$total = 0;
+							$book_id_amout = array();
+							$indexs = "";
 
 							if(isset($_SESSION['cart']))
 							{
@@ -33,6 +35,8 @@
 								{
 									$rate = $val['qty'] * $val['price'];
 									$total = $total + $rate;
+									$indexs = '(Name: ' . $val['nm'] . '. Amout: ' . $val['qty'] . '), ';
+									array_push($book_id_amout, $indexs);
 
 									echo '
 										<tr>
@@ -50,19 +54,23 @@
 							}
 						?>
 					</tbody>
-
+					
 					<tr>
 						<td colspan="5">Total: </td>
 						<td colspan="2">KZT. <?php echo $total; ?></td>
 					</tr>
 
 				</table>
-
+					<p>
+						<?php
+							$link = implode($book_id_amout);
+						?>
+					</p>
 				<div align="center" style="margin-top: 20px">
 					<input type="submit" value="Re-calculate" class="btn btn-primary">
 					
-					<?php 
-						echo '<a class="btn btn-outline-success" href="order.php?total='.$total.'" name="button" >Confirm & Submit Order</a>'
+					<?php
+						echo '<a class="btn btn-outline-success" href="order.php?total='.$total.'&books='.$link.'" name="button" >Confirm & Submit Order</a>';
 					?>
 				</div>
 			</form>
