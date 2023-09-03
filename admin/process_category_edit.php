@@ -15,7 +15,7 @@
 		{
 			include("../includes/connection.php");
 
-			$q = "UPDATE category SET cat_nm='$cat' WHERE cat_id=$id";
+			$q = "UPDATE category SET cat_nm = '$cat' WHERE cat_id = $id";
 	
 			mysqli_query($link, $q);
 	
