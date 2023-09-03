@@ -67,19 +67,12 @@
                                     ?>
 
                                 </div>
-                                <!-- /.col-lg-6 (nested) -->                            
                             </div>
-                            <!-- /.row (nested) -->
                         </div>
-                        <!-- /.panel-body -->
                     </div>
-                    <!-- /.panel -->
                 </div>
-                <!-- /.col-lg-12 -->
             </div>
-            <!-- /.row -->
         </div>
-        <!-- /#page-wrapper -->
 
 <?php
     include("includes/footer.php");
