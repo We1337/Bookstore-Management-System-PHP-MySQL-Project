@@ -30,14 +30,14 @@
                                         <td>'.$count.'</td>
                                         <td>'.$cat_row['cat_nm'].'</td>
                                         <td>
-                                            <a style="color: red;" href="category_edit.php?id='.$cat_row['cat_id'].'">Edit</a> &nbsp;&nbsp;
-                                            <a style="color: red;"  href="process_category_del.php?id='.$cat_row['cat_id'].'">x</a>
+                                            <a class="btn btn-info btn-sm" href="category_edit.php?id='.$cat_row['cat_id'].'">Edit</a> &nbsp;&nbsp;
+                                            <a class="btn btn-danger btn-sm" href="process_category_del.php?id='.$cat_row['cat_id'].'">Delate</a>
                                         </td>
                                     </tr>';
 
                                 $count++;
                             }
-
+                            
                         ?>
                                             
                     </tbody>
