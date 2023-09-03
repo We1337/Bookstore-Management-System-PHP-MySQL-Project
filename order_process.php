@@ -51,8 +51,7 @@
 
 			$rid = $_SESSION['client']['id'];
 
-			$q = "INSERT INTO `bookstoredatabase`.`order` (`o_id`, `o_name`, `o_address`, `o_pincode`, `o_city`, `o_state`, `o_mobile`, `o_rid`, `o_total_price`, `o_list_books`) VALUES 
-			(NULL, '$fnm', '$add', '$pc', '$city', '$state', '$mno', '$rid', '$totalprice', '$totalbooks')";
+			$q = "INSERT INTO `order`(`o_id`, `o_name`, `o_address`, `o_pincode`, `o_city`, `o_state`, `o_mobile`, `o_rid`, `o_total_price`, `o_list_books`) VALUES (NULL, '$fnm', '$add', '$pc', '$city', '$state', '$mno', '$rid', '$totalprice', '$totalbooks')";
 
 			$res = mysqli_query($link, $q);
 
