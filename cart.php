@@ -2,26 +2,23 @@
 	include("includes/header.php");
 ?>
 
-<div id="content">
-	<div class="post">
-		<br>
-		<h2 class="title text-center">Cart</h2>
-	
-		<div class="container">
-				
-			<form action="addtocart.php" method="post">
+	<div class="container">
+		<div class="post">
+			<br>
+			<h2 class="title text-center">Cart</h2>			
+			<form action="addtocart.php" method="POST">
 				<table class="table" cellspacing="0" border="0" width="100%">
-					<thead class="thead-dark">
-    					<tr>
-      						<th scope="col">No</th>
-      						<th scope="col">Name</th>
-      						<th scope="col">Image</th>
-      						<th scope="col">Qty</th>
+					<thead>
+						<tr>
+							<th scope="col">No</th>
+							<th scope="col">Name</th>
+							<th scope="col">Image</th>
+							<th scope="col">Qty</th>
 							<th scope="col">Price</th>
 							<th scope="col">Rate</th>
 							<th scope="col">Remove</th>
-    					</tr>
-  					</thead>
+						</tr>
+					</thead>
 					<tbody>
 						<?php
 							$count = 1;
@@ -54,21 +51,19 @@
 							}
 						?>
 					</tbody>
-					
+						
 					<tr>
 						<td colspan="5">Total: </td>
 						<td colspan="2">KZT. <?php echo $total; ?></td>
 					</tr>
 
 				</table>
-					<p>
-						<?php
-							$link = implode($book_id_amout);
-						?>
-					</p>
+						
+				<p><?php $link = implode($book_id_amout); ?></p>
+					
 				<div align="center" style="margin-top: 20px">
 					<input type="submit" value="Re-calculate" class="btn btn-primary">
-					
+						
 					<?php
 						echo '<a class="btn btn-outline-success" href="order.php?total='.$total.'&books='.$link.'" name="button" >Confirm & Submit Order</a>';
 					?>
@@ -76,7 +71,6 @@
 			</form>
 		</div>
 	</div>
-</div><!-- end #content -->
 
 <?php
 	include("includes/footer.php");
