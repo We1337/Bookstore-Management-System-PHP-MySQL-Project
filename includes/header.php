@@ -51,6 +51,3 @@
       			</div>
     		</div>
   		</header>
-
-		<!-- end #header-wrapper -->
-		<div id="page">
