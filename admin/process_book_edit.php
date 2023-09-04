@@ -57,7 +57,7 @@
 			move_uploaded_file($_FILES['b_img']['tmp_name'],"../book_img/".$_FILES['b_img']['name']);
 			$b_img = "book_img/".$_FILES['b_img']['name'];
 
-			$q = "update book set b_nm = '$bnm', b_cat = '$cat', b_desc = '$desc', b_price = '$price', b_img='$b_img', b_time='$t' where b_id = ".$id;
+			$q = "UPDATE book SET b_nm = '$bnm', b_cat = '$cat', b_desc = '$desc', b_price = '$price', b_img='$b_img', b_time='$t' WHERE b_id = ".$id;
 
 			$res = mysqli_query($link, $q);
 
