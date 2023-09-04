@@ -14,58 +14,62 @@
                 <h1 class="page-header text-center">View Book</h1>
     
                 <p class="text-center"><strong>Book List</strong></p>
-                    
-                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                        <thead>
-                            <tr>
-                                <th class="col">No</th>
-                                <th class="col">Book Name</th>
-                                <th class="col">Category</th>
-                                <th class="col">Price</th>
-                                <th class="col">Image</th>
-                                <th class="col">Date</th>
-                                <th class="col">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                
+                <form method="get" action="book_view.php" class="form-inline">
+                    <input class="form-control mr-sm-2" type="text" name="s" placeholder="Search" aria-label="Search">
+                    <br>
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="search-submit">Search</button>
+                </form> 
+                <br>
 
-                            <?php
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th class="col">No</th>
+                            <th class="col">Book Name</th>
+                            <th class="col">Category</th>
+                            <th class="col">Price</th>
+                            <th class="col">Image</th>
+                            <th class="col">Date</th>
+                            <th class="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                            $s = $_GET['s'];
 
-                                $book_q = "SELECT * FROM book";
+                            $blq = "SELECT * FROM book WHERE b_nm LIKE '%$s%'";
 
-                                $book_res = mysqli_query($link, $book_q);
+                            $blres = mysqli_query($link, $blq);
 
-                                $count = 1;
+                            $count = 1;
 
-                                while($book_row = mysqli_fetch_assoc($book_res))
-                                {
-                                    echo '
-                                        <tr class="odd gradeX">
-                                        <td>'.$count.'</td>
-                                        <td>'.$book_row['b_nm'].'</td>
-                                        <td>'.$book_row['cat_nm'].'</td>
-                                        <td>'.$book_row['b_price'].'</td>';
 
-                                    echo "<td width='120'><center><img src='../$book_row[b_img]' width='50' height='70'></center>";
+                            while($book_row = mysqli_fetch_assoc($blres))
+                            {
+                                echo '
+                                    <tr class="odd gradeX">
+                                    <td>'.$count.'</td>
+                                    <td>'.$book_row['b_nm'].'</td>
+                                    <td>'.$book_row['cat_nm'].'</td>
+                                    <td>'.$book_row['b_price'].'</td>';
+
+                                echo "<td width='120'><center><img src='../$book_row[b_img]' width='50' height='70'></center>";
                                                       
-                                    echo '
-                                        <td>'.@date("d-M-y",$book_row['b_time']).'</td>
-                                        <td align="center">
-                                            <a class="btn btn-danger btn-sm" href="process_book_del.php?id='.$book_row['b_id'].'">Delate</a></td>
-                                        </tr>';
+                                echo '
+                                    <td>'.@date("d-M-y",$book_row['b_time']).'</td>
+                                    <td align="center">
+                                        <a class="btn btn-danger btn-sm" href="process_book_del.php?id='.$book_row['b_id'].'">Delate</a></td>
+                                    </tr>';
+                                
+                                $count++;
+                            }
 
-                                    $count++;
-                                }
-
-                            ?>
-                                            
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                        ?>
+                    </tbody>
+                </table>
             </div>
+        </div>
 <?php
     include("includes/footer.php");
 ?>
