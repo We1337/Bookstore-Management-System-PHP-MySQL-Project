@@ -2,8 +2,6 @@
     include("includes/header.php");
     include("../includes/connection.php");
 ?>
-
-//TODO: search bar 
 //TODO: edit name 
 //TODO: edit price 
 //TODO: edit image
@@ -49,17 +47,17 @@
                             {
                                 echo '
                                     <tr class="odd gradeX">
-                                    <td>'.$count.'</td>
-                                    <td>'.$book_row['b_nm'].'</td>
-                                    <td>'.$book_row['cat_nm'].'</td>
-                                    <td>'.$book_row['b_price'].'</td>';
+                                        <td>'.$count.'</td>
+                                        <td>'.$book_row['b_nm'].'</td>
+                                        <td>'.$book_row['cat_nm'].'</td>
+                                        <td>'.$book_row['b_price'].'</td>';
 
-                                echo "<td width='120'><center><img src='../$book_row[b_img]' width='50' height='70'></center>";
+                                echo "  <td width='120'><center><img src='../$book_row[b_img]' width='50' height='70'></center>";
                                                       
                                 echo '
-                                    <td>'.@date("d-M-y",$book_row['b_time']).'</td>
-                                    <td align="center">
-                                        <a class="btn btn-danger btn-sm" href="process_book_del.php?id='.$book_row['b_id'].'">Delate</a></td>
+                                        <td>'.@date("d-M-y",$book_row['b_time']).'</td>
+                                        <td align="center"><a class="btn btn-danger btn-sm" href="process_book_del.php?id='.$book_row['b_id'].'">Delate</a></td>
+                                        <td align="center"><a class="btn btn-info btn-sm" href="process_book_change.php?id='.$book_row['b_id'].'">Edit</a></td>
                                     </tr>';
                                 
                                 $count++;
