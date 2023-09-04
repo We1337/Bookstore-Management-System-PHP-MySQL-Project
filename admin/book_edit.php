@@ -9,14 +9,13 @@
     $crow = mysqli_fetch_assoc($res);
 ?>
 
-        <div id="page-wrapper">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">Update Book</h1>
-                </div>
-                <!-- /.col-lg-12 -->
+<div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog" id="modalSignin">
+  	<div class="modal-dialog" role="document">
+    	<div class="modal-content rounded-4 shadow">
+            <div class="modal-header p-5 pb-4 border-bottom-0">
+                <h1 class="page-header text-center">Update Book</h1>
             </div>
-            <!-- /.row -->
+        
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
