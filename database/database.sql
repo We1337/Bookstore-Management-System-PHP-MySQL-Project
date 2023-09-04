@@ -47,7 +47,7 @@ INSERT INTO `admin` (`a_id`, `a_unm`, `a_pwd`) VALUES (1, 'admin', 'admin');
 CREATE TABLE IF NOT EXISTS `book` (
   `b_id` INT(10) NOT NULL AUTO_INCREMENT,
   `b_nm` VARCHAR(50) NOT NULL,
-  `b_cat` INT(6) NOT NULL,
+  `b_cat` VARCHAR(50) NOT NULL,
   `b_desc` LONGTEXT NOT NULL,
   `b_price` INT(4) NOT NULL,
   `b_img` VARCHAR(50) NOT NULL,
@@ -60,17 +60,17 @@ CREATE TABLE IF NOT EXISTS `book` (
 --
 
 INSERT INTO `book` (`b_id`, `b_nm`, `b_cat`, `b_desc`, `b_price`, `b_img`, `b_time`) VALUES
-(15, 'Octavia Spencer - Detective', 12, 'This is Detective Book About Ninja', 50, 'book_img/d.jpg', 1554088592),
-(16, 'Murder on The Orient Express', 13, 'Suspence Book about Murder.', 60, 'book_img/d3.jpg', 1554088749),
-(18, 'A Dictionary of Architecture', 14, 'Containing over 5,000 entries from Aalto to ziggurat, this is the most comprehensive and up-to-date dictionary of architecture in paperback. Beautifully illustrated and written in a clear and concise style, it is an invaluable work of reference for both students of architecture and the general reader, as well as professional architects. Covers all periods of Western architectural history, from ancient times to the present day Concise biographies of leading architects, from Brunelleschi and Imhotep to Le Corbusier and Richard Rogers Over 250 illustrations specially drawn for this volume', 500, 'book_img/ARC9.jpg', 1554089362),
-(19, 'CAT Book', 15, 'Book about Competitive Exam CAT.\r\nIn CAT Collegians are Eligible for Give Exam.', 260, 'book_img/CAT.jpg', 1554089935),
-(20, 'Visual Basic 2005', 16, 'VB.Net Connectivity.', 430, 'book_img/comp8.jpg', 1554090190),
-(21, 'HTML for World Wide Web', 17, 'HTML uses tags,it''s not case sensitive,work with own html tags which must be enclosed.', 240, 'book_img/0201354934.jpg', 1554090473),
-(22, 'A TEXTBOOK OF COST AND MANAGEMENT ACCOUNTING 8th e', 18, 'Student friendly and examination oriented approach # Innovative, comprehensive and systematic presentation of the subject matter # Use of diagrams and exhibits to help students understand concepts easily and clearly # Around 500 solved problems and illustrations with working notes # Solved and unsolved practical questions from various university and professional examinations like BCom, MCom, CA, CS, ICWA, etc. # Objective type questions and select theory questions # Ideal for self study.', 410, 'book_img/busi7.jpg', 1554091189),
-(23, 'Spider Man', 19, 'Spider Man Comic Book.', 120, 'book_img/comic1.jpg', 1554091718),
-(24, 'The Mad, Mad World of Cricket', 20, 'The funny side of the gentleman?s game?captured by a master cartoonist In India cricket is more than a game; it is a national obsession. And with a World Cup always around the corner, there is no better way to prepare for the excitement of seeing the men in blue in action than with renowned cartoonist Sudhir Dar?s creations.', 200, 'book_img/c1.jpg', 1554092107),
-(25, 'A Dictionary of', 13, 'Containing over 5,000 entries from Aalto to ziggurat, this is the most comprehensive and up-to-date dictionary of architecture in paperback. Beautifully illustrated and written in a clear and concise style, it is an invaluable work of reference for both students of architecture and the general reader, as well as professional architects. Covers all periods of Western architectural history, from ancient times to the present day Concise biographies of leading architects, from Brunelleschi and Imhotep to Le Corbusier and Richard Rogers Over 250 illustrations specially drawn for this volume', 500, 'book_img/ARC9.jpg', 1555228720),
-(26, 'BILL DAVE MANAGEMENT', 21, 'This book is about management by Bill Dave', 90, 'book_img/MANAGEMENT2.jpg', 1555250569);
+(15, 'Octavia Spencer - Detective', 'Suspence', 'This is Detective Book About Ninja', 50, 'book_img/d.jpg', 1554088592),
+(16, 'Murder on The Orient Express', 'Suspence', 'Suspence Book about Murder.', 60, 'book_img/d3.jpg', 1554088749),
+(18, 'A Dictionary of Architecture', 'Architecture', 'Containing over 5,000 entries from Aalto to ziggurat, this is the most comprehensive and up-to-date dictionary of architecture in paperback. Beautifully illustrated and written in a clear and concise style, it is an invaluable work of reference for both students of architecture and the general reader, as well as professional architects. Covers all periods of Western architectural history, from ancient times to the present day Concise biographies of leading architects, from Brunelleschi and Imhotep to Le Corbusier and Richard Rogers Over 250 illustrations specially drawn for this volume', 500, 'book_img/ARC9.jpg', 1554089362),
+(19, 'CAT Book', 'Competitive Exam', 'Book about Competitive Exam CAT.\r\nIn CAT Collegians are Eligible for Give Exam.', 260, 'book_img/CAT.jpg', 1554089935),
+(20, 'Visual Basic 2005', 'Programming', 'VB.Net Connectivity.', 430, 'book_img/comp8.jpg', 1554090190),
+(21, 'HTML for World Wide Web', 'Web Design', 'HTML uses tags,it''s not case sensitive,work with own html tags which must be enclosed.', 240, 'book_img/0201354934.jpg', 1554090473),
+(22, 'A TEXTBOOK OF COST AND MANAGEMENT ACCOUNTING 8th e', 'Management', 'Student friendly and examination oriented approach # Innovative, comprehensive and systematic presentation of the subject matter # Use of diagrams and exhibits to help students understand concepts easily and clearly # Around 500 solved problems and illustrations with working notes # Solved and unsolved practical questions from various university and professional examinations like BCom, MCom, CA, CS, ICWA, etc. # Objective type questions and select theory questions # Ideal for self study.', 410, 'book_img/busi7.jpg', 1554091189),
+(23, 'Spider Man', 'Comics', 'Spider Man Comic Book.', 120, 'book_img/comic1.jpg', 1554091718),
+(24, 'The Mad, Mad World of Cricket', 'Sport', 'The funny side of the gentleman?s game?captured by a master cartoonist In India cricket is more than a game; it is a national obsession. And with a World Cup always around the corner, there is no better way to prepare for the excitement of seeing the men in blue in action than with renowned cartoonist Sudhir Dar?s creations.', 200, 'book_img/c1.jpg', 1554092107),
+(25, 'A Dictionary of', 'Architecture', 'Containing over 5,000 entries from Aalto to ziggurat, this is the most comprehensive and up-to-date dictionary of architecture in paperback. Beautifully illustrated and written in a clear and concise style, it is an invaluable work of reference for both students of architecture and the general reader, as well as professional architects. Covers all periods of Western architectural history, from ancient times to the present day Concise biographies of leading architects, from Brunelleschi and Imhotep to Le Corbusier and Richard Rogers Over 250 illustrations specially drawn for this volume', 500, 'book_img/ARC9.jpg', 1555228720),
+(26, 'BILL DAVE MANAGEMENT', 'Management', 'This book is about management by Bill Dave', 90, 'book_img/MANAGEMENT2.jpg', 1555250569);
 
 -- --------------------------------------------------------
 
