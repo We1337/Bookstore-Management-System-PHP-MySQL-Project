@@ -2,17 +2,17 @@
 	include("includes/header.php");
 	include("includes/connection.php");
 
-	$bid=$_GET['id'];
+	$bid = $_GET['id'];
 
-	$book_query="SELECT * FROM book,category WHERE b_cat = cat_id AND b_id = $bid";
+	$book_query = "SELECT * FROM book WHERE b_id = $bid";
 
-	$book_res=mysqli_query($link, $book_query);
+	$book_res = mysqli_query($link, $book_query);
 
-	$book_row=mysqli_fetch_assoc($book_res);
+	$book_row = mysqli_fetch_assoc($book_res);
 ?>
 
 	<header class="d-flex justify-content-center py-3">
-        <h3 class="nav-item"><?php echo $book_row['cat_nm']; ?></h3>
+        <h3 class="nav-item"><?php echo $book_row['b_cat']; ?></h3>
     </header>
 
 	<div class="container text-center">
@@ -66,7 +66,7 @@
                             </div>
                         </div>
                     </div>
-                    <img class="card-img-right flex-auto d-none d-md-block" alt="Thumbnail [500x550]" style="width: 500px; height: 550px;" src="<?php echo $book_row['b_img']; ?>" data-holder-rendered="true">
+                    <img class="card-img-right flex-auto d-none d-md-block" style="width: 500px; height: 550px;" src="<?php echo $book_row['b_img']; ?>" data-holder-rendered="true">
                 </div>
             </div>
         </div>
