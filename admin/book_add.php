@@ -79,6 +79,7 @@
                             ?>
                             <input type="file" name="b_img" class="form-control">
                         </div>
+                        
                         <button type="submit" class="btn btn-primary btn-sm">Add Book</button>
 
                     </form>
