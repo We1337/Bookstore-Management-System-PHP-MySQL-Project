@@ -2,75 +2,62 @@
     include("includes/header.php");
     include("../includes/connection.php");
 ?>
-        <div id="page-wrapper">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">View Contact</h1>
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Contact List
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Name</th>
-                                            <th>Mobile No</th>
-                                            <th>E-Mail Address</th>
-                                            <th>Message</th>
-                                            <th>Time</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
+        <div class="container">
+            <div class="post">
+                <br>
+                <h1 class="page-header text-center">View Contacts</h1>
+    
+                <p class="text-center"><strong>Book List</strong></p>
+                
+                <form method="GET" action="contact_view.php" class="form-inline">
+                    <input class="form-control mr-sm-2" type="text" name="s" placeholder="Search" aria-label="Search">
+                    <br>
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="search-submit">Search</button>
+                </form> 
+                <br>
 
-                                        <?php
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th class="col">No</th>
+                            <th class="col">Name</th>
+                            <th class="col">Mobile</th>
+                            <th class="col">E-Mail Address</th>
+                            <th class="col">Message</th>
+                            <th class="col">Time</th>
+                            <th class="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <?php
+                            $s = $_GET['s'];
+                            $blq = "SELECT * FROM contact WHERE c_fnm LIKE '%$s%'";
+                            $blres = mysqli_query($link, $blq);
 
-                                            $book_q = "SELECT * FROM contact";
+                            $count = 1;
 
-                                            $book_res = mysqli_query($link, $book_q);
-
-                                            $count = 1;
-
-                                            while($book_row = mysqli_fetch_assoc($book_res))
-                                            {
-                                                echo '
-                                                    <tr class="odd gradeX">
-                                                        <td>'.$count.'</td>
-                                                        <td>'.$book_row['c_fnm'].'</td>
-                                                        <td>'.$book_row['c_mno'].'</td>
-                                                        <td>'.$book_row['c_email'].'</td>
-                                                        <td>'.$book_row['c_msg'].'</td>
-                                                        <td>'.@date("d-M-y",$book_row['c_time']).'</td>
-                                                        <td align="center"><a style="color: red;" href="process_contact_del.php?id='.$book_row['c_id'].'">x</a></td>
-                                                    </tr>';
-                                                $count++;
-                                            }
-
-                                        ?>
+                            while($book_row = mysqli_fetch_assoc($blres))
+                            {
+                                echo '
+                                    <tr>
+                                        <td>'.$count.'</td>
+                                        <td>'.$book_row['c_fnm'].'</td>
+                                        <td>'.$book_row['c_mno'].'</td>
+                                        <td>'.$book_row['c_email'].'</td>
+                                        <td>'.$book_row['c_msg'].'</td>
+                                        <td>'.@date("d-M-y",$book_row['c_time']).'</td>
+                                        <td align="center"><a class="btn btn-danger btn-sm" href="process_contact_del.php?id='.$book_row['c_id'].'">Delate</a></td>
+                                    </tr>';
+                                $count++;
+                            }
+                        ?>
                                             
-                                    </tbody>
-                                </table>
-                            </div>
-                            <!-- /.table-responsive -->
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-12 -->
-            </div> 
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <!-- /#page-wrapper -->
+        
 <?php
     include("includes/footer.php");
 ?>
