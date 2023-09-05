@@ -15,10 +15,10 @@
         <h3 class="nav-item"><?php echo $book_row['cat_nm']; ?></h3>
     </header>
 
-	<div class="container text-center"> <!-- Center the content -->
+	<div class="container text-center">
         <div class="d-flex justify-content-center py-3">
-            <div class="col-md-12"> <!-- Increase the column width -->
-                <div class="card flex-md-row mb-4 box-shadow h-md-550"> <!-- Increase the card height -->
+            <div class="col-md-12"> 
+                <div class="card flex-md-row mb-4 box-shadow h-md-550"> 
                     <div class="card-body d-flex flex-column align-items-start">
                         <strong class="d-inline-block mb-2 text-primary"><?php echo $book_row['b_nm']; ?></strong>
                         <h3 class="mb-0">

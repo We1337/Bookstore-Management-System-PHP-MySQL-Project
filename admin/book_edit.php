@@ -9,8 +9,6 @@
 
     $cq = "SELECT * FROM book WHERE b_id='".$id."';";
 
-    echo $cq;
-
     $res = mysqli_query($link, $cq);
 
     $crow = mysqli_fetch_assoc($res);
