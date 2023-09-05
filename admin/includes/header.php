@@ -55,7 +55,7 @@
                                 <a class="nav-link" href="users_view.php">View Users</a>
                             </li> 
                             <li class="nav-item">
-                                <a class="nav-link" href="users_view.php">Order</a>
+                                <a class="nav-link" href="order_view.php">Order</a>
                             </li>  
 
                             <a href="logout.php"><button type="button" class="btn btn-outline-light me-2">Logout</button></a>
