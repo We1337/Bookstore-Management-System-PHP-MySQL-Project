@@ -5,9 +5,7 @@
         <div class="container">
             <div class="post">
                 <br>
-                <h1 class="page-header text-center">View Contacts</h1>
-    
-                <p class="text-center"><strong>Book List</strong></p>
+                <h1 class="page-header text-center">View Contacts</h1> 
                 
                 <form method="GET" action="contact_view.php" class="form-inline">
                     <input class="form-control mr-sm-2" type="text" name="s" placeholder="Search" aria-label="Search">
