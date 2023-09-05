@@ -4,6 +4,7 @@
 
 	include("../includes/connection.php");
 
+	echo $_POST;
 	if(!empty($_POST))
 	{
 		$_SESSION['error'] = array();
@@ -37,7 +38,7 @@
 		}	
 		else if(!(strtoupper(substr($_FILES['b_img']['name'],-4)) == ".JPG" || strtoupper(substr($_FILES['b_img']['name'],-5)) == ".JPEG"|| strtoupper(substr($_FILES['b_img']['name'],-4))==".GIF"))
 		{
-			$_SESSION['error']['b_img'] = "wrong file  type";
+			$_SESSION['error']['b_img'] = "wrong file type";
 		}	
 
 		//image validation
@@ -57,7 +58,7 @@
 			move_uploaded_file($_FILES['b_img']['tmp_name'],"../book_img/".$_FILES['b_img']['name']);
 			$b_img = "book_img/".$_FILES['b_img']['name'];
 
-			$q = "UPDATE book SET b_nm = '$bnm', b_cat = '$cat', b_desc = '$desc', b_price = '$price', b_img='$b_img', b_time='$t' WHERE b_id = ".$id;
+			$q = "UPDATE book SET b_nm = '".$bnm."', b_cat = '".$cat."', b_desc = '".$desc."', b_price = '".$price."', b_img = '".$b_img."', b_time = '".$t."' WHERE b_id = ".$id;
 
 			$res = mysqli_query($link, $q);
 
@@ -66,7 +67,7 @@
 	}
 	else
 	{
-		header("location:book_view.php");
+		header("location:book_view.php&error=".$_POST);
 	}
 
 ?>

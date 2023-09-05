@@ -2,9 +2,6 @@
     include("includes/header.php");
     include("../includes/connection.php");
 ?>
-//TODO: edit name 
-//TODO: edit price 
-//TODO: edit image
 
         <div class="container">
             <div class="post">

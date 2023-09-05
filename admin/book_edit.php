@@ -1,12 +1,20 @@
 <?php
+
+    session_start();
+
     include("includes/header.php");
     include("../includes/connection.php");
 
-    $cq = "SELECT * FROM book WHERE b_id = " . $_GET['id'] . ";";
+    $id = $_GET['id'];
+
+    $cq = "SELECT * FROM book WHERE b_id='".$id."';";
+
+    echo $cq;
 
     $res = mysqli_query($link, $cq);
 
     $crow = mysqli_fetch_assoc($res);
+
 ?>
 
         <div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog" id="modalSignin">
@@ -42,9 +50,9 @@
 
                                         $cres = mysqli_query($link, $cq);
 
-                                        while($crow = mysqli_fetch_assoc($cres))
+                                        while($crows = mysqli_fetch_assoc($cres))
                                         {
-                                            echo '<option value="'.$crow['cat_id'].'">'.$crow['cat_nm'].'</option>';
+                                            echo '<option value="'.$crows['cat_nm'].'">'.$crows['cat_nm'].'</option>';
                                         }
                                     ?>
                                 </select>
@@ -74,7 +82,7 @@
                                 ?>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group mb-3">
                                 <?php
                                     if(isset($_SESSION['error']['b_img']))
                                     {
