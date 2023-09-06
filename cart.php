@@ -62,10 +62,10 @@
 				<p><?php $link = implode($book_id_amout); ?></p>
 					
 				<div align="center" style="margin-top: 20px">
-					<input type="submit" value="Re-calculate" class="btn btn-primary">
+					<input type="submit" value="Re-calculate" class="btn btn-primary btn-sm">
 						
 					<?php
-						echo '<a class="btn btn-outline-success" href="order.php?total='.$total.'&books='.$link.'" name="button" >Confirm & Submit Order</a>';
+						echo '<a class="btn btn-outline-success btn-sm" href="order.php?total='.$total.'&books='.$link.'" name="button" >Confirm & Submit Order</a>';
 					?>
 				</div>
 			</form>
