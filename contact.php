@@ -62,7 +62,7 @@
 						?>
 					</div>
 					
-          			<button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit" value="Submit">Submit</button>
+          			<button class="w-100 mb-2 btn btn-sm rounded-3 btn-primary" type="submit" value="Submit">Submit</button>
         		</form>
       		</div>
 
