@@ -29,12 +29,12 @@
             			<input name="pwd" type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
             			<label for="floatingPassword">Password</label>
           			</div>
-          			<button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit" value="Login">Login</button>
-		    		<a href="register.php" class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" role="button">Registration</button>
-					<a href="forget_password.php" class="w-100 py-2 mb-2 btn btn-outline-primary rounded-3" role="button">Forget Password?</a>
+          			<button class="w-100 mb-2 btn btn-sm rounded-3 btn-primary" type="submit" value="Login">Login</button>
+		    		<a href="register.php" class="w-100 mb-2 btn btn-sm rounded-3 btn-primary" role="button">Registration</button>
+					<a href="forget_password.php" class="w-100 py-2 mb-2 btn btn-outline-primary btn-sm rounded-3" role="button">Forget Password?</a>
 
 					<h2 class="fs-5 fw-bold mb-3">For Admins</h2>
-          			<a href="admin/index.php" class="w-100 py-2 mb-2 btn btn-outline-primary rounded-3" role="button">Admin Login</a>
+          			<a href="admin/index.php" class="w-100 py-2 mb-2 btn btn-outline-primary btn-sm rounded-3" role="button">Admin Login</a>
         		</form>
       		</div>
     	</div>
