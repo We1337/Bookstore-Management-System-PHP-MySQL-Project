@@ -109,8 +109,8 @@
 						?>
           			</div>
 
-          			<button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit" value="Register">Sign up</button>
-					<a href="login.php" class="w-100 mb-2 btn btn-lg rounded-3 btn-primary">Sign in</a>
+          			<button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary btn-sm" type="submit" value="Register">Sign up</button>
+					<a href="login.php" class="w-100 mb-2 btn btn-lg rounded-3 btn-primary btn-sm">Sign in</a>
 					
         		</form>
       		</div>
