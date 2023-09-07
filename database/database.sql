@@ -179,3 +179,28 @@ INSERT INTO `register` (`r_id`, `r_fnm`, `r_unm`, `r_pwd`, `r_cno`, `r_email`, `
 (1, 'Dhaval Makwana', 'dhaval', 'dhaval123', '9876543210', 'dhavalmak77@gmail.com', 'Which is your Favourite Movie ?', 'shawshank redemption', '1554092678'),
 (2, 'Kumar Baraiya', 'kumar', 'kumar123', '1234567890', 'kbaraiya@gmail.com', 'Which is your Favourite Movie ?', '123', '1554201585'),
 (3, 'Hiren Makwana', 'hirenmakwana', 'hirenmakwana', '7894561230', 'hiren@gmail.com', 'Which is your Favourite Movie ?', 'prometheus', '1555655074');
+
+--
+-- Table structure for table `creditcard`
+--
+
+CREATE TABLE `creditcard` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100) COLLATE utf8_unicode_ci NOT NULL,
+  `email` VARCHAR(255) COLLATE utf8_unicode_ci NOT NULL,
+  `card_num` BIGINT(20) NOT NULL,
+  `card_cvc` INT(5) NOT NULL,
+  `card_exp_month` VARCHAR(2) COLLATE utf8_unicode_ci NOT NULL,
+  `card_exp_year` VARCHAR(5) COLLATE utf8_unicode_ci NOT NULL,
+  `item_name` VARCHAR(255) COLLATE utf8_unicode_ci NOT NULL,
+  `item_number` VARCHAR(50) COLLATE utf8_unicode_ci NOT NULL,
+  `item_price` FLOAT(10,2) NOT NULL,
+  `item_price_currency` VARCHAR(10) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'usd',
+  `paid_amout` VARCHAR(10) COLLATE utf8_unicode_ci NOT NULL,
+  `paid_amout_currency` VARCHAR(10) COLLATE utf8_unicode_ci NOT NULL,
+  `txn_id` VARCHAR(100) COLLATE utf8_unicode_ci NOT NULL,
+  `payment_status` VARCHAR(50) COLLATE utf8_unicode_ci NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL,
+  PRIMARY KEY(`id`)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_unicode_ci;
