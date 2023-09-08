@@ -1,4 +1,6 @@
 <?php
+	session_start();
+
 	include("includes/header.php");
 ?>
 
@@ -62,6 +64,7 @@
 				<p><?php $link = implode($book_id_amout); ?></p>
 					
 				<div align="center" style="margin-top: 20px">
+
 					<input type="submit" value="Re-calculate" class="btn btn-primary btn-sm">
 						
 					<?php
