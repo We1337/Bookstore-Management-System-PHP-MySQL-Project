@@ -55,7 +55,7 @@
 
 			$res = mysqli_query($link, $q);
 
-			header("location:order.php?order=success");
+			header("location:payment.php?price=".$totalprice);
 		}
 	}
 	else
