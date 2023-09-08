@@ -7,7 +7,7 @@ define('DB_USERNAME', 'root');
 define('DB_PASSWORD', 'dedsec44678@'); 
 
 // PayPal Configuration
-define('PAYPAL_EMAIL', 'Your PayPal Business Email'); 
+define('PAYPAL_EMAIL', 'sb-wx1bv26591863@business.example.com'); 
 define('RETURN_URL', 'return.php'); 
 define('CANCEL_URL', 'cancel.php'); 
 define('NOTIFY_URL', 'notify.php'); 
