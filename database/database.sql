@@ -181,26 +181,41 @@ INSERT INTO `register` (`r_id`, `r_fnm`, `r_unm`, `r_pwd`, `r_cno`, `r_email`, `
 (3, 'Hiren Makwana', 'hirenmakwana', 'hirenmakwana', '7894561230', 'hiren@gmail.com', 'Which is your Favourite Movie ?', 'prometheus', '1555655074');
 
 --
--- Table structure for table `creditcard`
+-- Table structure for table `payment_info`
 --
 
-CREATE TABLE `creditcard` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(100) COLLATE utf8_unicode_ci NOT NULL,
-  `email` VARCHAR(255) COLLATE utf8_unicode_ci NOT NULL,
-  `card_num` BIGINT(20) NOT NULL,
-  `card_cvc` INT(5) NOT NULL,
-  `card_exp_month` VARCHAR(2) COLLATE utf8_unicode_ci NOT NULL,
-  `card_exp_year` VARCHAR(5) COLLATE utf8_unicode_ci NOT NULL,
-  `item_name` VARCHAR(255) COLLATE utf8_unicode_ci NOT NULL,
-  `item_number` VARCHAR(50) COLLATE utf8_unicode_ci NOT NULL,
-  `item_price` FLOAT(10,2) NOT NULL,
-  `item_price_currency` VARCHAR(10) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'usd',
-  `paid_amout` VARCHAR(10) COLLATE utf8_unicode_ci NOT NULL,
-  `paid_amout_currency` VARCHAR(10) COLLATE utf8_unicode_ci NOT NULL,
-  `txn_id` VARCHAR(100) COLLATE utf8_unicode_ci NOT NULL,
-  `payment_status` VARCHAR(50) COLLATE utf8_unicode_ci NOT NULL,
-  `created` datetime NOT NULL,
-  `modified` datetime NOT NULL,
-  PRIMARY KEY(`id`)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_unicode_ci;
+CREATE TABLE `payment_info` (
+  `id` int(11) NOT NULL,
+  `item_number` varchar(255) NOT NULL,
+  `item_name` varchar(255) NOT NULL,
+  `payment_status` varchar(255) NOT NULL,
+  `amount` double(10,2) NOT NULL,
+  `currency` varchar(255) NOT NULL,
+  `txn_id` varchar(255) NOT NULL,
+  `create_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `payment_info`
+--
+ALTER TABLE `payment_info`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `payment_info`
+--
+ALTER TABLE `payment_info`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
