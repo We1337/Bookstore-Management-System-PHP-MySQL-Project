@@ -8,9 +8,9 @@ define('DB_PASSWORD', 'dedsec44678@');
 
 // PayPal Configuration
 define('PAYPAL_EMAIL', 'Your PayPal Business Email'); 
-define('RETURN_URL', 'https://www.your-website.com/return.php'); 
-define('CANCEL_URL', 'https://www.your-website.com/cancel.php'); 
-define('NOTIFY_URL', 'https://www.your-website.com/notify.php'); 
+define('RETURN_URL', 'return.php'); 
+define('CANCEL_URL', 'cancel.php'); 
+define('NOTIFY_URL', 'notify.php'); 
 define('CURRENCY', 'USD'); 
 define('SANDBOX', TRUE); // TRUE or FALSE 
 define('LOCAL_CERTIFICATE', FALSE); // TRUE or FALSE
