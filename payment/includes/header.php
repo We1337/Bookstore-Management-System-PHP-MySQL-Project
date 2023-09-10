@@ -24,13 +24,13 @@
       			<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 
         			<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          				<li><a href="index.php" class="px-2 btn btn-outline-light">Home</a></li>
-						<li><a href="cart.php" class="nav-link px-2 text-white">Cart</a></li>
-          				<li><a href="contact.php" class="nav-link px-2 text-white">Contact us</a></li>
-          				<li><a href="about.php" class="nav-link px-2 text-white">About</a></li>
+          				<li><a href="/index.php" class="px-2 btn btn-outline-light">Home</a></li>
+						<li><a href="/cart.php" class="nav-link px-2 text-white">Cart</a></li>
+          				<li><a href="/contact.php" class="nav-link px-2 text-white">Contact us</a></li>
+          				<li><a href="/about.php" class="nav-link px-2 text-white">About</a></li>
         			</ul>
 
-					<form method="get" action="search.php" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 d-flex align-items-center" role="search">
+					<form method="GET" action="/search.php" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 d-flex align-items-center" role="search">
   						<input type="text" name="s" class="form-control form-control-dark text-bg-dark me-2" placeholder="Search..." aria-label="Search">
   						<button type="submit" id="search-submit" value="GO" class="btn btn-primary">Search</button>
 					</form>
@@ -39,12 +39,12 @@
 						<?php
 							if(isset($_SESSION['client']['status']))
 							{
-								echo '<a href="logout.php"><button type="button" class="btn btn-outline-light me-2">Logout</button></a>';
+								echo '<a href="/logout.php"><button type="button" class="btn btn-outline-light me-2">Logout</button></a>';
 							}
 							else
 							{
-          						echo '<a href="login.php"><button type="button" class="btn btn-outline-light me-2">Sign in</button></a>';
-          						echo '<a href="register.php"><button type="button" class="btn btn-warning">Sign up</button></a>';
+          						echo '<a href="/login.php"><button type="button" class="btn btn-outline-light me-2">Sign in</button></a>';
+          						echo '<a href="/register.php"><button type="button" class="btn btn-warning">Sign up</button></a>';
 							}
 		  				?>
        		 		</div>
