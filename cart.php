@@ -45,7 +45,7 @@
 											<td><input type="number" min="1" value="'.$val['qty'].'" style="width: 50px" name="'.$id.'"></td>
 											<td>'.$val['price'].'</td>
 											<td>'.$rate.'</td>
-											<td><a style="color: red;text-decoration:none;" href="addtocart.php?id='.$id.'">X</a></td>
+											<td><a class="btn btn-outline-danger" href="addtocart.php?id='.$id.'">Delate</a></td>
 										</tr>';
 
 									$count++;
