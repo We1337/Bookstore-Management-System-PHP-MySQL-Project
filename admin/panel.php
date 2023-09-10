@@ -12,6 +12,11 @@
                     <strong>Backup</strong>
                 </a>
             </div>
+            <div class="media pt-3">
+                <a href="includes/recover_backup.php" class="btn btn-primary">
+                    <strong>Recover backup</strong>
+                </a>
+            </div>
     
         </div>
 
