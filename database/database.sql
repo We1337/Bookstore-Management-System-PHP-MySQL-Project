@@ -180,38 +180,3 @@ INSERT INTO `register` (`r_id`, `r_fnm`, `r_unm`, `r_pwd`, `r_cno`, `r_email`, `
 (2, 'Kumar Baraiya', 'kumar', 'kumar123', '1234567890', 'kbaraiya@gmail.com', 'Which is your Favourite Movie ?', '123', '1554201585'),
 (3, 'Hiren Makwana', 'hirenmakwana', 'hirenmakwana', '7894561230', 'hiren@gmail.com', 'Which is your Favourite Movie ?', 'prometheus', '1555655074');
 
---
--- Table structure for table `payment_info`
---
-
-CREATE TABLE `payment_info` (
-  `id` int(11) NOT NULL,
-  `item_number` varchar(255) NOT NULL,
-  `item_name` varchar(255) NOT NULL,
-  `payment_status` varchar(255) NOT NULL,
-  `amount` double(10,2) NOT NULL,
-  `currency` varchar(255) NOT NULL,
-  `txn_id` varchar(255) NOT NULL,
-  `create_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `payment_info`
---
-ALTER TABLE `payment_info`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `payment_info`
---
-ALTER TABLE `payment_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-COMMIT;
