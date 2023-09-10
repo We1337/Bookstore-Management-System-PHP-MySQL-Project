@@ -13,7 +13,7 @@
    $backup_file  = "table.sql";
    $sql = "SELECT * INTO OUTFILE '$backup_file' FROM $table_name";
    
-   $conn->select_db(`bookstoredatabase`);
+   $conn->select_db('bookstoredatabase');
    $retval = mysqli_query( $conn, $sql );
    
    if(! $retval ) {
