@@ -57,6 +57,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="order_view.php">Order</a>
                             </li>  
+                            <li class="nav-item">
+                                <a class="nav-link" href="panel.php">Panel</a>
+                            </li>
 
                             <a href="logout.php"><button type="button" class="btn btn-outline-light me-2">Logout</button></a>
                         </ul>
