@@ -1,32 +1,47 @@
 <?php
-	session_start();
+// Start a session
+session_start();
 
-	if(isset($_GET['bcid']))
-	{
-		include("includes/connection.php");
+// Include the database connection
+include("includes/connection.php");
 
-		$q = "SELECT * FROM book WHERE b_id=".$_GET['bcid'];
+if (isset($_GET['bcid'])) {
+    // Add a book to the cart
+    $bookId = (int)$_GET['bcid'];
 
-		$res = mysqli_query($link, $q);
+    // Query to select the book information
+    $query = "SELECT * FROM book WHERE b_id = $bookId";
 
-		$row = mysqli_fetch_assoc($res);
+    // Execute the query
+    $result = mysqli_query($link, $query);
 
-		$_SESSION['cart'][] = array("nm" => $row['b_nm'],"img" => $row['b_img'],"price" => $row['b_price'],"qty" => 1);
-	}
+    if ($result && mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
 
-	else if(!empty($_POST))
-	{
-		foreach($_POST as $id => $qty)
-		{
-			$_SESSION['cart'][$id]['qty'] = $qty;
-		}
-	}
+        // Add the selected book to the cart session
+        $_SESSION['cart'][] = array(
+            "nm" => $row['b_nm'],
+            "img" => $row['b_img'],
+            "price" => $row['b_price'],
+            "qty" => 1
+        );
+    }
+} elseif (!empty($_POST)) {
+    // Update quantities in the cart based on the submitted form data
+    foreach ($_POST as $id => $qty) {
+        if (isset($_SESSION['cart'][$id])) {
+            $_SESSION['cart'][$id]['qty'] = $qty;
+        }
+    }
+} elseif (isset($_GET['id'])) {
+    // Remove a book from the cart
+    $id = $_GET['id'];
 
-	else if(isset($_GET['id']))
-	{
-		$id = $_GET['id'];
-		unset($_SESSION['cart'][$id]);
-	}
+    if (isset($_SESSION['cart'][$id])) {
+        unset($_SESSION['cart'][$id]);
+    }
+}
 
-	header("location:cart.php");
+// Redirect to the cart page
+header("location:cart.php");
 ?>

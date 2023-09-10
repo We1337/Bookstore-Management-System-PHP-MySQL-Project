@@ -1,9 +1,10 @@
 <?php
-	
-	session_start();
+// Start or resume the PHP session
+session_start();
 
-	session_destroy();
+// Destroy the current session, effectively logging the user out
+session_destroy();
 
-	header("location:index.php");
-
+// Redirect the user to the "index.php" page
+header("location: index.php");
 ?>

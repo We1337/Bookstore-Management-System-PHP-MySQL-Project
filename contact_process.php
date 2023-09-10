@@ -1,61 +1,64 @@
 <?php
-	
-	session_start();
+    // Start a session
+    session_start();
 
-	if(!empty($_POST))
-	{
-		extract($_POST);
-		$_SESSION['error'] = array();
+    // Check if the form has been submitted
+    if (!empty($_POST)) {
+        // Extract form data into variables
+        extract($_POST);
+    
+        // Initialize an array to store error messages
+        $_SESSION['error'] = array();
 
-		if(empty($fnm))
-		{
-			$_SESSION['error']['fnm'] = "Please enter Full Name";
-		}
-		
-		if(empty($mno))
-		{
-			$_SESSION['error']['mno'] = "Please enter Mobile Number";
-		}
-		else if(!empty($mno))
-		{
-			if(!is_numeric($mno))
-			{
-				$_SESSION['error']['mno'] = "Please Enter Numeric Mobile Number";
-			}
-		}
+        // Validate Full Name
+        if (empty($fnm)) {
+            $_SESSION['error']['fnm'] = "Please enter Full Name";
+        }
 
-		if(empty($msg))
-		{
-			$_SESSION['error']['msg'] = "Please enter Message";
-		}	
+        // Validate Mobile Number
+        if (empty($mno)) {
+            $_SESSION['error']['mno'] = "Please enter Mobile Number";
+        } elseif (!empty($mno)) {
+            // Check if Mobile Number is numeric
+            if (!is_numeric($mno)) {
+                $_SESSION['error']['mno'] = "Please Enter Numeric Mobile Number";
+            }
+        }
 
-		if(empty($email))
-		{
-			$_SESSION['error']['email'] = "Please enter E-Mail ID";
-		}
+        // Validate Message
+        if (empty($msg)) {
+            $_SESSION['error']['msg'] = "Please enter Message";
+        }	
 
-		if(!empty($error))
-		{
-			header("Location:contact.php?message=error");
-			exit;
-		}
-		else
-		{
-			include("includes/connection.php");
+        // Validate E-Mail Address
+        if (empty($email)) {
+            $_SESSION['error']['email'] = "Please enter E-Mail ID";
+        }
 
-			$t = time();
+        // Check if there are any errors
+        if (!empty($error)) {
+            // Redirect to the contact page with an error message
+            header("Location: contact.php?message=error");
+            exit;
+        } else {
+            // Include a database connection
+            include("includes/connection.php");
 
-			$q = "INSERT INTO contact(c_fnm, c_mno, c_email, c_msg, c_time) VALUES ('$fnm', '$mno', '$email', '$msg', '$t')";
+            // Get the current timestamp
+            $t = time();
 
-			mysqli_query($link, $q);
+            // Insert contact form data into the database
+            $q = "INSERT INTO contact(c_fnm, c_mno, c_email, c_msg, c_time) VALUES ('$fnm', '$mno', '$email', '$msg', '$t')";
 
-			header("Location:index.php?message=success");
-			exit;
-		}
-	}
-	else
-	{
-		header("location:contact.php?message=error");
-		exit;
-	}
+            mysqli_query($link, $q);
+
+            // Redirect to the index page with a success message
+            header("Location: index.php?message=success");
+            exit;
+        }
+    } else {
+        // If the form was not submitted, redirect to the contact page with an error message
+        header("Location: contact.php?message=error");
+        exit;
+    }
 ?>
