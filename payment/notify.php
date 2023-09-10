@@ -132,5 +132,6 @@ if (strcmp($res, "VERIFIED") == 0 || strcasecmp($res, "VERIFIED") == 0) {
 } else if (strcmp($res, "INVALID") == 0) {
 	//Log invalid IPN messages for investigation
 	error_log(date('[Y-m-d H:i e] '). "Invalid IPN: $req" . PHP_EOL, 3, IPN_LOG_FILE);
+    header("location: /index.php");
 }
 ?>
