@@ -32,9 +32,7 @@ The Bookstore Management System is designed to eliminate paperwork hassles and p
 - PHP, Bootstrap, HTML, CSS
 
 **Limitations:**
-- No online payment option.
 - Absence of multilingual support.
-- Lack of backup and recovery options.
 - Help feature not implemented.
 
 **Future Scope:**
