@@ -24,7 +24,7 @@ if (!empty($_POST)) {
                 'id' => $row['r_id'],
                 'status' => true
             ];
-            header("location: index.php?message=loginsuccess");
+            header("location: index.php?message=loginsuccess&username='$unm'");
         } else {
             // Invalid username or password
             $_SESSION['error'][] = "Wrong Username or Password";
