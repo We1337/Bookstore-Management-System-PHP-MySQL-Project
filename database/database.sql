@@ -186,11 +186,10 @@ INSERT INTO `register` (`r_id`, `r_fnm`, `r_unm`, `r_pwd`, `r_cno`, `r_email`, `
 
 CREATE TABLE `userSupport` (
     `id` INT AUTO_INCREMENT PRIMARY KEY,
-    `user_id` INT NOT NULL,
+    `username` VARCHAR(255) NOT NULL,
     `subject` VARCHAR(255) NOT NULL,
     `message` TEXT NOT NULL,
     `status` ENUM('Open', 'Closed') DEFAULT 'Open',
-    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (`user_id`) REFERENCES `register`(`r_id`)
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
