@@ -9,6 +9,8 @@ $messages = [
 ];
 
 $messageType = $_GET['message'] ?? '';
+$_SESSION['actualusername'] = $_GET['username'];
+
 
 if (isset($messages[$messageType])) {
     echo $messages[$messageType];
