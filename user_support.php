@@ -78,5 +78,5 @@ $stmt->bind_param("i", $user_id); // Bind the parameter
 </div>
 
 <?
-
+include("includes/footer.php");
 ?>
