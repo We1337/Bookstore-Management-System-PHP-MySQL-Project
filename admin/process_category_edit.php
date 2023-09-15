@@ -1,7 +1,7 @@
 <?php
 	session_start();
 
-	if(! empty($_POST))
+	if(!empty($_POST))
 	{
 		extract($_POST);
 		$_SESSION['error'] = array();
