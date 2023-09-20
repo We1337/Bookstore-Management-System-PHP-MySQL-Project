@@ -33,7 +33,6 @@ The Bookstore Management System is designed to eliminate paperwork hassles and p
 
 **Limitations:**
 - Absence of multilingual support.
-- Help feature not implemented.
 
 **Future Scope:**
 - Integrate a help module for user assistance.
