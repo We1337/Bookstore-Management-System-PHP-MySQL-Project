@@ -1,21 +1,18 @@
 <?php
-// Include the header
-include("includes/header.php");
+    include("includes/header.php");
+    include("includes/connection.php");
 
-// Include the database connection
-include("includes/connection.php");
+    // Get the book ID from the URL
+    $book_id = $_GET['id'];
 
-// Get the book ID from the URL
-$bid = $_GET['id'];
+    // Query to select the book information
+    $book_query = "SELECT * FROM `book` WHERE `book_id` = $book_id";
 
-// Query to select the book information
-$book_query = "SELECT * FROM book WHERE b_id = $bid";
+    // Execute the query
+    $book_res = mysqli_query($connection, $book_query);
 
-// Execute the query
-$book_res = mysqli_query($link, $book_query);
-
-// Fetch the book details
-$book_row = mysqli_fetch_assoc($book_res);
+    // Fetch the book details
+    $book_row = mysqli_fetch_assoc($book_res);
 ?>
 
 <header class="d-flex justify-content-center py-3">

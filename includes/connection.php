@@ -1,10 +1,14 @@
 <?php
+	class ConnectionDataBase {
+		private const HOST = 'localhost';
+		private const USER = 'root';
+		private const PASSWORD = 'DedSec44678@';
+		private const DATABASE = 'bookstoredatabase';
 
-	$link = mysqli_connect("localhost","root","DedSec44678@","bookstoredatabase");
-
-	// Check connection
-	if ($link -> connect_errno) 
-	{
-		echo "Failed to connect to MySQLi: " . $link -> connect_error;
+		public function connection_database() {
+			
+			$mysqli = new mysqli(HOST, );
+			return $mysqli;
+		}
 	}
 ?>

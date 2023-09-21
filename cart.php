@@ -10,7 +10,7 @@ include("includes/header.php");
     <div class="post">
         <br>
         <h2 class="title text-center">Cart</h2>
-        <form action="addtocart.php" method="POST">
+        <form action="add_to_cart.php" method="POST">
             <table class="table" cellspacing="0" border="0" width="100%">
                 <thead>
                     <tr>
