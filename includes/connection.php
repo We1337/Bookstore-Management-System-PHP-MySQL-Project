@@ -5,9 +5,9 @@
 	define("DB_PASS", "DedSec44678@");
 
 	try {
-		$connection_db = new mysqli(DB_HOST, DB_NAME, DB_USER, DB_PASS);
-	} catch(Exception $error_message) {
-		$error = $error_message->getMessage();
-		echo "Error: " . $error;
+		$connection_database = new mysqli(DB_HOST, DB_NAME, DB_USER, DB_PASS);
+	} catch(Exception $error) {
+		$error_message = $error->getMessage();
+		echo "Failed to connect to MySQL: " . $error_message;
 	}
 ?>
