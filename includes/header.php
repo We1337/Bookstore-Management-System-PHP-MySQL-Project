@@ -32,8 +32,8 @@
         			</ul>
 
 					<form method="get" action="search.php" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 d-flex align-items-center" role="search">
-  						<input type="text" name="s" class="form-control form-control-dark text-bg-dark me-2" placeholder="Search..." aria-label="Search">
-  						<button type="submit" id="search-submit" value="GO" class="btn btn-primary">Search</button>
+  						<input type="text" name="search" class="form-control form-control-dark text-bg-dark me-2">
+  						<button type="submit" class="btn btn-primary">Search</button>
 					</form>
 
         			<div class="text-end">
