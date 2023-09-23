@@ -26,7 +26,7 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 --
 
 CREATE TABLE IF NOT EXISTS `admin_table` (
-  `admin_id` INT(4) NOT NULL AUTO_INCREMENT,
+  `admin_id` INT(10) NOT NULL AUTO_INCREMENT,
   `admin_user_name` VARCHAR(30) NOT NULL,
   `admin_password` VARCHAR(30) NOT NULL,
   PRIMARY KEY (`admin_id`)
@@ -108,7 +108,7 @@ INSERT INTO `category_table` (`category_name`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `contact_table` (
-  `contact_id` INT(4) NOT NULL AUTO_INCREMENT,
+  `contact_id` INT(10) NOT NULL AUTO_INCREMENT,
   `contact_full_name` VARCHAR(100) NOT NULL,
   `contact_mobile_number` INT(11) NOT NULL,
   `contact_email` VARCHAR(60) NOT NULL,
@@ -133,7 +133,7 @@ INSERT INTO `contact_table` (`contact_full_name`, `contact_mobile_number`, `cont
 --
 
 CREATE TABLE IF NOT EXISTS `order_table` (
-  `order_id` INT(11) NOT NULL AUTO_INCREMENT,
+  `order_id` INT(10) NOT NULL AUTO_INCREMENT,
   `order_name` VARCHAR(30) NOT NULL,
   `order_address` VARCHAR(200) NOT NULL,
   `order_pincode` INT(20) NOT NULL,
@@ -150,7 +150,7 @@ CREATE TABLE IF NOT EXISTS `order_table` (
 -- Dumping data for table `order_table`
 --
 
-INSERT INTO `order_table` (`order_name`, `order_address`, `order_pincode`, `order_city`, `order_state`, `order_mobile`, `order_rid`, `order_total_price`, `order_list_books`) VALUES
+INSERT INTO `order_table` (`order_name`, `order_address`, `order_pincode`, `order_city`, `order_state`, `order_mobile`, `order_register_id`, `order_total_price`, `order_list_books`) VALUES
 ('Ulan Batr', 'St. Astana 51', 000000, 'Akmola', 'Astana', 77470000000, 1, 500000, 'book_id-amout: 15-12, book_id-amout: 16-10'),
 ('Mete Khan', 'St. Astana 21', 000000, 'Akmola', 'Astana', 77470000000, 1, 540000, 'book_id-amout: 15-12, book_id-amout: 16-10');
 
@@ -161,7 +161,7 @@ INSERT INTO `order_table` (`order_name`, `order_address`, `order_pincode`, `orde
 --
 
 CREATE TABLE IF NOT EXISTS `register_table` (
-  `register_id` INT(8) NOT NULL AUTO_INCREMENT,
+  `register_id` INT(10) NOT NULL AUTO_INCREMENT,
   `register_full_name` VARCHAR(100) NOT NULL,
   `register_user_name` VARCHAR(50) NOT NULL,
   `register_password` VARCHAR(30) NOT NULL,
@@ -189,7 +189,7 @@ INSERT INTO `register_table` (`register_full_name`, `register_user_name`, `regis
 --
 
 CREATE TABLE IF NOT EXISTS `user_support_table` (
-    `user_support_id` INT(8) NOT NULL AUTO_INCREMENT,
+    `user_support_id` INT(10) NOT NULL AUTO_INCREMENT,
     `user_support_email` VARCHAR(255) NOT NULL,
     `user_support_subject` VARCHAR(255) NOT NULL,
     `user_support_message` TEXT NOT NULL,
@@ -202,7 +202,9 @@ CREATE TABLE IF NOT EXISTS `user_support_table` (
 -- Dumping data for table `user_support_table`
 -- 
 
-INSERT INTO `user_support_table` (`user_support_id`, `user_support_email`, `user_support_subject`, `user_support_message`) VALUES
+INSERT INTO `user_support_table` (`user_support_email`, `user_support_subject`, `user_support_message`) VALUES
 ('turkkhan@gmail.com', 'User error',          'Help with with error login system'),
 ('tatar@gmail.com',    'Delivery problem',    'Hi there, help me with delivery'),
 ('aslkhan@gmail.com',  'How to search books', 'Hello, I can not find books');
+
+-- --------------------------------------------------------
