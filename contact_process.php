@@ -45,12 +45,12 @@
             include("includes/connection.php");
 
             // Get the current timestamp
-            $t = time();
+            $time = time();
 
             // Insert contact form data into the database
-            $q = "INSERT INTO contact(c_fnm, c_mno, c_email, c_msg, c_time) VALUES ('$fnm', '$mno', '$email', '$msg', '$t')";
+            $query = "INSERT INTO `contact_table`(contact_full_name, contact_mobile_number, contact_email, contact_message, contact_time) VALUES ('$fnm', '$mno', '$email', '$msg', '$time')";
 
-            mysqli_query($link, $q);
+            mysqli_query($connection_database, $query);
 
             // Redirect to the index page with a success message
             header("Location: index.php?message=success");
