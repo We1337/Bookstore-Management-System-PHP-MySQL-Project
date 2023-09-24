@@ -1,51 +1,36 @@
 <?php
-// Include the header
-include("includes/header.php");
+    include("includes/header.php");
 ?>
 
-<div id="content">
-    <div class="post">
-        <h2 class="title">
-            <a href="#"><?php echo $_GET['cat']; ?></a>
-        </h2>
-
-        <p class="meta"></p>
-
-        <div class="entry">
-
-            <?php
-            // Include the database connection
+        <?php
             include("includes/connection.php");
 
-            // Get the category ID from the URL
-            $id = $_GET['id'];
+            $query = "SELECT * FROM `book_table` ORDER BY `book_id` DESC LIMIT 0,9";
+            $result = mysqli_query($connection_database, $query);
+        ?>
 
-            // Query to select books in the specified category
-            $blq = "SELECT * FROM book WHERE b_cat=$id";
-
-            // Execute the query
-            $blres = mysqli_query($link, $blq);
-
-            // Loop through the results and display book information
-            while ($blrow = mysqli_fetch_assoc($blres)) {
-                echo '
-                    <div class="book_box">
-                        <a href="book_detail.php?id=' . $blrow['b_id'] . '">
-                            <img src="' . $blrow['b_img'] . '">
-                            <h2>' . $blrow['b_nm'] . '</h2>
-                            <p>Rs.' . $blrow['b_price'] . '</p>
-                        </a>
-                    </div>';
-            }
-            ?>
-
-            <div style="clear:both;"></div>
-
+        <div class="album py-5 bg-body-tertiary">
+            <div class="container">
+                <div class="row">
+                    <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+                        <div class="col-md-4">
+                            <a class="link-offset-2 link-underline link-underline-opacity-0" href="book_detail.php?id=<?php echo $row['book_id']; ?>">
+                                <div class="card shadow-sm">
+                                    <img class="bd-placeholder-img card-img-top" width="100" height="500" src="<?php echo $row['book_img']; ?>">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <small class="text-body-secondary"><?php echo $row['book_name']; ?></small>
+                                            <small class="text-body-secondary">₸ <?php echo $row['book_price']; ?></small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    <?php } ?>
+                </div>
+            </div>
         </div>
-    </div>
-</div><!-- end #content -->
 
 <?php
-// Include the footer
-include("includes/footer.php");
+    include("includes/footer.php");
 ?>
