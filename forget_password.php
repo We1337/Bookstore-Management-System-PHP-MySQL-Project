@@ -28,7 +28,7 @@
 						</div>
 
 						<!-- Security Question Selection -->
-						<select class="form-select" name="question" aria-label="Default select example">
+						<select class="form-select mb-3" name="question" aria-label="Default select example">
 							<option>Which is your Favourite Movie?</option>
 							<option>Which is your Favourite Actress?</option>
 						</select>
@@ -38,11 +38,23 @@
 								echo '<font color="red">'.$_SESSION['error']['que'].'</font>';
 							}
 						?>
+
+						<!-- Security Answer -->
+						<div class="form-floating mb-3">
+							<input name="answer" type="text" class="form-control rounded-3" placeholder="Security answer">
+							<label>Security answer</label>
+							<?php 
+								// Display an error message for 'unm' if it exists in the session
+								if(isset($_SESSION['error']['unm'])) {
+									echo '<font color="red">'.$_SESSION['error']['unm'].'</font>';
+								}
+							?>
+						</div>
 						
 						<!-- Password Input -->
 						<div class="form-floating mb-3">
-							<input name="pwd" type="password" class="form-control rounded-3" placeholder="Password">
-							<label>Password</label>
+							<input name="pwd" type="password" class="form-control rounded-3" placeholder="New Password">
+							<label>New Password</label>
 							<?php
 								// Display an error message for 'pwd' if it exists in the session
 								if(isset($_SESSION['error']['pwd'])) {

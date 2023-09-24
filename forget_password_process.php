@@ -16,10 +16,10 @@ if (!empty($_POST)) {
         // If 'unm' is not empty, attempt to retrieve data from the database
         include("includes/connection.php");
 
-        // Query the database to find a matching 'r_unm' (User Name)
-        $q = "SELECT * FROM register WHERE r_unm='$unm'";
-        $res = mysqli_query($link, $q);
-        $row = mysqli_fetch_assoc($res);
+        // Query the database to find a matching 'register_user_name' and 'register_answer'
+        $qeury = "SELECT * FROM `register_table` WHERE `register_user_name` = '$unm' AND `register_answer` = '$answer'";
+        $result_user_name = mysqli_query($connection_database, $qeury);
+        $row = mysqli_fetch_assoc($result_user_name);
 
         // Check if 'row' is empty, indicating no matching user
         if (empty($row)) {
@@ -37,6 +37,17 @@ if (!empty($_POST)) {
         } elseif ($pwd != $cpwd) {
             // Check if 'pwd' and 'cpwd' do not match
             $_SESSION['error']['pwd'] = "Password isn't Match";
+        }
+
+        $update_password = "UPDATE `register_table` SET `register_password` = '$pwd' WHERE `register_user_name` = '$unm'";
+        $result_user_update = mysqli_query($connection_database, $update_password);
+
+        if($result_user_update) {
+            header("location: forget_password.php");
+            exit();
+        } else {
+            header("location: login.php");
+            exit();
         }
     }
 
