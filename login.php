@@ -24,8 +24,8 @@
                                 }
                             ?>
                             <div class="form-floating mb-3">
-                                <input name="username" type="text" class="form-control rounded-3" placeholder="name@example.com">
-                                <label for="floatingInput">Email address or ID</label>
+                                <input name="username" type="text" class="form-control rounded-3" placeholder="User ID">
+                                <label for="floatingInput">ID</label>
                             </div>
                             <div class="form-floating mb-3">
                                 <input name="password" type="password" class="form-control rounded-3" placeholder="Password">
