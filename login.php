@@ -25,7 +25,7 @@
                             ?>
                             <div class="form-floating mb-3">
                                 <input name="username" type="text" class="form-control rounded-3" placeholder="User ID">
-                                <label for="floatingInput">ID</label>
+                                <label for="floatingInput">User ID</label>
                             </div>
                             <div class="form-floating mb-3">
                                 <input name="password" type="password" class="form-control rounded-3" placeholder="Password">
