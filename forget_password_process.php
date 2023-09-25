@@ -1,62 +1,71 @@
 <?php
-// Start or resume the PHP session
-session_start();
+    if (!empty($_POST)) {
+        // Extract form data into variables
+        extract($_POST);
 
-if (!empty($_POST)) {
-    // Initialize an array to store error messages
-    $_SESSION['error'] = [];
-
-    // Extract data from the POST request
-    extract($_POST);
-
-    // Check if the 'unm' (User Name) field is empty
-    if (empty($unm)) {
-        $_SESSION['error']['unm'] = "Please enter User Name";
-    } else {
         // If 'unm' is not empty, attempt to retrieve data from the database
         include("includes/connection.php");
 
-        // Query the database to find a matching 'register_user_name' and 'register_answer'
-        $qeury = "SELECT * FROM `register_table` WHERE `register_user_name` = '$unm' AND `register_answer` = '$answer'";
-        $result_user_name = mysqli_query($connection_database, $qeury);
+        // Query the database to find a matching 'register_user_name'
+        $query = "SELECT * FROM `register_table` WHERE `register_user_name` = '$unm'";
+        $result_user_name = mysqli_query($connection_database, $query);
         $row = mysqli_fetch_assoc($result_user_name);
 
         // Check if 'row' is empty, indicating no matching user
-        if (empty($row)) {
-            $_SESSION['error']['unm'] = "Wrong User Name";
-        }
+        if (!empty($row)) {
+            $secret_value = $row['register_answer'];
 
-        // Check if the 'answer' (Security Answer) field is empty
-        if (empty($answer)) {
-            $_SESSION['error']['answer'] = "Please enter Security Answer";
-        }
+            // Check if the 'answer' (Security Answer) field is empty
+            if (empty($answer)) {
+                $_SESSION['error']['answer'] = "Please enter Security Answer";
+            } elseif ($row['register_answer'] !== $answer) {
+                // Check if 'answer' does not match the value in the database
+                $_SESSION['error']['answer'] = "Incorrect Security Answer";
+            }
 
-        // Check if the 'pwd' (New Password) and 'cpwd' (Confirm Password) fields are empty
-        if (empty($pwd) || empty($cpwd)) {
-            $_SESSION['error']['pwd'] = "Please enter New Password";
-        } elseif ($pwd != $cpwd) {
-            // Check if 'pwd' and 'cpwd' do not match
-            $_SESSION['error']['pwd'] = "Password isn't Match";
-        }
+            // Check if the 'pwd' (New Password) and 'cpwd' (Confirm Password) fields are empty
+            if (empty($pwd) || empty($cpwd)) {
+                $_SESSION['error']['pwd'] = "Please enter New Password";
+            } elseif ($pwd != $cpwd) {
+                // Check if 'pwd' and 'cpwd' do not match
+                $_SESSION['error']['pwd'] = "Passwords don't match";
+            }
 
-        $update_password = "UPDATE `register_table` SET `register_password` = '$pwd' WHERE `register_user_name` = '$unm'";
-        $result_user_update = mysqli_query($connection_database, $update_password);
+            if($secret_value == $answer) {
 
-        if($result_user_update) {
-            header("location: forget_password.php");
+                if (!empty($error)) {
+                    header("location: forget_password.php?message=error");
+                    exit();
+                } else {
+                    
+                    // If there are no errors, update the password
+                    $update_password = "UPDATE `register_table` SET `register_password` = '$pwd' WHERE `register_user_name` = '$unm'";
+                    $result_user_update = mysqli_query($connection_database, $update_password);
+
+                    if ($result_user_update) {
+                        header("location: login.php");
+                        exit();
+                    } else {
+                        $_SESSION['error']['db_error'] = "Error updating password";
+                    }
+                }
+            } else {
+                header("location: forget_password.php?message=error");
+                exit();
+            }
+            header("location: forget_password.php?message=error");
             exit();
+            
+
         } else {
-            header("location: login.php");
+            $_SESSION['error']['unm'] = "Wrong User Name";
+            header("location: forget_password.php?message=error");
             exit();
         }
-    }
 
-    // If there are any errors, redirect to 'forget_password.php'
-    if (!empty($_SESSION['error'])) {
-        header("location: forget_password.php");
+    } else {
+        // If the form was not submitted, redirect to the contact page with an error message
+        header("Location: contact.php?message=error");
+        exit();
     }
-} else {
-    // If the POST request is empty, redirect to 'forget_password.php'
-    header("location: forget_password.php");
-}
 ?>

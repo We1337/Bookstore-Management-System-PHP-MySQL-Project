@@ -45,7 +45,7 @@
 							<label>Security answer</label>
 							<?php 
 								// Display an error message for 'unm' if it exists in the session
-								if(isset($_SESSION['error']['unm'])) {
+								if(isset($_SESSION['error']['answer'])) {
 									echo '<font color="red">'.$_SESSION['error']['unm'].'</font>';
 								}
 							?>
