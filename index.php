@@ -7,6 +7,7 @@
         'success' => '<div class="alert alert-success" role="alert">Message has been delivered.</div>',
         'error' => '<div class="alert alert-danger" role="alert">Please try again later.</div>',
         'welcome' => '<div class="alert alert-success" role="alert">Welcome! Successfully logged in.</div>',
+        'support_sended' => '<div class="alert alert-success" role="alert">Your message sended to support group.</div>'
     ];
 
     $messageType = $_GET['message'] ?? '';
