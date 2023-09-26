@@ -14,7 +14,7 @@
                     <div class="card-body d-flex flex-column align-items-start">
                         <strong class="d-inline-block mb-2 text-primary"><?php echo $book_row['book_name']; ?></strong>
                         <h3 class="mb-0">
-                            <?php echo $book_row['book_price']; ?> ₸
+                            ₸ <?php echo $book_row['book_price']; ?> 
                         </h3>
                         <p class="card-text mb-auto">
                             <?php echo $book_row['book_description']; ?>
@@ -35,7 +35,7 @@
 
                                     if (isset($_SESSION['client']['status'])) {
                                         if ($cart == 0) {
-                                            echo '<a href="addtocart.php?bcid='.$book_row['book_id'].'" class="btn btn-outline-success mb-3">Add to Cart</a>';
+                                            echo '<a href="add_to_cart.php?book_card_id='.$book_row['book_id'].'" class="btn btn-outline-success mb-3">Add to Cart</a>';
                                         } else {
                                             echo "Already in Cart";
                                         }

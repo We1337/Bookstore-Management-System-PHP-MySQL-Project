@@ -1,5 +1,4 @@
 <?php
-    // Start a session
     session_start();
 
     // Include the database connection
@@ -10,10 +9,10 @@
         $book_id = (int)$_GET['book_card_id'];
 
         // Query to select the book information
-        $query = "SELECT * FROM `book` WHERE `book_id` = $book_id";
+        $query = "SELECT * FROM `book_table` WHERE `book_id` = $book_id";
 
         // Execute the query
-        $result = mysqli_query($connection_db, $query);
+        $result = mysqli_query($connection_database, $query);
 
         if ($result && mysqli_num_rows($result) > 0) {
             $row = mysqli_fetch_assoc($result);
@@ -43,5 +42,6 @@
     }
 
     // Redirect to the cart page
-    header("location:cart.php");
+    header("Location:cart.php");
+    exit();
 ?>
