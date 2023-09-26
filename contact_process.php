@@ -11,23 +11,23 @@
         $_SESSION['error'] = array();
 
         // Validate Full Name
-        if (empty($fnm)) {
-            $_SESSION['error']['fnm'] = "Please enter Full Name";
+        if (empty($full_name)) {
+            $_SESSION['error']['full_name'] = "Please enter Full Name";
         }
 
         // Validate Mobile Number
-        if (empty($mno)) {
-            $_SESSION['error']['mno'] = "Please enter Mobile Number";
-        } elseif (!empty($mno)) {
+        if (empty($mobile_number)) {
+            $_SESSION['error']['mobile_number'] = "Please enter Mobile Number";
+        } elseif (!empty($mobile_number)) {
             // Check if Mobile Number is numeric
-            if (!is_numeric($mno)) {
-                $_SESSION['error']['mno'] = "Please Enter Numeric Mobile Number";
+            if (!is_numeric($mobile_number)) {
+                $_SESSION['error']['mobile_number'] = "Please Enter Numeric Mobile Number";
             }
         }
 
         // Validate Message
-        if (empty($msg)) {
-            $_SESSION['error']['msg'] = "Please enter Message";
+        if (empty($message)) {
+            $_SESSION['error']['message'] = "Please enter Message";
         }	
 
         // Validate E-Mail Address
@@ -39,7 +39,7 @@
         if (!empty($error)) {
             // Redirect to the contact page with an error message
             header("Location: contact.php?message=error");
-            exit;
+            exit();
         } else {
             // Include a database connection
             include("includes/connection.php");
@@ -47,18 +47,20 @@
             // Get the current timestamp
             $time = time();
 
+            $phone_number = (int)$mobile_number;
+
             // Insert contact form data into the database
-            $query = "INSERT INTO `contact_table`(contact_full_name, contact_mobile_number, contact_email, contact_message, contact_time) VALUES ('$fnm', '$mno', '$email', '$msg', '$time')";
+            $query = "INSERT INTO `contact_table`(`contact_full_name`, `contact_mobile_number`, `contact_email`, `contact_message`, `contact_time`) VALUES ('$full_name', '$phone_number', '$email', '$message', '$time')";
 
             mysqli_query($connection_database, $query);
 
             // Redirect to the index page with a success message
             header("Location: index.php?message=success");
-            exit;
+            exit();
         }
     } else {
         // If the form was not submitted, redirect to the contact page with an error message
         header("Location: contact.php?message=error");
-        exit;
+        exit();
     }
 ?>
