@@ -11,22 +11,22 @@ if (!empty($_POST)) {
     $_SESSION['error'] = array();
 
     // Validate Full Name
-    if (empty($fnm)) {
-        $_SESSION['error']['fnm'] = "Please enter Full Name";
+    if (empty($fullname)) {
+        $_SESSION['error']['fullname'] = "Please enter Full Name";
     }
 
     // Validate User Name
-    if (empty($unm)) {
-        $_SESSION['error']['unm'] = "Please enter User Name";
+    if (empty($username)) {
+        $_SESSION['error']['username'] = "Please enter User Name";
     }
 
     // Validate Password
-    if (empty($pwd) || empty($cpwd)) {
-        $_SESSION['error']['pwd'] = "Please enter Password";
-    } else if ($pwd != $cpwd) {
-        $_SESSION['error']['pwd'] = "Password isn't Match";
-    } else if (strlen($pwd) < 8) {
-        $_SESSION['error']['pwd'] = "Please Enter Minimum 8 Digit Password";
+    if (empty($password) || empty($confirm_password)) {
+        $_SESSION['error']['password'] = "Please enter Password";
+    } else if ($password != $confirm_password) {
+        $_SESSION['error']['password'] = "Password isn't Match";
+    } else if (strlen($password) < 8) {
+        $_SESSION['error']['password'] = "Please Enter Minimum 8 Digit Password";
     }
 
     // Validate E-Mail Address
@@ -42,16 +42,16 @@ if (!empty($_POST)) {
     }
 
     // Validate Contact Number
-    if (empty($cno)) {
-        $_SESSION['error']['cno'] = "Please Contact Number";
-    } elseif (!is_numeric($cno)) {
-        $_SESSION['error']['cno'] = "Please Enter Contact Number in Numbers";
+    if (empty($contact_number)) {
+        $_SESSION['error']['contact_number'] = "Please Contact Number";
+    } elseif (!is_numeric($contact_number)) {
+        $_SESSION['error']['contact_number'] = "Please Enter Contact Number in Numbers";
     }
 
     // Check if there are any errors
     if (!empty($error)) {
-        foreach ($error as $er) {
-            echo '<font color="red">' . $er . '</font><br>';
+        foreach ($error as $errors) {
+            echo '<font color="red">' . $errors . '</font><br>';
         }
     }
 
@@ -63,15 +63,15 @@ if (!empty($_POST)) {
         include("includes/connection.php");
 
         // Get the current timestamp
-        $t = time();
+        $time = time();
 
         // Insert user data into the database
-        $q = "INSERT INTO register(r_fnm, r_unm, r_pwd, r_cno, r_email, r_question, r_answer, r_time) VALUES ('$fnm', '$unm', '$pwd', '$cno', '$email', '$question', '$answer', '$t')";
+        $query = "INSERT INTO `register_table`(register_full_name, register_user_name, register_password, register_contact_number, register_email, register_question, register_answer, register_time) VALUES ('$fullname', '$username', '$password', '$contact_number', '$email', '$question', '$answer', '$time')";
 
-        mysqli_query($link, $q);
+        mysqli_query($connection_database, $query);
 
         // Redirect to the registration success page
-        header("location:register.php?register");
+        header("location:register.php?registered");
     }
 } else {
     // If the form was not submitted, redirect to the registration page
