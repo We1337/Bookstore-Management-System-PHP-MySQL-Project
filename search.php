@@ -29,14 +29,14 @@
                         <?php while ($book_list_row = mysqli_fetch_assoc($book_list_result)) { ?>
                             <div class="col-md-4">
                                 <!-- Display book details and link to book_detail.php for more information -->
-                                <a href="book_detail.php?id=<?php echo $book_list_row['book_id']; ?>">
+                                <a style="text-decoration: none" href="book_detail.php?id=<?php echo $book_list_row['book_id']; ?>">
                                     <div class="card shadow-sm">
                                         <!-- Display book image -->
                                         <img class="bd-placeholder-img card-img-top" width="50" height="400" src="<?php echo $book_list_row['book_img']; ?>">
                                         <div class="card-body">
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <!-- Display book name and price -->
-                                                <small class="text-body-secondary"><?php echo $book_list_row['book_name']; ?></small>
+                                                <small class="no-underline"><?php echo $book_list_row['book_name']; ?></small>
                                                 <small class="text-body-secondary">₸ <?php echo $book_list_row['book_price']; ?></small>
                                             </div>
                                         </div>
