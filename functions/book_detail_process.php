@@ -1,6 +1,6 @@
 <?php
 
-    include("includes/connection.php");
+    include("./includes/connection.php");
 
     // Get the book ID from the URL
     $book_id = $_GET['id'];
@@ -34,7 +34,7 @@
                 echo "Already in Cart";
             }
         } else {
-            echo '<a type="button" href="login.php" class="btn btn-outline-success me-2">Click here Login..</a>';
+            echo '<a type="button" href="login.php" class="btn btn-outline-success me-2">Click here to Login..</a>';
         }
     }
 

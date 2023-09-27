@@ -1,6 +1,6 @@
 <?php
     include("includes/header.php");
-    include("book_detail_process.php");
+    include("functions/book_detail_process.php");
 ?>
 
     <header class="d-flex justify-content-center py-3">
