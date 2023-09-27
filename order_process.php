@@ -6,8 +6,8 @@ if (!empty($_POST)) {
     $_SESSION['error'] = array();
 
     // Check if 'fnm' (Full Name) is empty
-    if (empty($fnm)) {
-        $_SESSION['error']['fnm'] = "Enter Full Name";
+    if (empty($fullname)) {
+        $_SESSION['error']['fullname'] = "Enter Full Name";
     }
 
     // Check if 'add' (Full Address) is empty
@@ -16,8 +16,8 @@ if (!empty($_POST)) {
     }
 
     // Check if 'pc' (City Pincode) is empty
-    if (empty($pc)) {
-        $_SESSION['error']['pc'] = "Enter City Pincode";
+    if (empty($pincode)) {
+        $_SESSION['error']['pincode'] = "Enter City Pincode";
     }
 
     // Check if 'city' (City) is empty
@@ -31,11 +31,11 @@ if (!empty($_POST)) {
     }
 
     // Check if 'mno' (Mobile Number) is empty
-    if (empty($mno)) {
-        $_SESSION['error']['mno'] = "Enter Mobile Number";
-    } elseif (!is_numeric($mno)) {
-        // Check if 'mno' contains non-numeric characters
-        $_SESSION['error']['mno'] = "Enter Mobile Number in Numbers";
+    if (empty($mobile_number)) {
+        $_SESSION['error']['mobile_number'] = "Enter Mobile Number";
+    } elseif (!is_numeric($mobile_number)) {
+        // Check if 'mobile_number' contains non-numeric characters
+        $_SESSION['error']['mobile_number'] = "Enter Mobile Number in Numbers";
     }
 
     if (!empty($_SESSION['error'])) {
@@ -45,11 +45,11 @@ if (!empty($_POST)) {
         include("includes/connection.php");
 
         // Get the user ID from the session
-        $rid = $_SESSION['client']['id'];
+        $register = $_SESSION['client']['id'];
 
         // Prepare and execute the SQL query to insert the order data into the database
-        $q = "INSERT INTO `order`(`o_id`, `o_name`, `o_address`, `o_pincode`, `o_city`, `o_state`, `o_mobile`, `o_rid`, `o_total_price`, `o_list_books`) VALUES (NULL, '$fnm', '$add', '$pc', '$city', '$state', '$mno', '$rid', '$totalprice', '$totalbooks')";
-        $res = mysqli_query($link, $q);
+        $query = "INSERT INTO `order_table`(`order_name`, `order_address`, `order_pincode`, `order_city`, `order_state`, `order_mobile`, `order_register_id`, `order_total_price`, `order_list_books`) VALUES ('$fullname', '$add', '$pincode', '$city', '$state', '$mobile_number', '$register', '$totalprice', '$totalbooks')";
+        $res = mysqli_query($connection_database, $query);
 
         // Redirect to 'payment.php' with the total price as a parameter
         header("location: payment.php?price=" . $totalprice);
