@@ -1,6 +1,4 @@
 <?php
-    // Start a session
-    session_start();
 
     // Check if the form has been submitted
     if (!empty($_POST)) {
@@ -42,20 +40,18 @@
             exit();
         } else {
             // Include a database connection
-            include("includes/connection.php");
+            include("../includes/connection.php");
 
             // Get the current timestamp
             $time = time();
 
-            $phone_number = (int)$mobile_number;
-
             // Insert contact form data into the database
-            $query = "INSERT INTO `contact_table`(`contact_full_name`, `contact_mobile_number`, `contact_email`, `contact_message`, `contact_time`) VALUES ('$full_name', '$phone_number', '$email', '$message', '$time')";
+            $query = "INSERT INTO `contact_table`(`contact_full_name`, `contact_mobile_number`, `contact_email`, `contact_message`, `contact_time`) VALUES ('$full_name', '$mobile_number', '$email', '$message', '$time')";
 
             mysqli_query($connection_database, $query);
 
             // Redirect to the index page with a success message
-            header("Location: index.php?message=success");
+            header("Location: ../index.php?message=success");
             exit();
         }
     } else {

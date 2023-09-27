@@ -11,14 +11,14 @@
                     </div>
 
                     <div class="modal-body p-5 pt-0">
-                        <form class="contact" action="contact_process.php" method="POST">
+                        <form action="functions/contact_process.php" method="POST">
 
                             <!-- Full Name Input -->
                             <div class="form-floating mb-3">
                                 <input type="text" name="full_name" class="form-control rounded-3" placeholder="Full Name">
                                 <label for="floatingInput">Full Name</label>
                                 <?php
-                                    if(isset($_SESSION['error']['fnm'])) {
+                                    if(isset($_SESSION['error']['full_name'])) {
                                         echo '<div class="alert alert-danger" role="alert">' . $_SESSION['error']['full_name'] . '</div>';
                                     }
                                 ?>
@@ -26,7 +26,7 @@
 
                             <!-- Mobile Number Input -->
                             <div class="form-floating mb-3">
-                                <input type="number" name="mobile_number" class="form-control rounded-3" placeholder="Mobile Number">
+                                <input type="text" name="mobile_number" class="form-control rounded-3" placeholder="Mobile Number">
                                 <label for="floatingInput">Mobile Number</label>
                                 <?php
                                     if(isset($_SESSION['error']['mobile_number'])) {
