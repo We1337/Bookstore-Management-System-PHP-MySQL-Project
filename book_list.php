@@ -5,11 +5,15 @@
         <?php
             include("includes/connection.php");
 
-            $query = "SELECT * FROM `book_table` ORDER BY `book_id` DESC LIMIT 0,9";
+            $query = "SELECT * FROM `book_table` ORDER BY `book_id`";
             $result = mysqli_query($connection_database, $query);
         ?>
 
-        <div class="album py-5 bg-body-tertiary">
+        <header class="d-flex justify-content-center py-3">
+            <h3 class="nav-item">List of Books</h3>
+        </header>
+
+        <div class="album py-3 bg-body-tertiary">
             <div class="container">
                 <div class="row">
                     <?php while ($row = mysqli_fetch_assoc($result)) { ?>
