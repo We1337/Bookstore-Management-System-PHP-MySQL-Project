@@ -2,10 +2,10 @@
 
 	require_once('dbclass.php');
 	/*
-	Read POST data
-	reading posted data directly from $_POST causes serialization
-	issues with array data in POST.
-	Reading raw POST data from input stream instead.
+		Read POST data
+		reading posted data directly from $_POST causes serialization
+		issues with array data in POST.
+		Reading raw POST data from input stream instead.
 	*/
 	define("IPN_LOG_FILE", "ipn.log");
 	$raw_post_data = file_get_contents('php://input');
@@ -49,8 +49,8 @@
 	curl_setopt($ch, CURLOPT_FORBID_REUSE, 1);
 
 	/*
-	This is often required if the server is missing a global cert bundle, or is using an outdated one.
-	Please download the latest 'cacert.pem' from http://curl.haxx.se/docs/caextract.html
+		This is often required if the server is missing a global cert bundle, or is using an outdated one.
+		Please download the latest 'cacert.pem' from http://curl.haxx.se/docs/caextract.html
 	*/
 	if (LOCAL_CERTIFICATE == TRUE) {
 		curl_setopt($ch, CURLOPT_CAINFO, __DIR__ . "/cert/cacert.pem");
@@ -74,8 +74,8 @@
 	}
 
 	/* 
-	* Inspect IPN validation result and act accordingly 
-	* Split response headers and payload, a better way for strcmp 
+	* 	Inspect IPN validation result and act accordingly 
+	* 	Split response headers and payload, a better way for strcmp 
 	*/
 	$tokens = explode("\r\n\r\n", trim($res));
 	$res = trim(end($tokens));
