@@ -1,5 +1,5 @@
 <?php
-    include("includes/header.php");
+    include("../includes/header.php");
 ?>
 
         <div class="mh-100" style="height:500px">
@@ -8,5 +8,5 @@
         </div>
  
 <?php
-    include("includes/footer.php");
+    include("../includes/footer.php");
 ?>
