@@ -11,7 +11,7 @@
         if (empty($username)) 
         {
             $_SESSION['error'][] = "Please enter a user ID";
-            header("Location: login.php");
+            header("Location: ../login.php");
             exit();
         } 
         else 
@@ -19,12 +19,12 @@
             if (empty($password)) 
             {
                 $_SESSION['error'][] = "Please enter a password";
-                header("Location: login.php");
+                header("Location: ../login.php");
                 exit();
             } 
             else 
             {
-                include("includes/connection.php");
+                include("../includes/connection.php");
 
                 // Query the database to check for valid credentials
                 $query_username = "SELECT * FROM `register_table` WHERE `register_user_name` = '$username'";
@@ -45,20 +45,20 @@
                         $_SESSION['client']['id'] = $value_of_username['register_id'];
                         $_SESSION['client']['status'] = true;
 
-                        header("Location: index.php?message=welcome");
+                        header("Location: ../index.php?message=welcome");
                         exit();
                     } 
                     else 
                     {
                         $_SESSION['error'][] = "Wrong password";
-                        header("Location: login.php");
+                        header("Location: ../login.php");
                         exit();
                     }
                 } 
                 else 
                 {
                     $_SESSION['error'][] = "Wrong username";
-                    header("Location: login.php");
+                    header("Location: ../login.php");
                     exit();
                 }
             }
@@ -67,7 +67,7 @@
     else 
     {
         // No form submission data, redirect to login page
-        header("Location: login.php");
+        header("Location: ../login.php");
         exit();
     }
 ?>

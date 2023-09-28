@@ -13,7 +13,7 @@
                     <!-- Modal Body -->
                     <div class="modal-body p-5 pt-0">
                         <!-- Login Form -->
-                        <form class="login" action="login_process.php" method="POST">
+                        <form class="login" action="functions/login_process.php" method="POST">
                             <?php
                                 // Display error messages, if any
                                 if (!empty($_SESSION['error'])) {
