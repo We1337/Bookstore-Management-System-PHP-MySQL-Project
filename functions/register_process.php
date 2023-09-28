@@ -60,7 +60,7 @@
             header("location:register.php");
         } else {
             // Include a database connection
-            include("includes/connection.php");
+            include("../includes/connection.php");
 
             // Get the current timestamp
             $time = time();
@@ -71,10 +71,10 @@
             mysqli_query($connection_database, $query);
 
             // Redirect to the registration success page
-            header("location:register.php?registered");
+            header("location: ../register.php?registered");
         }
     } else {
         // If the form was not submitted, redirect to the registration page
-        header("location:register.php");
+        header("location:../register.php");
     }
 ?>

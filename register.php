@@ -3,9 +3,8 @@
     include("includes/header.php");
 
     // Check if the registration was successful
-    if (isset($_GET['register'])) {
-        echo '<font color="red">Registered Successfully..</font>';
-        echo '<br>';
+    if (isset($_GET['registered'])) {
+        echo '<div class="alert alert-success" role="alert">This is a success alert—check it out!</div>';
     }
 ?>
 
@@ -17,14 +16,14 @@
                     </div>
 
                     <div class="modal-body p-5 pt-0">
-                        <form action="register_process.php" method="POST">
+                        <form action="functions/register_process.php" method="POST">
 
                             <div class="form-floating mb-3">
                                 <input name="fullname" type="text" class="form-control rounded-3" placeholder="Full Name">
                                 <label>Full Name</label>
                                 <?php
                                     if(isset($_SESSION['error']['fullname'])) {
-                                        echo '<font color="red">'.$_SESSION['error']['fullname'].'</font>';
+                                        echo '<font color="red">' . $_SESSION['error']['fullname'] . '</font>';
                                     }
                                 ?>
                             </div>
@@ -34,7 +33,7 @@
                                 <label>User Name</label>
                                 <?php
                                     if(isset($_SESSION['error']['username'])) {
-                                        echo '<font color="red">'.$_SESSION['error']['username'].'</font>';
+                                        echo '<font color="red">' . $_SESSION['error']['username'] . '</font>';
                                     }
                                 ?>
                             </div>
@@ -44,7 +43,7 @@
                                 <label>Password</label>
                                 <?php
                                     if(isset($_SESSION['error']['password'])) {
-                                        echo '<font color="red">'.$_SESSION['error']['password'].'</font>';
+                                        echo '<font color="red">' . $_SESSION['error']['password'] . '</font>';
                                     }
                                 ?>
                             </div>
@@ -54,7 +53,7 @@
                                 <label>Confirm Password</label>
                                 <?php
                                     if(isset($_SESSION['error']['password'])) {
-                                        echo '<font color="red">'.$_SESSION['error']['password'].'</font>';
+                                        echo '<font color="red">' . $_SESSION['error']['password'] . '</font>';
                                     }
                                 ?>
                             </div>
@@ -64,7 +63,7 @@
                                 <label>Contact Number</label>
                                 <?php
                                     if(isset($_SESSION['error']['contact_number'])) {
-                                        echo '<font color="red">'.$_SESSION['error']['contact_number'].'</font>';
+                                        echo '<font color="red">' . $_SESSION['error']['contact_number'] . '</font>';
                                     }
                                 ?>
                             </div>
@@ -74,7 +73,7 @@
                                 <label>E-Mail:</label>
                                 <?php
                                     if(isset($_SESSION['error']['email'])) {
-                                        echo '<font color="red">'.$_SESSION['error']['email'].'</font>';
+                                        echo '<font color="red">' . $_SESSION['error']['email'] . '</font>';
                                     }
                                 ?>
                             </div>
@@ -85,7 +84,7 @@
                             </select>
                             <?php
                                 if(isset($_SESSION['error']['question'])) {
-                                    echo '<font color="red">'.$_SESSION['error']['question'].'</font>';
+                                    echo '<font color="red">' . $_SESSION['error']['question'] . '</font>';
                                 }
                             ?>
                             <br>
