@@ -1,13 +1,7 @@
 <?php
     include("includes/header.php");
+    include("functions/book_list_process.php");
 ?>
-
-        <?php
-            include("includes/connection.php");
-
-            $query = "SELECT * FROM `book_table` ORDER BY `book_id`";
-            $result = mysqli_query($connection_database, $query);
-        ?>
 
         <header class="d-flex justify-content-center py-3">
             <h3 class="nav-item">List of Books</h3>
