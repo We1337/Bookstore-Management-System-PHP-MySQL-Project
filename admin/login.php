@@ -36,11 +36,11 @@
                     <form class="login" action="login_process.php" method="POST">
                         
                         <div class="form-floating mb-3">
-                            <input name="unm" type="text" class="form-control rounded-3" id="floatingInput" placeholder="Admin name">
+                            <input name="username" type="text" class="form-control rounded-3" id="floatingInput" placeholder="Admin name">
                             <label for="floatingInput">Admin name</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input name="pwd" type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
+                            <input name="password" type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
                             <label for="floatingPassword">Password</label>
                         </div>
 

@@ -1,5 +1,4 @@
 <?php
-
 	session_start();
 
 	include("../includes/connection.php");
@@ -7,39 +6,40 @@
 	if(!empty($_POST))
 	{
 		$_SESSION['error'] = array();
+
 		extract($_POST);
 
-		if(empty($unm) || empty($pwd))
+		if(empty($username) || empty($password))
 		{
-			$_SESSION['error'][]="Required User Name & Password";
+			$_SESSION['error'][] = "Required User Name & Password";
 
 			header("location:login.php");
 		}
 		else
 		{
-			$q = "SELECT * FROM admin WHERE a_unm = '$unm' AND a_pwd = '$pwd'";
+			$query = "SELECT * FROM `admin_table` WHERE `admin_user_name` = '$username' AND `admin_password` = '$password'";
 
-			$res = mysqli_query($link, $q);
+			$result = mysqli_query($connection_database, $query);
 
-			$row = mysqli_fetch_assoc($res);
+			$row = mysqli_fetch_assoc($result);
 
 			if(!empty($row))
 			{
-				$_SESSION['admin']['unm'] = $row['a_unm'];
+				$_SESSION['admin']['username'] = $row['admin_name'];
 				$_SESSION['admin']['status'] = true;
 
-				header("location:index.php");
+				header("location: index.php");
 			}
 			else
 			{
 				$_SESSION['error'][] = "Wrong User Name or Password";
 
-				header("location:login.php");
+				header("location: login.php");
 			}
 		}
 	}
 	else
 	{
-		header("location:login.php");
+		header("location: login.php");
 	}
 ?>
