@@ -1,23 +1,14 @@
 <?php
-
     include("includes/header.php");
-
-    // Display messages based on the 'message' query parameter
-    $messages = [
-        'success' => '<div class="alert alert-success" role="alert">Message has been delivered.</div>',
-        'error' => '<div class="alert alert-danger" role="alert">Please try again later.</div>',
-        'welcome' => '<div class="alert alert-success" role="alert">Welcome! Successfully logged in.</div>',
-        'support_sended' => '<div class="alert alert-success" role="alert">Your message sended to support group.</div>'
-    ];
-
-    $messageType = $_GET['message'] ?? '';
-
-    if (isset($messages[$messageType])) {
-        echo $messages[$messageType];
-    }
+    include("includes/connection.php");
+    include("functions/index_process.php");
 ?>
 
     <main>
+
+        <?php 
+            display_notification_messages();
+        ?>
         
         <section class="py-5 text-center container">
             <div class="row py-lg-5">
@@ -27,13 +18,6 @@
                 </div>
             </div>
         </section>
-
-        <?php
-            include("includes/connection.php");
-
-            $query = "SELECT * FROM `book_table` ORDER BY `book_id` DESC LIMIT 0,9";
-            $result = mysqli_query($connection_database, $query);
-        ?>
 
         <div class="album py-5 bg-body-tertiary">
             <div class="container">
