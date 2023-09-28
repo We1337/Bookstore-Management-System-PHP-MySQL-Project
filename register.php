@@ -4,7 +4,7 @@
 
     // Check if the registration was successful
     if (isset($_GET['registered'])) {
-        echo '<div class="alert alert-success" role="alert">This is a success alert—check it out!</div>';
+        echo '<div class="alert alert-success" role="alert">You are registered!</div>';
     }
 ?>
 
