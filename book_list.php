@@ -1,5 +1,6 @@
 <?php
     include("includes/header.php");
+    include("includes/connection.php");
     include("functions/book_list_process.php");
 ?>
 
