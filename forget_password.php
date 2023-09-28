@@ -1,5 +1,7 @@
 <?php
 	include("includes/header.php");
+	include("includes/connection.php");
+
 ?>
 
 		<!-- Forget Password Modal -->
@@ -17,11 +19,11 @@
 						<form action="functions/forget_password_process.php" method="POST">
 							<!-- User Name Input -->
 							<div class="form-floating mb-3">
-								<input name="unm" type="text" class="form-control rounded-3" placeholder="Full Name">
+								<input name="username" type="text" class="form-control rounded-3" placeholder="Full Name">
 								<label>User Name</label>
 								<?php 
 									// Display an error message for 'unm' if it exists in the session
-									if(isset($_SESSION['error']['unm'])) {
+									if(isset($_SESSION['error']['username'])) {
 										echo '<font color="red">'.$_SESSION['error']['unm'].'</font>';
 									}
 								?>
@@ -34,8 +36,8 @@
 							</select>
 							<?php
 								// Display an error message for 'que' (question) if it exists in the session
-								if(isset($_SESSION['error']['que'])) {
-									echo '<font color="red">'.$_SESSION['error']['que'].'</font>';
+								if(isset($_SESSION['error']['question'])) {
+									echo '<font color="red">'.$_SESSION['error']['question'].'</font>';
 								}
 							?>
 
@@ -46,31 +48,31 @@
 								<?php 
 									// Display an error message for 'unm' if it exists in the session
 									if(isset($_SESSION['error']['answer'])) {
-										echo '<font color="red">'.$_SESSION['error']['unm'].'</font>';
+										echo '<font color="red">'.$_SESSION['error']['answer'].'</font>';
 									}
 								?>
 							</div>
 							
 							<!-- Password Input -->
 							<div class="form-floating mb-3">
-								<input name="pwd" type="password" class="form-control rounded-3" placeholder="New Password">
+								<input name="password" type="password" class="form-control rounded-3" placeholder="New Password">
 								<label>New Password</label>
 								<?php
 									// Display an error message for 'pwd' if it exists in the session
-									if(isset($_SESSION['error']['pwd'])) {
-										echo '<font color="red">'.$_SESSION['error']['pwd'].'</font>';
+									if(isset($_SESSION['error']['password'])) {
+										echo '<font color="red">'.$_SESSION['error']['password'].'</font>';
 									}
 								?>
 							</div>
 
 							<!-- Confirm Password Input -->
 							<div class="form-floating mb-3">
-								<input name="cpwd" type="password" class="form-control rounded-3" placeholder="Confirm Password">
+								<input name="confirm_password" type="password" class="form-control rounded-3" placeholder="Confirm Password">
 								<label>Confirm Password</label>
 								<?php
 									// Display an error message for 'pwd' if it exists in the session
-									if(isset($_SESSION['error']['pwd'])) {
-										echo '<font color="red">'.$_SESSION['error']['pwd'].'</font>';
+									if(isset($_SESSION['error']['confirm_password'])) {
+										echo '<font color="red">'.$_SESSION['error']['confirm_password'].'</font>';
 									}
 								?>
 							</div>

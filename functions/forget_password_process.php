@@ -7,7 +7,7 @@
         include("../includes/connection.php");
 
         // Query the database to find a matching 'register_user_name'
-        $query = "SELECT * FROM `register_table` WHERE `register_user_name` = '$unm'";
+        $query = "SELECT * FROM `register_table` WHERE `register_user_name` = '$username'";
         $result_user_name = mysqli_query($connection_database, $query);
         $row = mysqli_fetch_assoc($result_user_name);
 
@@ -18,17 +18,17 @@
             // Check if the 'answer' (Security Answer) field is empty
             if (empty($answer)) {
                 $_SESSION['error']['answer'] = "Please enter Security Answer";
-            } elseif ($row['register_answer'] !== $answer) {
+            } elseif ($row['register_answer'] !== $answer && $row['register_question'] !== $question) {
                 // Check if 'answer' does not match the value in the database
                 $_SESSION['error']['answer'] = "Incorrect Security Answer";
             }
 
             // Check if the 'pwd' (New Password) and 'cpwd' (Confirm Password) fields are empty
-            if (empty($pwd) || empty($cpwd)) {
-                $_SESSION['error']['pwd'] = "Please enter New Password";
-            } elseif ($pwd != $cpwd) {
+            if (empty($password) || empty($confirm_password)) {
+                $_SESSION['error']['password'] = "Please enter New Password";
+            } elseif ($password != $confirm_password) {
                 // Check if 'pwd' and 'cpwd' do not match
-                $_SESSION['error']['pwd'] = "Passwords don't match";
+                $_SESSION['error']['password'] = "Passwords don't match";
             }
 
             if($secret_value == $answer) {
@@ -39,7 +39,7 @@
                 } else {
                     
                     // If there are no errors, update the password
-                    $update_password = "UPDATE `register_table` SET `register_password` = '$pwd' WHERE `register_user_name` = '$unm'";
+                    $update_password = "UPDATE `register_table` SET `register_password` = '$password' WHERE `register_user_name` = '$username'";
                     $result_user_update = mysqli_query($connection_database, $update_password);
 
                     if ($result_user_update) {
