@@ -18,7 +18,7 @@
 
             <!-- Modal Body -->
             <div class="modal-body p-5 pt-0">
-                <form action="order_process.php" method="POST">
+                <form action="functions/order_process.php" method="POST">
                     <?php
                         // Check if the 'order' parameter is set (order successfully placed)
                         if (isset($_GET['order'])) {

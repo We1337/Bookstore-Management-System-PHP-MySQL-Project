@@ -42,6 +42,6 @@
     }
 
     // Redirect to the cart page
-    header("Location:cart.php");
+    header("location: cart.php");
     exit();
 ?>

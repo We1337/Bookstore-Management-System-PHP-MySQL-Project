@@ -40,9 +40,9 @@ if (!empty($_POST)) {
 
     if (!empty($_SESSION['error'])) {
         // Redirect to 'order.php' with an error message
-        header("location: order.php?error=wentwrong");
+        header("location: ../order.php?error=wentwrong");
     } else {
-        include("includes/connection.php");
+        include("../includes/connection.php");
 
         // Get the user ID from the session
         $register = $_SESSION['client']['id'];
@@ -52,10 +52,10 @@ if (!empty($_POST)) {
         $res = mysqli_query($connection_database, $query);
 
         // Redirect to 'payment.php' with the total price as a parameter
-        header("location: payment.php?price=" . $totalprice);
+        header("location: ../payment.php?price=" . $totalprice);
     }
 } else {
     // Redirect to 'order.php' with an empty error message
-    header("location: order.php?error=empty");
+    header("location: ../order.php?error=empty");
 }
 ?>
