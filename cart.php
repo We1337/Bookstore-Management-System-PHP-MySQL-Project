@@ -6,7 +6,7 @@
         <div class="post">
             <br>
             <h2 class="title text-center">Cart</h2>
-            <form action="add_to_cart.php" method="POST">
+            <form action="functions/add_to_cart.php" method="POST">
                 <table class="table" cellspacing="0" border="0" width="100%">
                     <thead>
                         <tr>
@@ -42,7 +42,7 @@
                                             <td><input type="number" min="1" value="' . $value['quantity'] . '" style="width: 50px" name="' . $id . '"></td>
                                             <td>' . $value['price'] . '</td>
                                             <td>' . $rate . '</td>
-                                            <td><a class="btn btn-outline-danger" href="add_to_cart.php?id=' . $id . '">Delete</a></td>
+                                            <td><a class="btn btn-outline-danger" href="functions/add_to_cart.php?id=' . $id . '">Delete</a></td>
                                         </tr>';
 
                                     $count++;

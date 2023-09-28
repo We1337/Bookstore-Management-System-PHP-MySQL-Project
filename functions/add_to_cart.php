@@ -2,7 +2,7 @@
     session_start();
 
     // Include the database connection
-    include("includes/connection.php");
+    include("../includes/connection.php");
 
     if (isset($_GET['book_card_id'])) {
         // Add a book to the cart
@@ -42,6 +42,6 @@
     }
 
     // Redirect to the cart page
-    header("location: cart.php");
+    header("location: ../cart.php");
     exit();
 ?>

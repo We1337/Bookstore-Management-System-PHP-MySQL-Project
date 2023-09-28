@@ -29,7 +29,7 @@
 
         if (isset($_SESSION['client']['status'])) {
             if ($cart == 0) {
-                echo '<a href="add_to_cart.php?book_card_id='.$input['book_id'].'" class="btn btn-outline-success mb-3">Add to Cart</a>';
+                echo '<a href="functions/add_to_cart.php?book_card_id='.$input['book_id'].'" class="btn btn-outline-success mb-3">Add to Cart</a>';
             } else {
                 echo "Already in Cart";
             }
