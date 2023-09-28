@@ -4,7 +4,7 @@
         extract($_POST);
 
         // If 'unm' is not empty, attempt to retrieve data from the database
-        include("includes/connection.php");
+        include("../includes/connection.php");
 
         // Query the database to find a matching 'register_user_name'
         $query = "SELECT * FROM `register_table` WHERE `register_user_name` = '$unm'";
@@ -34,7 +34,7 @@
             if($secret_value == $answer) {
 
                 if (!empty($error)) {
-                    header("location: forget_password.php?message=error");
+                    header("location: ../forget_password.php?message=error");
                     exit();
                 } else {
                     
@@ -43,29 +43,29 @@
                     $result_user_update = mysqli_query($connection_database, $update_password);
 
                     if ($result_user_update) {
-                        header("location: login.php");
+                        header("location: ../login.php");
                         exit();
                     } else {
                         $_SESSION['error']['db_error'] = "Error updating password";
                     }
                 }
             } else {
-                header("location: forget_password.php?message=error");
+                header("location: ../forget_password.php?message=error");
                 exit();
             }
-            header("location: forget_password.php?message=error");
+            header("location: ../forget_password.php?message=error");
             exit();
             
 
         } else {
             $_SESSION['error']['unm'] = "Wrong User Name";
-            header("location: forget_password.php?message=error");
+            header("location: ../forget_password.php?message=error");
             exit();
         }
 
     } else {
         // If the form was not submitted, redirect to the contact page with an error message
-        header("Location: contact.php?message=error");
+        header("Location: ../forget_password.php?message=error");
         exit();
     }
 ?>

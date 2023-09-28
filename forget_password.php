@@ -14,7 +14,7 @@
 				<!-- Modal Body -->
 				<div class="modal-body p-5 pt-0">
 					<!-- Forget Password Form -->
-					<form action="forget_password_process.php" method="POST">
+					<form action="functions/forget_password_process.php" method="POST">
 						<!-- User Name Input -->
 						<div class="form-floating mb-3">
 							<input name="unm" type="text" class="form-control rounded-3" placeholder="Full Name">
