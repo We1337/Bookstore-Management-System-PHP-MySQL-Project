@@ -25,7 +25,7 @@
 
 			if(!empty($row))
 			{
-				$_SESSION['admin']['username'] = $row['admin_name'];
+				$_SESSION['admin']['username'] = $row['admin_user_name'];
 				$_SESSION['admin']['status'] = true;
 
 				header("location: index.php");
