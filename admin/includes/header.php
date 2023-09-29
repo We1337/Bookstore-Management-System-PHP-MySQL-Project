@@ -58,7 +58,7 @@
                                 <a class="nav-link" href="order_view.php">Order</a>
                             </li>  
                             <li class="nav-item">
-                                <a class="nav-link" href="panel.php">Panel</a>
+                                <a class="nav-link" href="panel.php">Back-up</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="support.php">Support</a>
