@@ -4,27 +4,28 @@
 	if(!empty($_POST))
 	{
 		extract($_POST);
+
 		$_SESSION['error'] = array();
 		
-		if(empty($cat))
+		if(empty($category))
 		{
 			$_SESSION['error'][] = "Please enter Category Name";
-			header("location:category_edit.php?id=$id");
+			header("location: category_edit.php?id='$id'");
 		}
 		else
 		{
 			include("../includes/connection.php");
 
-			$q = "UPDATE category SET cat_nm = '$cat' WHERE cat_id = $id";
+			$query = "UPDATE `category_table` SET `category_name` = '$category' WHERE `category_id` = '$id'";
 	
-			mysqli_query($link, $q);
+			mysqli_query($connection_database, $query);
 	
-			header("location:category_view.php");
+			header("Location: category_view.php");
 		}
 	}
 	else
 	{
-		header("location:category_view.php");
+		header("Location: category_view.php");
 	}
 
 ?>

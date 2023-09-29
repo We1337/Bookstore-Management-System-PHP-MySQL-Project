@@ -10,17 +10,17 @@
     
                     <div class="modal-body p-5 pt-0">
 
-                        <form role="form" action="process_category_add.php" method="POST" class="login">
+                        <form role="form" action="process_category_add.php" method="POST">
 
                             <div class="form-floating mb-3">
-                                <input name="cat" type="text" class="form-control rounded-3" id="floatingPassword" placeholder="Category Name">
-                                <label for="floatingPassword">Category Name</label>
+                                <input name="category" type="text" class="form-control rounded-3" placeholder="Category Name">
+                                <label>Category Name</label>
                             </div>
 
                             <?php
-                                if(isset($_SESSION['error']['cat']))
+                                if(isset($_SESSION['error']['category']))
                                 {
-                                    echo '<p class="error">'.$_SESSION['error']['cat'].'</p>';
+                                    echo '<p class="error">'.$_SESSION['error']['category'].'</p>';
                                 } 
                             ?>
 

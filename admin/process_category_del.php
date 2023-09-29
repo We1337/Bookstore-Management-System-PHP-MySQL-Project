@@ -4,10 +4,10 @@
 	
 	include("../includes/connection.php");
 
-	$query = "DELETE FROM category WHERE cat_id = ".$_GET['id'];
+	$query = "DELETE FROM `category_table` WHERE `category_id` = " . $_GET['id'];
 
-	mysqli_query($link, $query);
+	mysqli_query($connection_database, $query);
 
-	header("location:category_view.php");
+	header("location: category_view.php");
 
 ?>

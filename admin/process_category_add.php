@@ -5,31 +5,32 @@
 	if(!empty($_POST))
 	{
 		$_SESSION['error'] = array();
+
 		extract($_POST);
 
-		if(empty($cat))
+		if(empty($category))
 		{
-			$_SESSION['error']['cat'] = "Please Enter Category Name";
+			$_SESSION['error']['category'] = "Please enter category name";
 		}
 
-		if(!empty($_SESSION['error']['cat']))
+		if(!empty($_SESSION['error']['category']))
 		{
-			header("location:category_add.php");
+			header("location: category_add.php");
 		}
 		else
 		{
 			include("../includes/connection.php");
 
-			$q = "INSERT INTO category(cat_nm) VALUES ('$cat')";
+			$query = "INSERT INTO `category_table`(`category_name`) VALUES ('$category')";
 
-			mysqli_query($link, $q);
+			mysqli_query($connection_database, $query);
 
-			header("location:category_add.php");
+			header("location: category_view.php");
 		}
 	}
 	else
 	{
-		header("location:category.php");
+		header("location: category.php");
 	}
 
 ?>

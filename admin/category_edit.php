@@ -4,13 +4,13 @@
 
     $id = $_GET['id'];
 
-    $q = "SELECT * FROM category WHERE cat_id = '$id'";
+    $query = "SELECT * FROM `category_table` WHERE `category_id` = '$id'";
         
-    $res = mysqli_query($link, $q);
+    $result = mysqli_query($connection_database, $query);
 
-    $row = mysqli_fetch_assoc($res);
+    $row = mysqli_fetch_assoc($result);
 ?>
-        <div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog" id="modalSignin">
+        <div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content rounded-4 shadow">
                     <br>
@@ -30,7 +30,7 @@
                                         }
                                         else if(!empty($_SESSION['error']) )
                                         {
-                                            foreach($_SESSION['error']as $er)
+                                            foreach($_SESSION['error'] as $er)
                                             {
                                                 echo '
                                                     <div class="msg msg-error; error">
@@ -42,21 +42,21 @@
                                         }
                                     ?>
 
-                                    <form role="form" action="process_category_edit.php" method="POST" class="login">
+                                    <form role="form" action="process_category_edit.php" method="POST">
 
                                         <div class="form-floating mb-3">
-                                            <input type="text" name="cat" value="<?php echo $row['cat_nm']; ?>" class="form-control">
-                                            <label for="floatingPassword">New Name for Category</label>
+                                            <input type="text" name="category" value="<?php echo $row['category_name']; ?>" class="form-control">
+                                            <label>New Name for Category</label>
                                         </div>
 
                                         <?php
-                                            if(isset($_SESSION['error']['cat']))
+                                            if(isset($_SESSION['error']['category']))
                                             {
-                                                echo '<p class="error">'.$_SESSION['error']['cat'].'</p>';
+                                                echo '<p class="error">'.$_SESSION['error']['category'].'</p>';
                                             } 
                                         ?>
 
-                                        <input type="hidden" name="id" value="<?php echo $row['cat_id']; ?>" /> 
+                                        <input type="hidden" name="id" value="<?php echo $row['category_id']; ?>" /> 
 
                                         <button type="submit" class="w-100 mb-2 btn rounded-3 btn-primary">Update Category</button>
 
