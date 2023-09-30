@@ -4,11 +4,9 @@
 	
 	include("../includes/connection.php");
 
-	$query = "DELETE FROM register WHERE r_id = ".$_GET['id'];
+	$query = "DELETE FROM `register_table` WHERE register_id = " . $_GET['id'] . ";";
 
-	$result = mysqli_query($link, $query);
-
-	$run = mysqli_fetch_assoc($result);
+	mysqli_query($connection_database, $query);
 
 	header("location:users_view.php");
 

@@ -4,11 +4,9 @@
 	
 	include("../includes/connection.php");
 
-	$query = "DELETE FROM contact WHERE c_id = ".$_GET['id'];
+	$query = "DELETE FROM `contact_table` WHERE `contact_id` = " . $_GET['id'] . ";";
 
-	$result = mysqli_query($link, $query);
-
-	$run = mysqli_fetch_assoc($result);
+	mysqli_query($connection_database, $query);
 
 	header("location:contact_view.php");
 
