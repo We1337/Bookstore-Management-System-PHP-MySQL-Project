@@ -11,7 +11,7 @@
                 <p class="text-center"><strong>Book List</strong></p>
                 
                 <form method="get" action="book_view.php" class="form-inline">
-                    <input class="form-control mr-sm-2" type="text" name="s" placeholder="Search" aria-label="Search">
+                    <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search" aria-label="Search">
                     <br>
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="search-submit">Search</button>
                 </form> 
@@ -32,9 +32,9 @@
                     </thead>
                     <tbody>
                         <?php
-                            $s = $_GET['s'];
-                            $blq = "SELECT * FROM book WHERE b_nm LIKE '%$s%'";
-                            $blres = mysqli_query($link, $blq);
+                            $search = $_GET['search'];
+                            $blq = "SELECT * FROM `book_table` WHERE `book_name` LIKE '%$search%'";
+                            $blres = mysqli_query($connection_database, $blq);
 
                             $count = 1;
 
@@ -43,16 +43,16 @@
                                 echo '
                                     <tr>
                                         <td>'.$count.'</td>
-                                        <td>'.$book_row['b_nm'].'</td>
-                                        <td>'.$book_row['b_cat'].'</td>
-                                        <td>'.$book_row['b_price'].'</td>';
+                                        <td>'.$book_row['book_name'].'</td>
+                                        <td>'.$book_row['book_category'].'</td>
+                                        <td>'.$book_row['book_price'].'</td>';
 
-                                echo "  <td width='120'><center><img src='../$book_row[b_img]' width='50' height='70'></center></td>";
+                                echo "  <td width='120'><center><img src='../$book_row[book_img]' width='50' height='70'></center></td>";
                                                       
                                 echo '
-                                        <td>'.@date("d-M-y",$book_row['b_time']).'</td>
-                                        <td align="center"><a class="btn btn-danger btn-sm" href="process_book_del.php?id='.$book_row['b_id'].'">Delate</a></td>
-                                        <td align="center"><a class="btn btn-info btn-sm" href="book_edit.php?id='.$book_row['b_id'].'">Edit</a></td>
+                                        <td>'.@date("d-M-y",$book_row['book_time']).'</td>
+                                        <td align="center"><a class="btn btn-danger btn-sm" href="process_book_del.php?id='.$book_row['book_id'].'">Delate</a></td>
+                                        <td align="center"><a class="btn btn-info btn-sm" href="book_edit.php?id='.$book_row['book_id'].'">Edit</a></td>
                                     </tr>';
                                 
                                 $count++;

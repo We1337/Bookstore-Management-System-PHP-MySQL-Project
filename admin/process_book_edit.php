@@ -1,50 +1,33 @@
 <?php
-
 	session_start();
 
 	include("../includes/connection.php");
 
-	echo $_POST;
 	if(!empty($_POST))
 	{
 		$_SESSION['error'] = array();
 
 		extract($_POST);
 
-		if(empty($bnm))
-		{
-			$_SESSION['error']['bnm'] = "Enter Book Name";
+		$query = "SELECT * FROM `book_table` WHERE `book_id` = '$book_id'";
+		$get_response = mysqli_query($connection_database, $query);
+		$values = mysqli_fetch_assoc($get_response);
+		
+		$checks = false;
+	
+		
+		if(!empty($values['book_img']))
+		{	
+	 		$book_img = $values['book_img'];
 		}
 
-		if(empty($desc))
+		if(!empty($_FILES['book_img']['name'])) 
 		{
-			$_SESSION['error']['desc'] = "Enter Book Description";
+			move_uploaded_file($_FILES['book_img']['tmp_name'], "../book_img/" . $_FILES['book_img']['name']);
+			$book_img = "book_img/" . $_FILES['book_img']['name'];
 		}
 
-		if(empty($price))
-		{
-			$_SESSION['error']['price'] = "Enter Book Price";
-		}
-		else if(!is_numeric($price))
-		{
-			$_SESSION['error']['price'] = "Enter Book Price in Numbers";
-		}
-
-		if(empty($_FILES['b_img']['name']))
-		{	$_SESSION['error']['b_img'] = "Please provide a file";
-		}
-		else if($_FILES['b_img']['error']>0)
-		{	$_SESSION['error']['b_img'] = "Error uploading file";
-		}	
-		else if(!(strtoupper(substr($_FILES['b_img']['name'],-4)) == ".JPG" || strtoupper(substr($_FILES['b_img']['name'],-5)) == ".JPEG"|| strtoupper(substr($_FILES['b_img']['name'],-4))==".GIF"))
-		{
-			$_SESSION['error']['b_img'] = "wrong file type";
-		}	
-
-		//image validation
-
-		$upper = strtoupper(substr($_FILES['b_img']['name'],-4));
-
+		
 		
 		if(!empty($_SESSION['error']))
 		{
@@ -52,22 +35,19 @@
 		}
 		else
 		{
-			$t = time();
-		
-			//move_uploaded_file($_FILES['b_img']['tmp_name'],"../book_img/".$img_nm);
-			move_uploaded_file($_FILES['b_img']['tmp_name'],"../book_img/".$_FILES['b_img']['name']);
-			$b_img = "book_img/".$_FILES['b_img']['name'];
+			$time = time();
 
-			$q = "UPDATE book SET b_nm = '".$bnm."', b_cat = '".$cat."', b_desc = '".$desc."', b_price = '".$price."', b_img = '".$b_img."', b_time = '".$t."' WHERE b_id = ".$id;
+			$q = "UPDATE `book_table` SET `book_name` = '".$book_name."', `book_category` = '".$book_category."', `book_description` = '".$book_description."', `book_price` = '".$book_price."', `book_img` = '".$book_img."', `book_time` = '".$time."' WHERE `book_id` = ".$book_id;
 
-			$res = mysqli_query($link, $q);
+			mysqli_query($connection_database, $q);
 
-			header("location:book_view.php");
+			header("location:book_view.php?=" . $_FILES['book_img']['name']);
 		}
+		
 	}
 	else
 	{
-		header("location:book_view.php&error=".$_POST);
+		header("location:book_view.php?error=empty");
 	}
 
 ?>

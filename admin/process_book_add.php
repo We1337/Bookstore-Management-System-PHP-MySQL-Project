@@ -1,7 +1,4 @@
 <?php
-
-	session_start();
-
 	include("../includes/connection.php");
 
 	if(!empty($_POST))
@@ -10,65 +7,62 @@
 
 		extract($_POST);
 
-		if(empty($bnm))
+		if(empty($book_name))
 		{
-			$_SESSION['error']['bnm'] = "Enter Book Name";
+			$_SESSION['error']['book_name'] = "Enter book name";
 		}
 
-		if(empty($desc))
+		if(empty($book_description))
 		{
-			$_SESSION['error']['desc'] = "Enter Book Description";
+			$_SESSION['error']['book_description'] = "Enter book description";
 		}
 
-		if(empty($price))
+		if(empty($book_price))
 		{
-			$_SESSION['error']['price'] = "Enter Book Price";
+			$_SESSION['error']['price'] = "Enter book price";
 		}
-		else if(!is_numeric($price))
+		else if(!is_numeric($book_price))
 		{
-			$_SESSION['error']['price'] = "Enter Book Price in Numbers";
+			$_SESSION['error']['price'] = "Enter book price in numbers";
 		}
 
-		if(empty($_FILES['b_img']['name']))
+		if(empty($_FILES['book_img']['name']))
 		{	
-			$_SESSION['error']['b_img'] = "Please provide a file";
+			$_SESSION['error']['book_img'] = "Please provide a file";
 		}
-		else if($_FILES['b_img']['error'] > 0)
+		else if($_FILES['book_img']['error'] > 0)
 		{	
-			$_SESSION['error']['b_img'] = "Error uploading file";
+			$_SESSION['error']['book_img'] = "Error uploading file";
 		}	
-		else if(!(strtoupper(substr($_FILES['b_img']['name'],-4)) == ".JPG" || strtoupper(substr($_FILES['b_img']['name'],-5)) == ".JPEG"|| strtoupper(substr($_FILES['b_img']['name'],-4))==".GIF"))
+		else if(!(strtoupper(substr($_FILES['book_img']['name'], -4)) == ".JPG" || strtoupper(substr($_FILES['book_img']['name'], -5)) == ".JPEG"|| strtoupper(substr($_FILES['book_img']['name'], -4))==".PNG"))
 		{	
-			$_SESSION['error']['b_img'] = "wrong file  type";
-		}	
+			$_SESSION['error']['book_img'] = "Wrong file type";
+		}
 
-		//image validation
-		$upper=strtoupper(substr($_FILES['b_img']['name'],-4));
-
-		
 		if(!empty($_SESSION['error']))
 		{
-			header("location:book_add.php");
+			header("location: book_add.php");
+			exit();
 		}
 		else
 		{
-			$t = time();
+			$time = time();
 		
 			//move_uploaded_file($_FILES['b_img']['tmp_name'],"../book_img/".$img_nm);
 
-			move_uploaded_file($_FILES['b_img']['tmp_name'], "../book_img/".$_FILES['b_img']['name']);
-			$b_img = "book_img/".$_FILES['b_img']['name'];
+			move_uploaded_file($_FILES['book_img']['tmp_name'], "../book_img/" . $_FILES['book_img']['name']);
+			$book_img = "book_img/".$_FILES['book_img']['name'];
 
-			$q = "INSERT INTO book(b_nm,b_cat,b_desc,b_price,b_img,b_time) VALUES ('$bnm',$cat,'$desc',$price,'$b_img','$t')";
+			$query = "INSERT INTO `book_table`(`book_name`, `book_category`, `book_description`, `book_price`, `book_img`, `book_time`) VALUES ('$book_name', '$book_category', '$book_description', '$book_price', '$book_img', '$time')";
 
-			$res = mysqli_query($link, $q);
+			mysqli_query($connection_database, $query);
 
-			header("location:book_add.php");
+			header("location: book_view.php");
 		}
 	}
 	else
 	{
-		header("location:book_add.php");
+		header("location: book_add.php");
 	}
 
 ?>
