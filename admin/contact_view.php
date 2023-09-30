@@ -30,8 +30,8 @@
                         
                         <?php
                             $s = $_GET['s'];
-                            $blq = "SELECT * FROM contact WHERE c_fnm LIKE '%$s%'";
-                            $blres = mysqli_query($link, $blq);
+                            $blq = "SELECT * FROM `contact_table` WHERE `contact_full_name` LIKE '%$s%'";
+                            $blres = mysqli_query($connection_database, $blq);
 
                             $count = 1;
 
@@ -40,12 +40,12 @@
                                 echo '
                                     <tr>
                                         <td>'.$count.'</td>
-                                        <td>'.$book_row['c_fnm'].'</td>
-                                        <td>'.$book_row['c_mno'].'</td>
-                                        <td>'.$book_row['c_email'].'</td>
-                                        <td>'.$book_row['c_msg'].'</td>
-                                        <td>'.@date("d-M-y",$book_row['c_time']).'</td>
-                                        <td align="center"><a class="btn btn-danger btn-sm" href="process_contact_del.php?id='.$book_row['c_id'].'">Delate</a></td>
+                                        <td>'.$book_row['contact_full_name'].'</td>
+                                        <td>'.$book_row['contact_mobile_number'].'</td>
+                                        <td>'.$book_row['contact_email'].'</td>
+                                        <td>'.$book_row['contact_message'].'</td>
+                                        <td>'.@date("d-M-y",$book_row['contact_time']).'</td>
+                                        <td align="center"><a class="btn btn-danger btn-sm" href="process_contact_del.php?id='.$book_row['contact_id'].'">Delate</a></td>
                                     </tr>';
                                 $count++;
                             }
