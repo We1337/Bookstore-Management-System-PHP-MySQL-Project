@@ -35,8 +35,8 @@
 
                         <?php
                             $s = $_GET['s'];
-                            $blq = "SELECT * FROM `order` WHERE o_name LIKE '%$s%'";
-                            $blres = mysqli_query($link, $blq);
+                            $blq = "SELECT * FROM `order_table` WHERE `order_name` LIKE '%$s%'";
+                            $blres = mysqli_query($connection_database, $blq);
 
                             $count = 1;
 
@@ -45,17 +45,17 @@
                                 echo '
                                     <tr>
                                         <td>'.$count.'</td>
-                                        <td>'.$r_row['o_id'].'</td>
-                                        <td>'.$r_row['o_name'].'</td>
-                                        <td>'.$r_row['o_address'].'</td>
-                                        <td>'.$r_row['o_pincode'].'</td>
-                                        <td>'.$r_row['o_city'].'</td>
-                                        <td>'.$r_row['o_state'].'</td>
-                                        <td>'.$r_row['o_mobile'].'</td>
-                                        <td>'.$r_row['o_rid'].'</td>
-                                        <td>'.$r_row['o_total_price'].'</td>
-                                        <td>'.$r_row['o_list_books'].'</td>
-                                        <td align="center"><a style="color: red;" href="process_users_del.php?id='.$r_row['o_id'].'">x</a></td>
+                                        <td>'.$r_row['order_id'].'</td>
+                                        <td>'.$r_row['order_name'].'</td>
+                                        <td>'.$r_row['order_address'].'</td>
+                                        <td>'.$r_row['order_pincode'].'</td>
+                                        <td>'.$r_row['order_city'].'</td>
+                                        <td>'.$r_row['order_state'].'</td>
+                                        <td>'.$r_row['order_mobile'].'</td>
+                                        <td>'.$r_row['order_rid'].'</td>
+                                        <td>'.$r_row['order_total_price'].'</td>
+                                        <td>'.$r_row['order_list_books'].'</td>
+                                        <td align="center"><a style="color: red;" href="process_order_del.php?id='.$r_row['order_id'].'">x</a></td>
                                     </tr>';
                                 $count++;
                             }
