@@ -31,8 +31,8 @@
 
                         <?php
                             $s = $_GET['s'];
-                            $blq = "SELECT * FROM register WHERE r_fnm LIKE '%$s%'";
-                            $blres = mysqli_query($link, $blq);
+                            $blq = "SELECT * FROM `register_table` WHERE register_full_name LIKE '%$s%'";
+                            $blres = mysqli_query($connection_database, $blq);
 
                             $count = 1;
 
@@ -41,13 +41,13 @@
                                 echo '
                                     <tr>
                                         <td>'.$count.'</td>
-                                        <td>'.$r_row['r_id'].'</td>
-                                        <td>'.$r_row['r_fnm'].'</td>
-                                        <td>'.$r_row['r_unm'].'</td>
-                                        <td>'.$r_row['r_cno'].'</td>
-                                        <td>'.$r_row['r_email'].'</td>
-                                        <td>'.@date("d-M-y",$book_row['r_time']).'</td>
-                                        <td align="center"><a style="color: red;" href="process_users_del.php?id='.$r_row['r_id'].'">x</a></td>
+                                        <td>'.$r_row['register_id'].'</td>
+                                        <td>'.$r_row['register_full_name'].'</td>
+                                        <td>'.$r_row['register_user_name'].'</td>
+                                        <td>'.$r_row['register_contact_number'].'</td>
+                                        <td>'.$r_row['register_email'].'</td>
+                                        <td>'.@date("d-M-y",$book_row['register_time']).'</td>
+                                        <td align="center"><a style="color: red;" href="process_users_del.php?id='.$r_row['register_id'].'">x</a></td>
                                     </tr>';
                                 $count++;
                             }
