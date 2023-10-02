@@ -1,3 +1,5 @@
+[![wakatime](https://wakatime.com/badge/user/4f051c0f-3094-4938-a7c1-8bf148762d5d/project/74a4bf3a-9b09-491a-baad-1097ffd40256.svg)](https://wakatime.com/badge/user/4f051c0f-3094-4938-a7c1-8bf148762d5d/project/74a4bf3a-9b09-491a-baad-1097ffd40256)
+
 # Bookstore-Management-System-PHP-MySQL-Project
 A Bookstore Management System aims to eliminate paperwork and streamline book-related tasks. It centralizes all activities and allows for multi-tasking. Records are kept securely, and the system prioritizes user experience. Continuous improvement is a priority.
 
