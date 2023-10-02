@@ -11,9 +11,7 @@
 
 		$query = "SELECT * FROM `book_table` WHERE `book_id` = '$book_id'";
 		$get_response = mysqli_query($connection_database, $query);
-		$values = mysqli_fetch_assoc($get_response);
-		
-		$checks = false;
+		$values = mysqli_fetch_assoc($get_response);	
 	
 		
 		if(!empty($values['book_img']))
@@ -25,9 +23,7 @@
 		{
 			move_uploaded_file($_FILES['book_img']['tmp_name'], "../book_img/" . $_FILES['book_img']['name']);
 			$book_img = "book_img/" . $_FILES['book_img']['name'];
-		}
-
-		
+		}	
 		
 		if(!empty($_SESSION['error']))
 		{
