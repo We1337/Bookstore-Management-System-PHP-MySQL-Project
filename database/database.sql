@@ -169,6 +169,7 @@ CREATE TABLE IF NOT EXISTS `register_table` (
   `register_email` VARCHAR(60) NOT NULL,
   `register_question` VARCHAR(100) NOT NULL,
   `register_answer` VARCHAR(50) NOT NULL,
+  `register_profile_picture` VARCHAR(50) NOT NULL DEFAULT 'profile_img/profile_default_picture.png',
   `register_time` VARCHAR(20) NOT NULL,
   PRIMARY KEY (`register_id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 AUTO_INCREMENT = 1;
@@ -177,10 +178,10 @@ CREATE TABLE IF NOT EXISTS `register_table` (
 -- Dumping data for table `register_table`
 --
 
-INSERT INTO `register_table` (`register_full_name`, `register_user_name`, `register_password`, `register_contact_number`, `register_email`, `register_question`, `register_answer`, `register_time`) VALUES
-('Asl Khan',    'Aslkhan', 'asl123',      77470000000, 'aslturkkhan77@gmail.com', 'Which is your Favourite Movie ?', 'redemption', '1554092678'),
-('Tatar Batr',  'Tatar',   'tatar12345',  77470000000, 'tatarbatr@gmail.com',     'Which is your Favourite Movie ?', '123',        '1554201585'),
-('Xasak Ata',   'Ata',     'ataxasak000', 77470000000, 'xasakata@gmail.com',      'Which is your Favourite Movie ?', 'prometheus', '1555655074');
+INSERT INTO `register_table` (`register_full_name`, `register_user_name`, `register_password`, `register_contact_number`, `register_email`, `register_question`, `register_answer`) VALUES
+('Asl Khan',    'Aslkhan', 'asl123',      77470000000, 'aslturkkhan77@gmail.com', 'Which is your Favourite Movie ?', 'redemption'),
+('Tatar Batr',  'Tatar',   'tatar12345',  77470000000, 'tatarbatr@gmail.com',     'Which is your Favourite Movie ?', '123'),
+('Xasak Ata',   'Ata',     'ataxasak000', 77470000000, 'xasakata@gmail.com',      'Which is your Favourite Movie ?', 'prometheus');
 
 -- --------------------------------------------------------
 
