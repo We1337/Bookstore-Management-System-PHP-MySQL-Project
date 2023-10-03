@@ -1,6 +1,6 @@
 <?php
     include("includes/header.php");
-    include("functions/card_process.php");
+    include("functions/cart_process.php");
 ?>
 
         <div class="container">
