@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 
 <html>
+
 	<head>
 	
 		<title>Bookstore Management System</title>
@@ -24,7 +25,7 @@
       			<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 
         			<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          				<li><a href="index.php" class="px-2 btn btn-outline-light">Home</a></li>
+          				<li><a href="index.php" class="px-2 btn btn-outline-info">Home</a></li>
 						<?php
 							if(isset($_SESSION['client']['status']))
 							{
@@ -41,18 +42,18 @@
 
 					<form method="get" action="search.php" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 d-flex align-items-center" role="search">
   						<input type="text" name="search" class="form-control form-control-dark text-bg-dark me-2">
-  						<button type="submit" class="btn btn-primary">Search</button>
+  						<button type="submit" class="btn btn-outline-info">Search</button>
 					</form>
 
         			<div class="text-end">
 						<?php
 							if(isset($_SESSION['client']['status']))
 							{
-								echo '<a href="logout.php"><button type="button" class="btn btn-outline-light me-2">Logout</button></a>';
+								echo '<a href="logout.php"><button type="button" class="btn btn-outline-info me-2">Sign out</button></a>';
 							}
 							else
 							{
-          						echo '<a href="login.php"><button type="button" class="btn btn-outline-light me-2">Sign in</button></a>';
+          						echo '<a href="login.php"><button type="button" class="btn btn-outline-info me-2">Sign in</button></a>';
           						echo '<a href="register.php"><button type="button" class="btn btn-warning">Sign up</button></a>';
 							}
 		  				?>
