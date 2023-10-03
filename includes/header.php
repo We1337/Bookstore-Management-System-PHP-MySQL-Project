@@ -25,10 +25,17 @@
 
         			<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           				<li><a href="index.php" class="px-2 btn btn-outline-light">Home</a></li>
-						<li><a href="cart.php" class="nav-link px-2 text-white">Cart</a></li>
+						<?php
+							if(isset($_SESSION['client']['status']))
+							{
+								echo '<li><a href="cart.php" class="nav-link px-2 text-white">Cart</a></li>';
+								echo '<li><a href="profile.php" class="nav-link px-2 text-white">Profile</a></li>';
+								echo '<li><a href="user_support.php" class="nav-link px-2 text-white">Support</a></li>';
+
+							}
+						?>
 						<li><a href="book_list.php" class="nav-link px-2 text-white">List</a></li>
           				<li><a href="contact.php" class="nav-link px-2 text-white">Contact Us</a></li>
-						<li><a href="user_support.php" class="nav-link px-2 text-white">Support</a></li>
           				<li><a href="about.php" class="nav-link px-2 text-white">About</a></li>
         			</ul>
 
