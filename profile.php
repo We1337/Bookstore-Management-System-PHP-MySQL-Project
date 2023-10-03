@@ -17,7 +17,7 @@
                                 <div class="card-header">Profile Picture</div>
                                     <div class="card-body text-center">
 
-                                        <img class="img-account-profile rounded-circle mb-2" src="<?php echo $row['register_profile_picture'] ?>" alt>
+                                        <img class="img-account-profile rounded-circle mb-2" style="width:220px;height:220px;" src="<?php echo $row['register_profile_picture'] ?>" alt>
 
                                         <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
 
