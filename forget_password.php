@@ -22,7 +22,7 @@
 								<input name="username" type="text" class="form-control rounded-3" placeholder="Full Name">
 								<label>User Name</label>
 								<?php 
-									// Display an error message for 'unm' if it exists in the session
+									// Display an error message for if it exists in the session
 									if(isset($_SESSION['error']['username'])) {
 										echo '<font color="red">'.$_SESSION['error']['unm'].'</font>';
 									}
@@ -35,7 +35,7 @@
 								<option>Which is your Favourite Actress?</option>
 							</select>
 							<?php
-								// Display an error message for 'que' (question) if it exists in the session
+								// Display an error message for (question) if it exists in the session
 								if(isset($_SESSION['error']['question'])) {
 									echo '<font color="red">'.$_SESSION['error']['question'].'</font>';
 								}
@@ -46,7 +46,7 @@
 								<input name="answer" type="text" class="form-control rounded-3" placeholder="Security answer">
 								<label>Security answer</label>
 								<?php 
-									// Display an error message for 'unm' if it exists in the session
+									// Display an error message for if it exists in the session
 									if(isset($_SESSION['error']['answer'])) {
 										echo '<font color="red">'.$_SESSION['error']['answer'].'</font>';
 									}
@@ -58,7 +58,7 @@
 								<input name="password" type="password" class="form-control rounded-3" placeholder="New Password">
 								<label>New Password</label>
 								<?php
-									// Display an error message for 'pwd' if it exists in the session
+									// Display an error message for if it exists in the session
 									if(isset($_SESSION['error']['password'])) {
 										echo '<font color="red">'.$_SESSION['error']['password'].'</font>';
 									}
