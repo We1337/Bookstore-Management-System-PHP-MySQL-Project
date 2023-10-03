@@ -1,11 +1,10 @@
 <?php
     include("includes/header.php");
     include("includes/connection.php");
+    include("functions/profile_data.php");
 
-    $id = $_SESSION['client']['id'];
-    $query = "SELECT * FROM `register_table` WHERE `register_id` = $id";
-    $result_user_name = mysqli_query($connection_database, $query);
-    $row = mysqli_fetch_assoc($result_user_name);
+    // Create a message for user saved a file.
+  
 ?>
 
         <div class="container-xl px-4 mt-4">
