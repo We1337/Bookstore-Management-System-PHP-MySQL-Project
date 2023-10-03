@@ -3,9 +3,12 @@
     $user_id = $_GET['id']; // Change this to the actual user ID
     $new_status = $_GET['status']; // Change this to the desired new status    
 
-    if($new_status === 'Open') {
+    if($new_status === 'Open') 
+    {
         $new_status = 'Closed';
-    } else {
+    } 
+    else 
+    {
         $new_status = 'Open';
     }
 

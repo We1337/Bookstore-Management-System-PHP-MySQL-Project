@@ -8,7 +8,7 @@
                 <h1 class="page-header text-center">View Contacts</h1> 
                 
                 <form method="GET" action="contact_view.php" class="form-inline">
-                    <input class="form-control mr-sm-2" type="text" name="s" placeholder="Search" aria-label="Search">
+                    <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search" aria-label="Search">
                     <br>
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="search-submit">Search</button>
                 </form> 
@@ -29,8 +29,8 @@
                     <tbody>
                         
                         <?php
-                            $s = $_GET['s'];
-                            $blq = "SELECT * FROM `contact_table` WHERE `contact_full_name` LIKE '%$s%'";
+                            $s = $_GET['search'];
+                            $blq = "SELECT * FROM `contact_table` WHERE `contact_full_name` LIKE '%$search%'";
                             $blres = mysqli_query($connection_database, $blq);
 
                             $count = 1;

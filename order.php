@@ -31,7 +31,7 @@
                             <!-- Full Name Input -->
                             <div class="form-floating mb-3">
                                 <input name="fullname" type="text" class="form-control rounded-3" placeholder="Full Name">
-                                <label>Full Name or Surname</label>
+                                <label>Full Name</label>
                                 <?php
                                     if (isset($_SESSION['error']['fullname'])) {
                                         echo '<font color="red">' . $_SESSION['error']['fullname'] . '</font>';

@@ -17,10 +17,13 @@
     exec($move);
 
     // Check if the backup was successful
-    if ($returnCode === 0) {
+    if ($returnCode === 0) 
+    {
         echo "Database backup completed successfully. Backup saved as $backupFileName";
         header("location:/panel.php?backupSuccessfully");
-    } else {
+    } 
+    else 
+    {
         echo "Database backup failed. Error: " . implode("\n", $output);
         header("location:/panel.php?backupfailed");
     }

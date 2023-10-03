@@ -16,16 +16,10 @@
                 <a href="includes/recover_backup.php" class="btn btn-primary">
                     <strong>Recover backup</strong>
                 </a>
-            </div>
-    
+            </div> 
         </div>
 
     </main>
-    
-<?php
-    include("includes/footer.php");
-?>
-
 
 <?php
     include("includes/footer.php");

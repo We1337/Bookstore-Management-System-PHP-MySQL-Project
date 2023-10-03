@@ -1,8 +1,8 @@
 <?php
     include('../includes/connection.php');
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
+    if ($_SERVER["REQUEST_METHOD"] == "POST") 
+    {
         $useremail = $_POST["useremail"];
         $subject = $_POST["subject"];
         $message = $_POST["message"];

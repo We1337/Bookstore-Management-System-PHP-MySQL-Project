@@ -15,9 +15,12 @@
 	define('SANDBOX', TRUE); // TRUE or FALSE 
 	define('LOCAL_CERTIFICATE', FALSE); // TRUE or FALSE
 
-	if (SANDBOX === TRUE){
+	if (SANDBOX === TRUE)
+	{
 		$paypal_url = "https://www.sandbox.paypal.com/cgi-bin/webscr";
-	}else{
+	}
+	else
+	{
 		$paypal_url = "https://www.paypal.com/cgi-bin/webscr";
 	}
 	// PayPal IPN Data Validate URL

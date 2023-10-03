@@ -47,8 +47,6 @@
 		else
 		{
 			$time = time();
-		
-			//move_uploaded_file($_FILES['b_img']['tmp_name'],"../book_img/".$img_nm);
 
 			move_uploaded_file($_FILES['book_img']['tmp_name'], "../book_img/" . $_FILES['book_img']['name']);
 			$book_img = "book_img/".$_FILES['book_img']['name'];

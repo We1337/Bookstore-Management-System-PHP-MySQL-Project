@@ -15,10 +15,13 @@
     exec($command, $output, $returnCode);
 
     // Check if the restore was successful
-    if ($returnCode === 0) {
+    if ($returnCode === 0) 
+    {
         echo "Database restore completed successfully.";
         header("location:/admin/panel.php?restoreSuccessfully");
-    } else {
+    } 
+    else 
+    {
         echo "Database restore failed. Error: " . implode("\n", $output);
         header("location:/admin/panel.php?restoreFailed");
     }

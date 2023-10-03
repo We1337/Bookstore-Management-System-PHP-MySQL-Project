@@ -1,14 +1,17 @@
 <?php
 
-    function display() {
+    function display() 
+    {
         $count = 1;
         $total = 0;
         $book_id_amout = array();
         $indexs = "";
 
         // Check if the 'cart' session variable is set
-        if (isset($_SESSION['cart'])) {
-            foreach ($_SESSION['cart'] as $id => $value) {
+        if (isset($_SESSION['cart'])) 
+        {
+            foreach ($_SESSION['cart'] as $id => $value) 
+            {
                 $rate = $value['quantity'] * $value['price'];
                 $total = $total + $rate;
                 $indexs = '(Name: ' . $value['name'] . '. Amount: ' . $value['quantity'] . '), ';

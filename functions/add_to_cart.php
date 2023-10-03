@@ -4,7 +4,8 @@
     // Include the database connection
     include("../includes/connection.php");
 
-    if (isset($_GET['book_card_id'])) {
+    if (isset($_GET['book_card_id'])) 
+    {
         // Add a book to the cart
         $book_id = (int)$_GET['book_card_id'];
 
@@ -25,18 +26,23 @@
                 "quantity" => 1
             );
         }
-    } elseif (!empty($_POST)) {
+    } 
+    elseif (!empty($_POST)) 
+    {
         // Update quantities in the cart based on the submitted form data
         foreach ($_POST as $id => $quantity) {
             if (isset($_SESSION['cart'][$id])) {
                 $_SESSION['cart'][$id]['quantity'] = $quantity;
             }
         }
-    } elseif (isset($_GET['id'])) {
+    } 
+    elseif (isset($_GET['id'])) 
+    {
         // Remove a book from the cart
         $id = $_GET['id'];
 
-        if (isset($_SESSION['cart'][$id])) {
+        if (isset($_SESSION['cart'][$id])) 
+        {
             unset($_SESSION['cart'][$id]);
         }
     }

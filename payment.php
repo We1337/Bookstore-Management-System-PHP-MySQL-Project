@@ -18,7 +18,7 @@
                     <input type='hidden' name='business' value='<?php echo PAYPAL_EMAIL; ?>'>
 
                     <!-- Details of the item that customers will purchase -->
-                    <input type='hidden' name='item_number' value='<?php echo 1; ?>'>
+                    <input type='hidden' name='item_number' value="1">
                     <input type='hidden' name='item_name' value='<?php echo 'books'; ?>'>
                     <input type='hidden' name='amount' value='<?php echo $_GET['price']; ?>'>
                     <input type='hidden' name='currency_code' value='<?php echo CURRENCY; ?>'>

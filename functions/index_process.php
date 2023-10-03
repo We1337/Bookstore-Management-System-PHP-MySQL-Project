@@ -14,7 +14,8 @@
 
         $messageType = $_GET['message'] ?? '';
 
-        if (isset($messages[$messageType])) {
+        if (isset($messages[$messageType])) 
+        {
             echo $messages[$messageType];
         }
     }
