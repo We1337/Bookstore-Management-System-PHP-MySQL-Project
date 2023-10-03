@@ -1,17 +1,17 @@
 <?php
-    include("../includes/connection.php");
-    // Start a session
     session_start();
+
+    include("../includes/connection.php");
 
     // Check if the form has been submitted
     if (!empty($_POST)) {
         // Extract form data into variables
         extract($_POST);
-        
-        $register_id = $_SESSION['client']['id'];
-        $query = "SELECT * FROM `register_table` WHERE `register_id` = $register_id";
-		$get_response = mysqli_query($connection_database, $query);
-		$values = mysqli_fetch_assoc($get_response);
+
+        $id = $_SESSION['client']['id'];
+        $query = "SELECT * FROM `register_table` WHERE `register_id` = $id";
+        $result_user_name = mysqli_query($connection_database, $query);
+        $rows = mysqli_fetch_assoc($result_user_name);
 
         // Initialize an array to store error messages
         $_SESSION['error'] = array();
@@ -47,12 +47,12 @@
             $_SESSION['error']['contact_number'] = "Please Enter Contact Number in Numbers";
         }
 
-        if(!empty($values['register_profile_picture']))
+        if (!empty($rows['register_profile_picture']))
 		{	
-	 		$img = $values['register_profile_picture'];
+	 		$img = $rows['register_profile_picture'];
 		}
 
-		if(!empty($_FILES['file']['name'])) 
+		if (!empty($_FILES['file']['name'])) 
 		{
 			move_uploaded_file($_FILES['file']['tmp_name'], "../profile_img/" . $_FILES['file']['name']);
 			$img = "profile_img/" . $_FILES['file']['name'];
@@ -66,7 +66,7 @@
         else 
         {
             // Insert user data into the database
-            $query = "UPDATE register_table SET register_full_name='$fullname', register_user_name='$username', register_password='$password', register_contact_number='$contact', register_email='$email', register_profile_picture='$img' WHERE register_id=$register_id";
+            $query = "UPDATE register_table SET register_full_name='$fullname', register_user_name='$username', register_password='$password', register_contact_number='$contact', register_email='$email', register_profile_picture='$img' WHERE register_id=$id";
         
             mysqli_query($connection_database, $query);
 
