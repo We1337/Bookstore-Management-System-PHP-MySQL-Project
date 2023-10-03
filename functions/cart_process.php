@@ -41,7 +41,7 @@
             </tr>
 
             <div align="center" style="margin-top: 20px">
-                <input type="submit" value="Re-calculate" class="btn btn-primary btn-sm">
+                <input type="submit" value="Re-calculate" class="btn btn-outline-info btn-sm">
                 <a class="btn btn-outline-success btn-sm" href="../order.php?total=' . $total . '&books=' . $amout_of_books . '" name="button" >Confirm & Submit Order</a>     
             </div>';
 
