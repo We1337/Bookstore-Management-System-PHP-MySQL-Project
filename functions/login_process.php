@@ -10,7 +10,7 @@
         // Check if username or password is empty
         if (empty($username)) 
         {
-            $_SESSION['error'][] = "Please enter a user ID";
+            $_SESSION['error'][] = "Please enter a user ID or Email";
             header("Location: ../login.php");
             exit();
         } 
@@ -27,7 +27,7 @@
                 include("../includes/connection.php");
 
                 // Query the database to check for valid credentials
-                $query_username = "SELECT * FROM `register_table` WHERE `register_user_name` = '$username'";
+                $query_username = "SELECT * FROM `register_table` WHERE `register_user_name` = '$username' OR `register_email` = '$username'";
                 $query_password = "SELECT * FROM `register_table` WHERE `register_password` = '$password'";
 
                 $result_username = mysqli_query($connection_database, $query_username);
@@ -41,7 +41,7 @@
                     if(!empty($value_of_password)) 
                     {
                         // User information
-                        $_SESSION['client']['username'] = $value_of_username['register_full_name'];
+                        $_SESSION['client']['username'] = $value_of_username['register_user_name'];
                         $_SESSION['client']['id'] = $value_of_username['register_id'];
                         $_SESSION['client']['status'] = true;
 
@@ -57,7 +57,7 @@
                 } 
                 else 
                 {
-                    $_SESSION['error'][] = "Wrong username";
+                    $_SESSION['error'][] = "Wrong user ID or Email";
                     header("Location: ../login.php");
                     exit();
                 }

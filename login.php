@@ -2,7 +2,7 @@
     include("includes/header.php");
 ?>
 
-        <div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog">
+        <div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1">
             <div class="modal-dialog" role="document">
                 <div class="modal-content rounded-4 shadow">
                     <!-- Modal Header -->
@@ -16,8 +16,10 @@
                         <form class="login" action="functions/login_process.php" method="POST">
                             <?php
                                 // Display error messages, if any
-                                if (!empty($_SESSION['error'])) {
-                                    foreach ($_SESSION['error'] as $errors) {
+                                if (!empty($_SESSION['error'])) 
+                                {
+                                    foreach ($_SESSION['error'] as $errors) 
+                                    {
                                         echo '<div class="alert alert-info" role="alert">' . $errors . '</div>';
                                     }
                                     unset($_SESSION['error']);
@@ -25,14 +27,14 @@
                             ?>
                             <div class="form-floating mb-3">
                                 <input name="username" type="text" class="form-control rounded-3" placeholder="User ID">
-                                <label for="floatingInput">User ID</label>
+                                <label>User ID</label>
                             </div>
                             <div class="form-floating mb-3">
                                 <input name="password" type="password" class="form-control rounded-3" placeholder="Password">
-                                <label for="floatingPassword">Password</label>
+                                <label>Password</label>
                             </div>
-                            <button class="w-100 mb-2 btn btn-sm rounded-3 btn-primary" type="submit" value="Login">Login</button>
-                            <a href="register.php" class="w-100 mb-2 btn btn-sm rounded-3 btn-primary" role="button">Registration</a>
+                            <button class="w-100 mb-2 btn btn-sm rounded-3 btn-primary" type="submit" value="Login">Sign in</button>
+                            <a href="register.php" class="w-100 mb-2 btn btn-sm rounded-3 btn-primary" role="button">Sign up</a>
                             <a href="forget_password.php" class="w-100 py-2 mb-2 btn btn-outline-primary btn-sm rounded-3" role="button">Forget Password?</a>
 
                             <!-- Admin Section -->
