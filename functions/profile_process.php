@@ -54,8 +54,8 @@
 
 		if(!empty($_FILES['file']['name'])) 
 		{
-			move_uploaded_file($_FILES['file']['tmp_name'], "../book_img/" . $_FILES['file']['name']);
-			$img = "book_img/" . $_FILES['file']['name'];
+			move_uploaded_file($_FILES['file']['tmp_name'], "../profile_img/" . $_FILES['file']['name']);
+			$img = "profile_img/" . $_FILES['file']['name'];
 		}	
 
         // If there are validation errors, redirect back to the registration page
