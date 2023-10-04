@@ -2,12 +2,14 @@
     include("includes/header.php");
     include("includes/connection.php");
     include("functions/index_process.php");
+    include("functions/index_notification.php");
 ?>
 
         <main>
 
             <?php 
                 display_notification_messages();
+                display_notification_messages_sucesses();
             ?>
             
             <section class="py-5 text-center container">

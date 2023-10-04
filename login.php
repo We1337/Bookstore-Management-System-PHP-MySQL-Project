@@ -1,5 +1,8 @@
 <?php
     include("includes/header.php");
+    include("functions/login_notification.php");
+
+    display_notification_messages();
 ?>
 
         <div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1">
@@ -14,32 +17,24 @@
                     <div class="modal-body p-5 pt-0">
                         <!-- Login Form -->
                         <form class="login" action="functions/login_process.php" method="POST">
-                            <?php
-                                // Display error messages, if any
-                                if (!empty($_SESSION['error'])) 
-                                {
-                                    foreach ($_SESSION['error'] as $errors) 
-                                    {
-                                        echo '<div class="alert alert-info" role="alert">' . $errors . '</div>';
-                                    }
-                                    unset($_SESSION['error']);
-                                }
-                            ?>
+                            
                             <div class="form-floating mb-3">
-                                <input name="username" type="text" class="form-control rounded-3" placeholder="User ID">
-                                <label>User ID</label>
+                                <input name="username" type="text" class="form-control rounded-3" placeholder="User ID or Email">
+                                <label>User ID or Email</label>
                             </div>
                             <div class="form-floating mb-3">
                                 <input name="password" type="password" class="form-control rounded-3" placeholder="Password">
                                 <label>Password</label>
                             </div>
-                            <button class="w-100 mb-2 btn btn-sm rounded-3 btn-primary" type="submit" value="Login">Sign in</button>
-                            <a href="register.php" class="w-100 mb-2 btn btn-sm rounded-3 btn-primary" role="button">Sign up</a>
-                            <a href="forget_password.php" class="w-100 py-2 mb-2 btn btn-outline-primary btn-sm rounded-3" role="button">Forget Password?</a>
+
+                            <button class="w-100 mb-2 btn btn-info btn-sm rounded-3" type="submit" value="Login">Sign in</button>
+                            <a href="register.php" class="w-100 mb-2 btn btn-info btn-sm rounded-3" role="button">Sign up</a>
+                            <a href="forget_password.php" class="w-100 mb-2 btn btn-outline-info btn-sm rounded-3" role="button">Forget Password?</a>
 
                             <!-- Admin Section -->
                             <h2 class="fs-5 fw-bold mb-3">For Admins</h2>
-                            <a href="admin/index.php" class="w-100 py-2 mb-2 btn btn-outline-primary btn-sm rounded-3" role="button">Admin Login</a>
+                            <a href="admin/index.php" class="w-100 mb-2 btn btn-outline-info btn-sm rounded-3" role="button">Admin Login</a>
+                            
                         </form>
                     </div>
                 </div>
