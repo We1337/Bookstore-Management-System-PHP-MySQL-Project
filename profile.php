@@ -72,14 +72,6 @@
             </div>
         </div>
 
-        <!-- JavaScript Code (to Show Modal on Page Load) -->
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                var myModal = new bootstrap.Modal(document.getElementById("myModal"));
-                myModal.show();
-            });
-        </script>
-
 <?php
     include("includes/footer.php");
 ?>
