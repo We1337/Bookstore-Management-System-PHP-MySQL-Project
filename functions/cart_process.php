@@ -1,9 +1,11 @@
 <?php
 
+    session_start();
+
     function display() 
     {
         $count = 1;
-        $total = 0;
+        $total_price = 0;
         $book_id_amout = array();
         $indexs = "";
 
@@ -13,7 +15,7 @@
             foreach ($_SESSION['cart'] as $id => $value) 
             {
                 $rate = $value['quantity'] * $value['price'];
-                $total = $total + $rate;
+                $total_price = $total_price + $rate;
                 $indexs = '(Name: ' . $value['name'] . '. Amount: ' . $value['quantity'] . '), ';
                 array_push($book_id_amout, $indexs);
 
@@ -37,13 +39,16 @@
         echo '
             <tr>
                 <td colspan="5">Total: </td>
-                <td colspan="2">KZT ' . $total . ' </td>
+                <td colspan="2">KZT ' . $total_price . ' </td>
             </tr>
 
             <div align="center" style="margin-top: 20px">
                 <input type="submit" value="Re-calculate" class="btn btn-outline-info btn-sm">
-                <a class="btn btn-outline-success btn-sm" href="../order.php?total=' . $total . '&books=' . $amout_of_books . '" name="button" >Confirm & Submit Order</a>     
+                <a class="btn btn-outline-success btn-sm" href="../order.php" name="button" >Confirm & Submit Order</a>     
             </div>';
+
+        $_SESSION['client']['order_total_price'] = $total_price;
+        $_SESSION['client']['order_books_name'] = $amout_of_books;
 
     }
 
