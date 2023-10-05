@@ -20,51 +20,51 @@
         // Validate Full Name
         if (empty($fullname)) 
         {
-            $_SESSION['error']['fullname'] = "Please enter full name";
+            $_SESSION['error'][] = "Please enter full name";
         }
 
         // Validate User Name
         if (empty($username)) 
         {
-            $_SESSION['error']['username'] = "Please enter user ID";
+            $_SESSION['error'][] = "Please enter user ID";
         } 
         else if (strpos($username, ' ') !== false) 
         {
-            $_SESSION['error']['username'] = "Please enter user without space";
+            $_SESSION['error'][] = "Please enter user without space";
         }
 
         // Validate Password
         if (empty($password)) 
         {
-            $_SESSION['error']['password'] = "Please enter password";
+            $_SESSION['error'][] = "Please enter password";
         } 
         else if (strlen($password) < 8) 
         {
-            $_SESSION['error']['password'] = "Please enter minimum 8 digit password";
+            $_SESSION['error'][] = "Please enter minimum 8 digit password";
         }
         else if (strpos($password, ' ') !== false) 
         {
-            $_SESSION['error']['password'] = "Please enter password without space";
+            $_SESSION['error'][] = "Please enter password without space";
         }
 
         // Validate E-Mail Address
         if (empty($email)) 
         {
-            $_SESSION['error']['email'] = "Please enter E-Mail address";
+            $_SESSION['error'][] = "Please enter E-Mail address";
         } 
         else if (!preg_match("/^[a-z0-9]+@[a-z\.]+$/i", $email)) 
         {
-            $_SESSION['error']['email'] = "Please enter valid E-Mail address";
+            $_SESSION['error'][] = "Please enter valid E-Mail address";
         }
 
         // Validate Contact Number
         if (empty($contact)) 
         {
-            $_SESSION['error']['contact_number'] = "Please enter contact number";
+            $_SESSION['error'][] = "Please enter contact number";
         } 
         else if (!is_numeric($contact)) 
         {
-            $_SESSION['error']['contact_number'] = "Please enter contact number in digits";
+            $_SESSION['error'][] = "Please enter contact number in digits";
         }
 
         if (!empty($rows['register_profile_picture']))
@@ -79,7 +79,7 @@
 
             if(!in_array(strtolower($fileExtension), $allowedExtensions)) 
             {
-			    $_SESSION['error']['file'] = "Please upload a PNG or JPG image";
+			    $_SESSION['error'][] = "Please upload a PNG or JPG image";
             } 
             else 
             {
