@@ -1,8 +1,9 @@
 <?php
     include("includes/header.php");
-    include("functions/login_notification.php");
+    include("functions/notification.php");
 
     display_notification_messages();
+    display_notification_messages_sucesses();
 ?>
 
         <div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1">

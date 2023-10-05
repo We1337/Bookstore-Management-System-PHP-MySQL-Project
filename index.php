@@ -2,7 +2,7 @@
     include("includes/header.php");
     include("includes/connection.php");
     include("functions/index_process.php");
-    include("functions/index_notification.php");
+    include("functions/notification.php");
 ?>
 
         <main>
