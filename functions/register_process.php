@@ -14,53 +14,53 @@
         // Validate Full Name
         if (empty($fullname)) 
         {
-            $_SESSION['error']['fullname'] = "Please enter Full Name";
+            $_SESSION['error']['fullname'] = "Please enter full name";
         }
 
         // Validate User Name
         if (empty($username)) 
         {
-            $_SESSION['error']['username'] = "Please enter User Name";
+            $_SESSION['error']['username'] = "Please enter user name";
         }
 
         // Validate Password
         if (empty($password) || empty($confirm_password)) 
         {
-            $_SESSION['error']['password'] = "Please enter Password";
+            $_SESSION['error']['password'] = "Please enter password";
         } 
         else if ($password != $confirm_password) 
         {
-            $_SESSION['error']['password'] = "Password isn't Match";
+            $_SESSION['error']['password'] = "Password isn't match";
         } 
         else if (strlen($password) < 8) 
         {
-            $_SESSION['error']['password'] = "Please Enter Minimum 8 Digit Password";
+            $_SESSION['error']['password'] = "Please enter minimum 8 digit password";
         }
 
         // Validate E-Mail Address
         if (empty($email)) 
         {
-            $_SESSION['error']['email'] = "Please enter E-Mail Address";
+            $_SESSION['error']['email'] = "Please enter E-Mail address";
         } 
         else if (!preg_match("/^[a-z0-9]+@[a-z\.]+$/i", $email)) 
         {
-            $_SESSION['error']['email'] = "Please Enter Valid E-Mail Address";
+            $_SESSION['error']['email'] = "Please enter valid E-Mail address";
         }
 
         // Validate Security Answer
         if (empty($answer)) 
         {
-            $_SESSION['error']['answer'] = "Please Enter Security Answer";
+            $_SESSION['error']['answer'] = "Please enter security answer";
         }
 
         // Validate Contact Number
         if (empty($contact_number)) 
         {
-            $_SESSION['error']['contact_number'] = "Please Contact Number";
+            $_SESSION['error']['contact_number'] = "Please contact number";
         } 
         elseif (!is_numeric($contact_number)) 
         {
-            $_SESSION['error']['contact_number'] = "Please Enter Contact Number in Numbers";
+            $_SESSION['error']['contact_number'] = "Please enter contact number in digits";
         }
 
         // Check if there are any errors
@@ -69,13 +69,14 @@
             foreach ($error as $errors) 
             {
                 echo '<font color="red">' . $errors . '</font><br>';
+                header("location: ../register.php");
             }
         }
 
         // If there are validation errors, redirect back to the registration page
         if (!empty($_SESSION['error'])) 
         {
-            header("location:register.php");
+            header("location: ../register.php");
         } 
         else 
         {
@@ -91,7 +92,8 @@
             mysqli_query($connection_database, $query);
 
             // Redirect to the registration success page
-            header("location: ../register.php?registered");
+            $_SESSION['message']['success'] = "You are signed up";
+            header("location: ../login.php");
         }
     } 
     else 
