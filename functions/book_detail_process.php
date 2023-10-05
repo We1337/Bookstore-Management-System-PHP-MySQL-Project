@@ -39,7 +39,7 @@
             } 
             else 
             {
-                echo "Already in Cart";
+                echo "<a href='../cart.php'>Already in Cart</a>";
             }
         } 
         else 
