@@ -44,7 +44,7 @@
                         $_SESSION['client']['username'] = $value_of_username['register_user_name'];
                         $_SESSION['client']['id'] = $value_of_username['register_id'];
                         $_SESSION['client']['status'] = true;
-                        $_SESSION['message'] = 'Welcome!';
+                        $_SESSION['message']['success'] = 'Welcome!';
 
                         header("Location: ../index.php");
                         exit();
