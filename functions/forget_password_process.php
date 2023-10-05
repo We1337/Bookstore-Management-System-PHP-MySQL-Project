@@ -19,23 +19,23 @@
             // Check if the 'answer' (Security Answer) field is empty
             if (empty($answer)) 
             {
-                $_SESSION['error']['answer'] = "Please enter Security Answer";
+                $_SESSION['error'][] = "Please enter Security Answer";
             } 
             elseif ($row['register_answer'] !== $answer && $row['register_question'] !== $question) 
             {
                 // Check if 'answer' does not match the value in the database
-                $_SESSION['error']['answer'] = "Incorrect Security Answer";
+                $_SESSION['error'][] = "Incorrect Security Answer";
             }
 
             // Check if the 'pwd' (New Password) and 'cpwd' (Confirm Password) fields are empty
             if (empty($password) || empty($confirm_password)) 
             {
-                $_SESSION['error']['password'] = "Please enter New Password";
+                $_SESSION['error'][] = "Please enter New Password";
             } 
             elseif ($password != $confirm_password) 
             {
                 // Check if 'pwd' and 'cpwd' do not match
-                $_SESSION['error']['password'] = "Passwords don't match";
+                $_SESSION['error'][] = "Passwords don't match";
             }
 
             if ($secret_value == $answer) 
@@ -43,7 +43,7 @@
 
                 if (!empty($error)) 
                 {
-                    header("location: ../forget_password.php?message=error");
+                    header("location: ../forget_password.php");
                     exit();
                 } 
                 else 
@@ -59,28 +59,28 @@
                     } 
                     else 
                     {
-                        $_SESSION['error']['db_error'] = "Error updating password";
+                        $_SESSION['error'][] = "Error updating password";
                     }
                 }
             } 
             else 
             {
-                header("location: ../forget_password.php?message=error");
+                header("location: ../forget_password.php");
                 exit();
             }
-            header("location: ../forget_password.php?message=error");
+            header("location: ../forget_password.php");
             exit();
         } 
         else 
         {
-            header("location: ../forget_password.php?message=error");
+            header("location: ../forget_password.php");
             exit();
         }
     } 
     else 
     {
         // If the form was not submitted, redirect to the contact page with an error message
-        header("Location: ../forget_password.php?message=error");
+        header("Location: ../forget_password.php");
         exit();
     }
 ?>
