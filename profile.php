@@ -2,7 +2,7 @@
     include("includes/header.php");
     include("includes/connection.php");
     include("functions/profile_data.php");
-    include("functions/profile_notification.php");
+    include("functions/notification.php");
 
     display_notification_messages(); 
 ?>
