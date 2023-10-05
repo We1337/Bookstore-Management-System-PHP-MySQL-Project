@@ -44,11 +44,11 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title">Welcome!</h5>
+                                <h5 class="modal-title">Message!</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                             </div>
                             <div class="modal-body">
-                                <p class="alert alert-success">User: ' . $_SESSION['client']['username'] . '</p>
+                                <p class="alert alert-success">' . $_SESSION['message']['success'] . '</p>
                             </div>
                         </div>
                     </div>
