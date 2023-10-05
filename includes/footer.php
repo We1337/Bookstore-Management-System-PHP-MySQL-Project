@@ -6,5 +6,13 @@
     		<p class="text-center text-body-secondary">2023. All rights reserved. Project Made By We1337.</p>
   		</footer>
 
+		<!-- JavaScript Code (to Show Modal on Page Load) -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var myModal = new bootstrap.Modal(document.getElementById("myModal"));
+                myModal.show();
+            });
+        </script>
+
 	</body>
 </html>
