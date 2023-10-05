@@ -3,14 +3,12 @@
     include("includes/connection.php");
     include("functions/index_process.php");
     include("functions/notification.php");
+
+    display_notification_messages();
+    display_notification_messages_sucesses();
 ?>
 
         <main>
-
-            <?php 
-                display_notification_messages();
-                display_notification_messages_sucesses();
-            ?>
             
             <section class="py-5 text-center container">
                 <div class="row py-lg-5">
