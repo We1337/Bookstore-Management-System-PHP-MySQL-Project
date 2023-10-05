@@ -195,6 +195,7 @@ INSERT INTO `register_table` (`register_full_name`, `register_user_name`, `regis
 
 CREATE TABLE IF NOT EXISTS `user_support_table` (
     `user_support_id` INT(10) NOT NULL AUTO_INCREMENT,
+    `user_support_actual_id` INT(10) NOT NULL,
     `user_support_email` VARCHAR(255) NOT NULL,
     `user_support_subject` VARCHAR(255) NOT NULL,
     `user_support_message` TEXT NOT NULL,
