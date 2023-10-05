@@ -2,6 +2,9 @@
     include("includes/header.php");
     include("includes/connection.php");
     include("functions/book_list_process.php");
+    include("functions/notification.php");
+
+    display_notification_messages();
 ?>
 
         <header class="d-flex justify-content-center py-3">
