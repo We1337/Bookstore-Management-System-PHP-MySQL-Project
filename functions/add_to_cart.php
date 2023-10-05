@@ -15,23 +15,20 @@
         // Execute the query
         $result = mysqli_query($connection_database, $query);
 
-        if ($result && mysqli_num_rows($result) > 0) {
+        if ($result && mysqli_num_rows($result) > 0) 
+        {
             $row = mysqli_fetch_assoc($result);
-
             // Add the selected book to the cart session
-            $_SESSION['cart'][] = array(
-                "name" => $row['book_name'],
-                "img" => $row['book_img'],
-                "price" => $row['book_price'],
-                "quantity" => 1
-            );
+            $_SESSION['cart'][] = array( "name" => $row['book_name'], "img" => $row['book_img'], "price" => $row['book_price'], "quantity" => 1);
         }
     } 
     elseif (!empty($_POST)) 
     {
         // Update quantities in the cart based on the submitted form data
-        foreach ($_POST as $id => $quantity) {
-            if (isset($_SESSION['cart'][$id])) {
+        foreach ($_POST as $id => $quantity) 
+        {
+            if (isset($_SESSION['cart'][$id])) 
+            {
                 $_SESSION['cart'][$id]['quantity'] = $quantity;
             }
         }
