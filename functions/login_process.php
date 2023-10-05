@@ -10,7 +10,7 @@
         // Check if username or password is empty
         if (empty($username)) 
         {
-            $_SESSION['error'][] = "Please enter a user ID or Email";
+            $_SESSION['error'] = "Please enter a user ID or Email";
             header("Location: ../login.php");
             exit();
         } 
@@ -18,7 +18,7 @@
         {
             if (empty($password)) 
             {
-                $_SESSION['error'][] = "Please enter a password";
+                $_SESSION['error'] = "Please enter a password";
                 header("Location: ../login.php");
                 exit();
             } 
@@ -51,14 +51,14 @@
                     } 
                     else 
                     {
-                        $_SESSION['error'][] = "Wrong password";
+                        $_SESSION['error'] = "Wrong password";
                         header("Location: ../login.php");
                         exit();
                     }
                 } 
                 else 
                 {
-                    $_SESSION['error'][] = "Wrong user ID or Email";
+                    $_SESSION['error'] = "Wrong user ID or Email";
                     header("Location: ../login.php");
                     exit();
                 }
