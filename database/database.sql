@@ -26,10 +26,10 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 --
 
 CREATE TABLE IF NOT EXISTS `admin_table` (
-  `admin_id` INT(10) NOT NULL AUTO_INCREMENT,
-  `admin_user_name` VARCHAR(30) NOT NULL,
-  `admin_password` VARCHAR(30) NOT NULL,
-  PRIMARY KEY (`admin_id`)
+  	`admin_id` INT(10) NOT NULL AUTO_INCREMENT,
+  	`admin_user_name` VARCHAR(30) NOT NULL,
+  	`admin_password` VARCHAR(30) NOT NULL,
+  	PRIMARY KEY (`admin_id`)
 ) ENGINE = InnoDB  DEFAULT CHARSET = utf8mb4 AUTO_INCREMENT = 1;
 
 --
@@ -47,14 +47,14 @@ INSERT INTO `admin_table` (`admin_user_name`, `admin_password`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `book_table` (
-  `book_id` INT(10) NOT NULL AUTO_INCREMENT,
-  `book_name` VARCHAR(50) NOT NULL,
-  `book_category` VARCHAR(50) NOT NULL,
-  `book_description` LONGTEXT NOT NULL,
-  `book_price` INT(4) NOT NULL,
-  `book_img` VARCHAR(50) NOT NULL,
-  `book_time` INT(20) NOT NULL,
-  PRIMARY KEY (`book_id`)
+  	`book_id` INT(10) NOT NULL AUTO_INCREMENT,
+  	`book_name` VARCHAR(50) NOT NULL,
+  	`book_category` VARCHAR(50) NOT NULL,
+  	`book_description` LONGTEXT NOT NULL,
+  	`book_price` INT(4) NOT NULL,
+  	`book_img` VARCHAR(50) NOT NULL,
+  	`book_time` INT(20) NOT NULL,
+  	PRIMARY KEY (`book_id`)
 ) ENGINE = InnoDB  DEFAULT CHARSET = utf8mb4 AUTO_INCREMENT = 1;
 
 --
@@ -85,9 +85,9 @@ INSERT INTO `book_table` (`book_name`, `book_category`, `book_description`, `boo
 --
 
 CREATE TABLE IF NOT EXISTS `category_table` (
-  `category_id` INT(10) NOT NULL AUTO_INCREMENT,
-  `category_name` VARCHAR(50) NOT NULL,
-  PRIMARY KEY (`category_id`)
+  	`category_id` INT(10) NOT NULL AUTO_INCREMENT,
+  	`category_name` VARCHAR(50) NOT NULL,
+  	PRIMARY KEY (`category_id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 AUTO_INCREMENT = 1;
 
 --
@@ -112,13 +112,14 @@ INSERT INTO `category_table` (`category_name`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `contact_table` (
-  `contact_id` INT(10) NOT NULL AUTO_INCREMENT,
-  `contact_full_name` VARCHAR(100) NOT NULL,
-  `contact_mobile_number` VARCHAR(15) NOT NULL,
-  `contact_email` VARCHAR(60) NOT NULL,
-  `contact_message` LONGTEXT NOT NULL,
-  `contact_time` VARCHAR(20) NOT NULL,
-  PRIMARY KEY (`contact_id`)
+  	`contact_id` INT(10) NOT NULL AUTO_INCREMENT,
+  	`contact_full_name` VARCHAR(100) NOT NULL,
+  	`contact_actual_id` VARCHAR(100) NOT NULL,
+  	`contact_mobile_number` VARCHAR(15) NOT NULL,
+  	`contact_email` VARCHAR(60) NOT NULL,
+  	`contact_message` LONGTEXT NOT NULL,
+  	`contact_time` VARCHAR(20) NOT NULL,
+  	PRIMARY KEY (`contact_id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 AUTO_INCREMENT = 1;
 
 --
@@ -137,17 +138,17 @@ INSERT INTO `contact_table` (`contact_full_name`, `contact_mobile_number`, `cont
 --
 
 CREATE TABLE IF NOT EXISTS `order_table` (
-  `order_id` INT(10) NOT NULL AUTO_INCREMENT,
-  `order_name` VARCHAR(30) NOT NULL,
-  `order_address` VARCHAR(200) NOT NULL,
-  `order_pincode` INT(20) NOT NULL,
-  `order_city` VARCHAR(30) NOT NULL,
-  `order_state` VARCHAR(30) NOT NULL,
-  `order_mobile` VARCHAR(15) NOT NULL,
-  `order_register_id` INT(8) NOT NULL,
-  `order_total_price` INT(50) NOT NULL,
-  `order_list_books` LONGTEXT NOT NULL,
-  PRIMARY KEY (`order_id`)
+  	`order_id` INT(10) NOT NULL AUTO_INCREMENT,
+  	`order_name` VARCHAR(30) NOT NULL,
+  	`order_address` VARCHAR(200) NOT NULL,
+  	`order_pincode` INT(20) NOT NULL,
+  	`order_city` VARCHAR(30) NOT NULL,
+  	`order_state` VARCHAR(30) NOT NULL,
+  	`order_mobile` VARCHAR(15) NOT NULL,
+  	`order_register_id` INT(8) NOT NULL,
+  	`order_total_price` INT(50) NOT NULL,
+  	`order_list_books` LONGTEXT NOT NULL,
+  	PRIMARY KEY (`order_id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 AUTO_INCREMENT = 1;
 
 --
@@ -165,17 +166,17 @@ INSERT INTO `order_table` (`order_name`, `order_address`, `order_pincode`, `orde
 --
 
 CREATE TABLE IF NOT EXISTS `register_table` (
-  `register_id` INT(10) NOT NULL AUTO_INCREMENT,
-  `register_full_name` VARCHAR(100) NOT NULL,
-  `register_user_name` VARCHAR(50) NOT NULL,
-  `register_password` VARCHAR(30) NOT NULL,
-  `register_contact_number` VARCHAR(15) NOT NULL,
-  `register_email` VARCHAR(60) NOT NULL,
-  `register_question` VARCHAR(100) NOT NULL,
-  `register_answer` VARCHAR(50) NOT NULL,
-  `register_profile_picture` VARCHAR(50) NOT NULL DEFAULT 'profile_img/profile_default_picture.png',
-  `register_time` VARCHAR(20) NOT NULL,
-  PRIMARY KEY (`register_id`)
+  	`register_id` INT(10) NOT NULL AUTO_INCREMENT,
+  	`register_full_name` VARCHAR(100) NOT NULL,
+  	`register_user_name` VARCHAR(50) NOT NULL,
+  	`register_password` VARCHAR(30) NOT NULL,
+  	`register_contact_number` VARCHAR(15) NOT NULL,
+  	`register_email` VARCHAR(60) NOT NULL,
+  	`register_question` VARCHAR(100) NOT NULL,
+  	`register_answer` VARCHAR(50) NOT NULL,
+  	`register_profile_picture` VARCHAR(50) NOT NULL DEFAULT 'profile_img/profile_default_picture.png',
+  	`register_time` VARCHAR(20) NOT NULL,
+  	PRIMARY KEY (`register_id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 AUTO_INCREMENT = 1;
 
 --
