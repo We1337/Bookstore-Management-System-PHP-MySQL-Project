@@ -41,7 +41,7 @@
                 <p class="text-justify container">
                     Our dedicated team of bookworms is here to assist you on your literary journey. We are a group of individuals who share a deep passion for books and a commitment to serving our community. Get to know us:
                     <br><br>
-                    We1337: The visionary behind [Bookstore Name] and a book connoisseur.
+                    We1337: The visionary behind Bookstore and a book connoisseur.
                     <br>
                     Same: Our store manager, who ensures everything runs smoothly.
                     <br>
