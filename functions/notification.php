@@ -5,6 +5,7 @@
         if (!empty($_SESSION['error'])) 
         {
             $arrays_of_message = array();
+            
             foreach ($_SESSION['error'] as $errors) 
             { 
                 array_push($arrays_of_message, $errors); 
