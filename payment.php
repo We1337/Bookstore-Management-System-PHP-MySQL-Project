@@ -1,8 +1,6 @@
 <?php
     require_once('payment/dbclass.php');
     include("includes/header.php");
-
-    session_start();
 ?>
 
         <!-- Payment Integration Section -->

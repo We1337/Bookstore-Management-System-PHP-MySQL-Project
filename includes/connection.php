@@ -1,6 +1,4 @@
 <?php
-	session_start();
-
 	define("DB_HOST", "localhost");
 	define("DB_NAME", "bookstoredatabase");
 	define("DB_USER", "root");

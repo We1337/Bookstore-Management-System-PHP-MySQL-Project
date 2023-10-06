@@ -1,7 +1,4 @@
 <?php
-
-    session_start();
-
     function display() 
     {
         $count = 1;
