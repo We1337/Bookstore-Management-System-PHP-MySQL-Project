@@ -19,23 +19,27 @@
             // Check if the 'answer' (Security Answer) field is empty
             if (empty($answer)) 
             {
-                $_SESSION['error'][] = "Please enter Security Answer";
+                $_SESSION['error'][] = "Please enter security answer";
             } 
-            elseif ($row['register_answer'] !== $answer && $row['register_question'] !== $question) 
+            else if ($row['register_answer'] !== $answer && $row['register_question'] !== $question) 
             {
                 // Check if 'answer' does not match the value in the database
-                $_SESSION['error'][] = "Incorrect Security Answer";
+                $_SESSION['error'][] = "Incorrect security answer";
             }
 
             // Check if the 'pwd' (New Password) and 'cpwd' (Confirm Password) fields are empty
             if (empty($password) || empty($confirm_password)) 
             {
-                $_SESSION['error'][] = "Please enter New Password";
+                $_SESSION['error'][] = "Please enter new password";
             } 
-            elseif ($password != $confirm_password) 
+            else if ($password != $confirm_password) 
             {
                 // Check if 'pwd' and 'cpwd' do not match
                 $_SESSION['error'][] = "Passwords don't match";
+            }
+            else if (strlen($password) >= 8)
+            {
+                $_SESSION['error'][] = "Please enter minimum 8 letters password";
             }
 
             if ($secret_value == $answer) 
