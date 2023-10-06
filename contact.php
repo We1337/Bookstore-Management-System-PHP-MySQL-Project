@@ -1,6 +1,10 @@
 <?php
     // Include the header template
     include("includes/header.php");
+    include("functions/notification.php");
+
+    display_notification_messages();
+    display_notification_messages_sucesses();
 ?>
 
         <div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog">
@@ -16,47 +20,25 @@
                             <!-- Full Name Input -->
                             <div class="form-floating mb-3">
                                 <input type="text" name="full_name" class="form-control rounded-3" placeholder="Full Name">
-                                <label for="floatingInput">Full Name</label>
-                                <?php
-                                    if(isset($_SESSION['error']['full_name'])) {
-                                        echo '<div class="alert alert-danger" role="alert">' . $_SESSION['error']['full_name'] . '</div>';
-                                    }
-                                ?>
+                                <label>Full Name</label>
                             </div>
 
                             <!-- Mobile Number Input -->
                             <div class="form-floating mb-3">
                                 <input type="text" name="mobile_number" class="form-control rounded-3" placeholder="Mobile Number">
-                                <label for="floatingInput">Mobile Number</label>
-                                <?php
-                                    if(isset($_SESSION['error']['mobile_number'])) {
-                                        echo '<div class="alert alert-danger" role="alert">' . $_SESSION['error']['mobile_number'] . '</div>';
-                                    }
-                                ?>
+                                <label>Mobile Number</label>
                             </div>
 
                             <!-- Email Input -->
                             <div class="form-floating mb-3">
                                 <input type="email" name="email" class="form-control rounded-3" placeholder="E-mail">
-                                <label for="floatingInput">E-mail</label>
-                                <?php
-                                    if(isset($_SESSION['error']['email'])) {
-                                        echo '<div class="alert alert-danger" role="alert">' . $_SESSION['error']['email'] . '</div>';
-                                    }
-                                ?>
+                                <label>E-mail</label>
                             </div>
 
                             <!-- Message Textarea -->
                             <div class="form-floating mb-3">
                                 <textarea type="text" name="message" class="form-control rounded-3" placeholder="Message"></textarea>
-                                <label for="floatingInput">Message</label>
-                                <?php
-                                    if(isset($_SESSION['error']['message'])) {
-                                        echo '<div class="alert alert-danger" role="alert">' . $_SESSION['error']['message'] . '</div>';
-                                    }
-                                    // Unset error messages after displaying them
-                                    unset($_SESSION['error']);
-                                ?>
+                                <label>Message</label>
                             </div>
 
                             <!-- Submit Button -->
