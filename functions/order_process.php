@@ -48,7 +48,7 @@
             $_SESSION['error'][] = "Enter mobile number in digits";
         }
 
-        if($_SESSION['client']['order_total_price'] >= 0)
+        if($_SESSION['client']['order_total_price'] <= 0)
         {
             $_SESSION['error'][] = "Cart is empty";
             header("location: ../book_list.php");
