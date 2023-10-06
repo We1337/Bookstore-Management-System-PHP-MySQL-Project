@@ -42,7 +42,7 @@
                             </div>
 
                             <!-- Submit Button -->
-                            <button class="w-100 mb-2 btn btn-sm rounded-3 btn-primary" type="submit" value="Submit">Submit</button>
+                            <button class="w-100 mb-2 btn btn-sm rounded-3 btn-outline-info" type="submit" value="Submit">Submit</button>
 
                         </form>
                     </div>
