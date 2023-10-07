@@ -56,7 +56,7 @@
                             </div>
 
                             <!-- Submit Button -->
-                            <button type="submit" name="submit" class="btn btn-outline-primary">Confirm & Proceed</button>
+                            <button type="submit" name="submit" class="w-100 mb-2 btn btn-lg rounded-3 btn-outline-info btn-sm">Confirm & Proceed</button>
                             
                         </form>
                     </div>
