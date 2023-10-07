@@ -1,5 +1,8 @@
 <?php
     include('includes/header.php');
+    include('functions/notification.php');
+
+    display_notification_messages();
 ?>
 
         <div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog">
@@ -11,23 +14,23 @@
                     </div>
 
                     <div class="modal-body p-5 pt-0">
-                        <form class="contact" action="functions/user_support_process.php" method="POST">
+                        <form action="functions/user_support_process.php" method="POST">
                             <!-- Full Name Input -->
                             <div class="form-floating mb-3">
-                                <input type="text" name="useremail" class="form-control rounded-3" placeholder="Email">
-                                <label for="floatingInput">Email</label>
+                                <input name="user_email" type="email" class="form-control rounded-3" placeholder="E-mail">
+                                <label>Email</label>
                             </div>
 
                             <!-- Email Input -->
                             <div class="form-floating mb-3">
-                                <input type="text" name="subject" class="form-control rounded-3" placeholder="Subject">
-                                <label for="floatingInput">Subject</label>
+                                <input name="subject" type="text" class="form-control rounded-3" placeholder="Subject">
+                                <label>Subject</label>
                             </div>
 
                             <!-- Message Textarea -->
                             <div class="form-floating mb-3">
-                                <textarea type="text" name="message" class="form-control rounded-3" placeholder="Message"></textarea>
-                                <label for="floatingInput">Message</label>
+                                <textarea name="message" type="text" class="form-control rounded-3" placeholder="Message"></textarea>
+                                <label>Message</label>
                             </div>
 
                             <!-- Submit Button -->
@@ -35,10 +38,11 @@
 
                         </form>
                     </div>
+
                 </div>
             </div>
         </div>
 
-<?
-include("includes/footer.php");
+<?php
+    include("includes/footer.php");
 ?>
