@@ -55,8 +55,8 @@
                             }
                         ?>
 
-                        <button class="w-100 mb-2 btn btn-sm rounded-3 btn-primary" type="submit">Login</button>
-                        <a class="w-100 mb-2 btn btn-sm rounded-3 btn-primary" href="../index.php">Exit</a>
+                        <button class="w-100 mb-2 btn btn-sm rounded-3 btn-outline-info" type="submit">Login</button>
+                        <a class="w-100 mb-2 btn btn-sm rounded-3 btn-outline-info" href="../index.php">Exit</a>
                     </form>
                 </div>
 
