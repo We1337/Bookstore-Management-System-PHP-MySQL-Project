@@ -63,20 +63,11 @@
             $_SESSION['error'][] = "Please enter contact number in digits";
         }
 
-        // Check if there are any errors
-        if (!empty($error)) 
-        {
-            foreach ($error as $errors) 
-            {
-                echo '<font color="red">' . $errors . '</font><br>';
-                header("location: ../register.php");
-            }
-        }
-
         // If there are validation errors, redirect back to the registration page
         if (!empty($_SESSION['error'])) 
         {
             header("location: ../register.php");
+            exit();
         } 
         else 
         {
@@ -100,7 +91,7 @@
     else 
     {
         // If the form was not submitted, redirect to the registration page
-        header("location:../register.php");
+        header("location: ../register.php");
         exit();
     }
 ?>
