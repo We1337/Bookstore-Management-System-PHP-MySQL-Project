@@ -44,7 +44,7 @@
                 // Check if 'pwd' and 'cpwd' do not match
                 $_SESSION['error'][] = "Passwords don't match";
             }
-            else if (strlen($password) <= 8)
+            else if (strlen($password) <= 7)
             {
                 $_SESSION['error'][] = "Please enter minimum 8 letters password";
             }
