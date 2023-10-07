@@ -60,8 +60,8 @@
                                 <label>Security Answer</label>
                             </div>
 
-                            <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary btn-sm" type="submit" value="Register">Sign up</button>
-                            <a href="login.php" class="w-100 mb-2 btn btn-lg rounded-3 btn-primary btn-sm">Sign in</a>
+                            <button class="w-100 mb-2 btn btn-lg rounded-3 btn-outline-info btn-sm" type="submit" value="Register">Sign up</button>
+                            <a href="login.php" class="w-100 mb-2 btn btn-lg rounded-3 btn-outline-info btn-sm">Sign in</a>
 
                         </form>
                     </div>
