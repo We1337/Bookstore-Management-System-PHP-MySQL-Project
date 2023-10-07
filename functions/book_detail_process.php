@@ -39,7 +39,7 @@
             } 
             else 
             {
-                echo "<a href='../cart.php'>Already in Cart</a>";
+                echo "<a class='btn btn-outline-info mb-3' href='../cart.php'>Already in Cart</a>";
             }
         } 
         else 
