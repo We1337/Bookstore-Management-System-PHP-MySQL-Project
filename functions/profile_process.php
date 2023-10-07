@@ -38,7 +38,7 @@
         {
             $_SESSION['error'][] = "Please enter password";
         } 
-        else if (strlen($password) < 8) 
+        else if (strlen($password) <= 7) 
         {
             $_SESSION['error'][] = "Please enter minimum 8 digit password";
         }
