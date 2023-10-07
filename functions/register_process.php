@@ -32,9 +32,9 @@
         {
             $_SESSION['error'][] = "Password isn't match";
         } 
-        else if (strlen($password) >= 8) 
+        else if (strlen($password) <= 7) 
         {
-            $_SESSION['error'][] = "Please enter minimum 8 letters password";
+            $_SESSION['error'][] = "Please enter minimum 9 letters password";
         }
 
         // Validate E-Mail Address
