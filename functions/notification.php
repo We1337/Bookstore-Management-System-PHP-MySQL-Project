@@ -1,6 +1,7 @@
 <?php
 
-    function display_notification_messages() {
+    function display_notification_messages() 
+    {
         // Display error messages, if any
         if (!empty($_SESSION['error'])) 
         {
@@ -34,11 +35,11 @@
         }
     }
 
-    function display_notification_messages_sucesses() {
+    function display_notification_messages_sucesses() 
+    {
         // Display error messages, if any
         if (!empty($_SESSION['message'])) 
         {
-
             echo '
                 <!-- Modal HTML -->
                 <div id="myModal" class="modal fade" tabindex="-1">
