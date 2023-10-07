@@ -5,10 +5,6 @@
         <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
             <div class="py-5 text-center">
 
-                <!-- Logo image -->
-                <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-                <br>
-
                 <!-- Dummy data -->
                 <h2>About Us</h2> 
                 <p class="text-justify container">
