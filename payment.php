@@ -23,7 +23,7 @@
                     <!-- Details of the item that customers will purchase -->
                     <input type='hidden' name='item_number' value="1">
                     <input type='hidden' name='item_name' value='<?php echo 'books'; ?>'>
-                    <input type='hidden' name='amount' value='<?php echo $_SESSION['client']['order_total_price']; ?>'>
+                    <input type='hidden' name='amount' value='<?php echo round($_SESSION['client']['order_total_price'] / 477, 2); ?>'>
                     <input type='hidden' name='currency_code' value='<?php echo CURRENCY; ?>'>
                     <input type='hidden' name='no_shipping' value='1'>
                     
