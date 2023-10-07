@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     if (!empty($_POST)) {
         // Extract form data into variables
         extract($_POST);
@@ -15,6 +17,11 @@
         if (!empty($row)) 
         {
             $secret_value = $row['register_answer'];
+
+            if(empty($username)) 
+            {
+                $_SESSION['error'][] = "Please enter user name";
+            }
 
             // Check if the 'answer' (Security Answer) field is empty
             if (empty($answer)) 
@@ -37,7 +44,7 @@
                 // Check if 'pwd' and 'cpwd' do not match
                 $_SESSION['error'][] = "Passwords don't match";
             }
-            else if (strlen($password) >= 8)
+            else if (strlen($password) <= 8)
             {
                 $_SESSION['error'][] = "Please enter minimum 8 letters password";
             }
@@ -58,12 +65,15 @@
 
                     if ($result_user_update) 
                     {
+                        $_SESSION['message']['success'] = "New password updated";
                         header("location: ../login.php");
                         exit();
                     } 
                     else 
                     {
                         $_SESSION['error'][] = "Error updating password";
+                        header("location: ../forget_password.php");
+                        exit();
                     }
                 }
             } 
@@ -72,11 +82,10 @@
                 header("location: ../forget_password.php");
                 exit();
             }
-            header("location: ../forget_password.php");
-            exit();
         } 
         else 
         {
+            $_SESSION['error'][] = "Wrong information given";
             header("location: ../forget_password.php");
             exit();
         }
