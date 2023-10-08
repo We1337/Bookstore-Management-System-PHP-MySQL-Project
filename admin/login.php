@@ -42,18 +42,7 @@
                         <div class="form-floating mb-3">
                             <input name="password" type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
                             <label for="floatingPassword">Password</label>
-                        </div>
-
-                        <?php
-                            if(!empty($_SESSION['error']))
-                            {
-                                foreach($_SESSION['error'] as $er)
-                                {
-                                    echo '<span style="display: block;text-align: center;padding-bottom: 10px;" class="error">'.$er.'</span>';
-                                }
-                                unset($_SESSION['error']);
-                            }
-                        ?>
+                        </div> 
 
                         <button class="w-100 mb-2 btn btn-sm rounded-3 btn-outline-info" type="submit">Login</button>
                         <a class="w-100 mb-2 btn btn-sm rounded-3 btn-outline-info" href="../index.php">Exit</a>
