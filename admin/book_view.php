@@ -10,7 +10,7 @@
     
                 <p class="text-center"><strong>Book List</strong></p>
                 
-                <form method="get" action="book_view.php" class="form-inline">
+                <form method="GET" action="book_view.php" class="form-inline">
                     <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search" aria-label="Search">
                     <br>
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="search-submit">Search</button>
