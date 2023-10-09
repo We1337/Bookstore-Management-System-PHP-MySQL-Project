@@ -1,8 +1,7 @@
 <?php
     include("includes/header.php");
 ?>
-
-       
+  
     <main role="main" class="container">
 
         <div class="my-3 p-3 bg-white rounded box-shadow">
