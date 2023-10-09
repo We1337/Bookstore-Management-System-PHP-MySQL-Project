@@ -40,7 +40,7 @@
           				<li><a href="about.php" class="nav-link px-2 text-white">About</a></li>
         			</ul>
 
-					<form method="get" action="search.php" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 d-flex align-items-center" role="search">
+					<form method="GET" action="search.php" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 d-flex align-items-center" role="search">
   						<input type="text" name="search" class="form-control form-control-dark text-bg-dark me-2">
   						<button type="submit" class="btn btn-outline-info">Search</button>
 					</form>
