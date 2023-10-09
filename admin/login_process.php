@@ -35,11 +35,13 @@
 				$_SESSION['error'][] = "Wrong User Name or Password";
 
 				header("location: login.php");
+				exit();
 			}
 		}
 	}
 	else
 	{
 		header("location: login.php");
+		exit();
 	}
 ?>
