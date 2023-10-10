@@ -39,16 +39,26 @@
       		<div class="navbar-collapse collapse" id="navbarsExample01">
         		<ul class="navbar-nav mr-auto">
           			<li class="nav-item">
-            			<a class="nav-link" href="../admin/order_view.php">Order</a>
+            			<a class="nav-link" href="../admin/order_view.php">Orders</a>
+						<a class="nav-link" href="../admin/support.php">Support</a>
+						<a class="nav-link" href="../admin/contact_view.php">Contact</a>
+						<a class="nav-link" href="../admin/user_view.php">View users</a>
+						<a class="nav-link" href="../admin/backup_panel.php">Back up</a>
           			</li>
           			<li class="nav-item dropdown">
-            			<a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+            			<a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Books</a>
             			<div class="dropdown-menu" aria-labelledby="dropdown01">
-              				<a class="dropdown-item" href="#">Action</a>
-              				<a class="dropdown-item" href="#">Another action</a>
-              				<a class="dropdown-item" href="#">Something else here</a>
+              				<a class="dropdown-item" href="../admin/book_add.php">Add books</a>
+              				<a class="dropdown-item" href="../admin/book_view.php">View books</a>
             			</div>
           			</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="treu" aria-expanded="false">Category</a>
+						<div class="dropdown-menu" aria-labelledby="dropdown01">
+							<a class="dropdown-item" href="#">Add categorys</a>
+							<a class="dropdown-item" href="#">View categorys</a>
+						</div>
+					</li>
         		</ul>
       		</div>
 
