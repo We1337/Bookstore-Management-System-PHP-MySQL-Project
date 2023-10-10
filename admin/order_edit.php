@@ -13,78 +13,63 @@
     $order_row = mysqli_fetch_assoc($result);
 ?>
 
-        <div class="modal position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content rounded-4 shadow">
-                    <div class="modal-header p-5 pb-4 border-bottom-0">
-                        <h1 class="page-header text-center">Update Order</h1>
-                    </div>
-        
-                    <div class="modal-body p-5 pt-0">
+        <div class="container-fluid px-4 mt-4">
+            <div class="">
+                <div class="">
+                    <form action="functions/profile_process.php" method="POST" enctype="multipart/form-data">
 
-                        <form role="form" action="../admin/functions/process_order_edit.php" method="POST" enctype="multipart/form-data">
+                        <div class="">
+                            <div class=" mb-4">
+                                <div class="card-header">Order Details</div>
+                                    <div class="card-body">
+                                        
+                                        <div class="mb-3">
+                                            <label class="small mb-1"></label>
+                                            <input name="username" class="form-control" type="text" placeholder="" value="">
+                                        </div>
 
-                            <input type="hidden" name="order_id" value="<?php echo $order_row['order_id']; ?>" />
+                                        <div class="row gx-3 mb-3">
+                                            <div class="col-md-6">
+                                                <label class="small mb-1"></label>
+                                                <input name="fullname" class="form-control" type="text" placeholder="" value="">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="small mb-1"></label>
+                                                <input name="password" class="form-control" type="text" placeholder="" value="">
+                                            </div>
+                                        </div>
 
-                            <div class="form-floating mb-3">
-                                <input type="text" name="order_name" value="<?php echo $order_row['order_name']; ?>" class="form-control">
-                                <label>Order user name</label>
+                                        <div class="row gx-3 mb-3">
+
+                                            <div class="mb-3">
+                                                <label class="small mb-1"></label>
+                                                <input name="email" class="form-control" type="email" placeholder="" value="">
+                                            </div>
+
+                                            <div class="row gx-3 mb-3">
+                                                <div class="mb-3">
+                                                    <label class="small mb-1"></label>
+                                                    <input name="contact" class="form-control" type="tel" placeholder="" value="">
+                                                </div>
+                                            </div>
+
+                                            <div class="row gx-3 mb-3">
+                                                <div class="col-md-6">
+                                                    <button class="btn btn-outline-info" type="submit" value="submit">Save changes</button>
+                                                    <button class="btn btn-outline-info" type="submit" value="submit">Save changes</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    
+                                    </div>
+                                </div>
                             </div>
-
-                            <div class="form-floating mb-3">
-                                <input type="text" name="order_address" value="<?php echo $order_row['order_address']; ?>" class="form-control">
-                                <label>Order address</label>
-                            </div>
-
-                            <div class="form-floating mb-3">
-                                <input type="text" name="order_pincode" value="<?php echo $order_row['order_pincode']; ?>" class="form-control">
-                                <label>Order pincode</label>
-                            </div>
-
-                            <div class="form-floating mb-3">
-                                <input type="text" name="order_city" value="<?php echo $order_row['order_city']; ?>" class="form-control">
-                                <label>Order city</label>
-                            </div>
-
-                            <div class="form-floating mb-3">
-                                <input type="text" name="order_state" value="<?php echo $order_row['order_state']; ?>" class="form-control">
-                                <label>Order state</label>
-                            </div>
-
-                            <div class="form-floating mb-3">
-                                <input type="text" name="order_mobile" value="<?php echo $order_row['order_mobile']; ?>" class="form-control">
-                                <label>Order mobile phone</label>
-                            </div>
-
-                            <div class="form-floating mb-3">
-                                <input type="text" name="order_register_id" value="<?php echo $order_row['order_register_id']; ?>" class="form-control">
-                                <label>Order register</label>
-                            </div>
-
-                            <div class="form-floating mb-3">
-                                <input type="text" name="order_total_price" value="<?php echo $order_row['order_total_price']; ?>" class="form-control">
-                                <label>Total price</label>
-                            </div>
-
-                            <div class="form-floating mb-3">
-                                <input type="text" name="order_list_books" value="<?php echo $order_row['order_list_books']; ?>" class="form-control">
-                                <label>Order list</label>
-                            </div>
-
-                            <button type="submit" class="btn btn-info btn-sm">Update Order</button>
-
-                            <a href="../admin/order_view.php" class="btn btn-info btn-sm">Exit</a>
-
-                        </form>
-
-                        <?php
-                            unset($_SESSION['error']);
-                        ?>
-
+                        </div>
+                     </form>
                 </div>
             </div>
-        </div>
-    </div>
+        </div>        
 
 <?php
     include("includes/footer.php");
