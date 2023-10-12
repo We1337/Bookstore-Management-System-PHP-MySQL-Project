@@ -42,7 +42,7 @@
             			<a class="nav-link" href="../admin/order_view.php">Orders</a>
 						<a class="nav-link" href="../admin/support.php">Support</a>
 						<a class="nav-link" href="../admin/contact_view.php">Contact</a>
-						<a class="nav-link" href="../admin/user_view.php">View users</a>
+						<a class="nav-link" href="../admin/users_view.php">View users</a>
 						<a class="nav-link" href="../admin/backup_panel.php">Back up</a>
           			</li>
           			<li class="nav-item dropdown">
