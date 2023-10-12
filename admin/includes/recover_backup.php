@@ -6,10 +6,10 @@
     $database = 'bookstoredatabase'; // Database name
 
     // Backup file to restore from
-    $backupFile = 'backup/backup_2023-09-10_16-56-54.sql'; // Adjust the filename and path accordingly
+    $backupFile = "backup/" . $_GET['file'];
 
     // Execute the mysql command to restore the database
-    $command = "mysql -h $host -u $username -p$password $database < $backupFile";
+    $command = "mysql -h " . escapeshellarg($host) . " -u " . escapeshellarg($username) . " -p" . escapeshellarg($password) . " " . escapeshellarg($database) . " < " . escapeshellarg($backupFile);
 
     // Execute the command
     exec($command, $output, $returnCode);
@@ -17,12 +17,10 @@
     // Check if the restore was successful
     if ($returnCode === 0) 
     {
-        echo "Database restore completed successfully.";
-        header("location:/admin/panel.php?restoreSuccessfully");
-    } 
-    else 
-    {
-        echo "Database restore failed. Error: " . implode("\n", $output);
-        header("location:/admin/panel.php?restoreFailed");
+        header("location: ../backup_panel.php?good");
+        exit();
     }
+    
+    header("location: ../backup_panel.php");
+    exit();
 ?>
