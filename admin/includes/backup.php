@@ -19,12 +19,10 @@
     // Check if the backup was successful
     if ($returnCode === 0) 
     {
-        echo "Database backup completed successfully. Backup saved as $backupFileName";
-        header("location:/panel.php?backupSuccessfully");
+        header("location: ../backup_panel.php?saved=good");
+        exit();
     } 
-    else 
-    {
-        echo "Database backup failed. Error: " . implode("\n", $output);
-        header("location:/panel.php?backupfailed");
-    }
+
+    header("location: ../backup_panel.php");
+    exit();
 ?>
