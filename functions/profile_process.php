@@ -92,6 +92,7 @@
         if (!empty($_SESSION['error'])) 
         {
             header("location: ../profile.php");
+            exit();
         } 
         else 
         {
@@ -101,10 +102,12 @@
             mysqli_query($connection_database, $query);
 
             header("location: ../profile.php");
+            exit();
         }
     } 
     else 
     {
         header("location: ../profile.php");
+        exit();
     }
 ?>
