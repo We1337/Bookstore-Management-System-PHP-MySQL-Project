@@ -11,16 +11,13 @@
 
 		if(empty($username) || empty($password))
 		{
-			$_SESSION['error'][] = "Required User Name & Password";
-
-			header("location:login.php");
+			header("location: login.php");
+			exit();
 		}
 		else
 		{
 			$query = "SELECT * FROM `admin_table` WHERE `admin_user_name` = '$username' AND `admin_password` = '$password'";
-
 			$result = mysqli_query($connection_database, $query);
-
 			$row = mysqli_fetch_assoc($result);
 
 			if(!empty($row))
@@ -29,11 +26,10 @@
 				$_SESSION['admin']['status'] = true;
 
 				header("location: index.php");
+				exit();
 			}
 			else
 			{
-				$_SESSION['error'][] = "Wrong User Name or Password";
-
 				header("location: login.php");
 				exit();
 			}

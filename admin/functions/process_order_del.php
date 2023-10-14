@@ -9,5 +9,5 @@
 	mysqli_query($connection_database, $query);
 
 	header("location: ../order_view.php");
-
+	exit();
 ?>

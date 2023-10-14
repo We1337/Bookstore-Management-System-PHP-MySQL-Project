@@ -7,4 +7,6 @@
 
     // Redirect the user to the "index.php" page
     header("location: index.php");
+
+    exit();
 ?>

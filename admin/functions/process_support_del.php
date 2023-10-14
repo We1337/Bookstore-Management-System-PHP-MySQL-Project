@@ -9,5 +9,5 @@
 	mysqli_query($connection_database, $query);
 
 	header("location: ../support.php");
-
+	exit();
 ?>

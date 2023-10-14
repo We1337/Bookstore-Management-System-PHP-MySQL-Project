@@ -3,7 +3,8 @@
 
     if(!isset($_SESSION['admin']['status']))
     {
-        header("location:login.php");
+        header("location: login.php");
+		exit();
     }
 ?>
 
@@ -58,6 +59,9 @@
 							<a class="dropdown-item" href="../admin/category_add.php">Add categorys</a>
 							<a class="dropdown-item" href="../admin/category_view.php">View categorys</a>
 						</div>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../admin/logout.php">Logout</a>
 					</li>
         		</ul>
       		</div>

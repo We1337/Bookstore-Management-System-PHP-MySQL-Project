@@ -9,5 +9,5 @@
 	$result = mysqli_query($connection_database, $query);
 
 	header("location: ../book_view.php");
-
+	exit();
 ?>
