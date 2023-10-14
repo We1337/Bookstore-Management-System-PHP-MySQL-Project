@@ -40,7 +40,7 @@
                                     <td>' . $contact_row['contact_email'] . '</td>
                                     <td>' . $contact_row['contact_message'] . '</td>
                                     <td>' . @date("d-M-y", $contact_row['contact_time']) . '</td>
-                                    <td align="center"><a class="btn btn-danger btn-sm" href="process_contact_del.php?id=' . $contact_row['contact_id'] . '">Delate</a></td>
+                                    <td align="center"><a class="btn btn-danger btn-sm" href="functions/process_contact_del.php?id=' . $contact_row['contact_id'] . '">Delate</a></td>
                                 </tr>';
                         }
                     ?>
