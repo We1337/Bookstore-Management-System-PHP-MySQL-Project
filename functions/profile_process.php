@@ -83,7 +83,11 @@
             } 
             else 
             {
-                move_uploaded_file($_FILES['file']['tmp_name'], "../profile_img/" . $_FILES['file']['name']);
+                $random_new_name = uniqid();
+
+                $new_name_for_file = $random_new_name . $_FILES['file']['name'];
+
+                move_uploaded_file($_FILES['file']['tmp_name'], "../profile_img/" . $new_name_for_file);
 			    $img = "profile_img/" . $_FILES['file']['name'];
             }
 		}
