@@ -11,7 +11,7 @@
     $books_row = mysqli_fetch_assoc($books_result);
 ?>
 
-    <div class="container-fluid px-4 mt-4">
+        <div class="container-fluid px-4 mt-4">
             <form action="functions/process_book_edit.php" method="POST" enctype="multipart/form-data">
                 <div class=" mb-4">
                     <div class="card-header">Book details</div>
