@@ -14,7 +14,6 @@
     // Fetch the book details
     $book_row = mysqli_fetch_assoc($book_result);
 
-
     function show_details($input) 
     {
         $cart = 0;
