@@ -42,7 +42,7 @@
             			<a class="nav-link" href="../admin/order_view.php">Orders</a>
 						<a class="nav-link" href="../admin/support.php">Support</a>
 						<a class="nav-link" href="../admin/contact_view.php">Contact</a>
-						<a class="nav-link" href="../admin/users_view.php">View users</a>
+						<a class="nav-link" href="../admin/users_view.php">Users</a>
 						<a class="nav-link" href="../admin/backup_panel.php">Back up</a>
           			</li>
           			<li class="nav-item dropdown">
@@ -55,8 +55,8 @@
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="treu" aria-expanded="false">Category</a>
 						<div class="dropdown-menu" aria-labelledby="dropdown01">
-							<a class="dropdown-item" href="#">Add categorys</a>
-							<a class="dropdown-item" href="#">View categorys</a>
+							<a class="dropdown-item" href="../admin/category_add.php">Add categorys</a>
+							<a class="dropdown-item" href="../admin/category_view.php">View categorys</a>
 						</div>
 					</li>
         		</ul>
