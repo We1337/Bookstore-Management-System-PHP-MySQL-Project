@@ -1,9 +1,7 @@
 <?php
     include("includes/header.php");
     include("../includes/connection.php");
-
-    $category_query = "SELECT * FROM `category_table`";
-    $category_result = mysqli_query($connection_database, $category_query);
+    include("functions/process_book_add_category.php");
 ?>
 
         <div class="container-fluid px-4 mt-4">

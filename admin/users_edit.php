@@ -1,13 +1,7 @@
 <?php
-    session_start();
-
     include("includes/header.php");
     include("../includes/connection.php");
-
-    $id = $_GET['id'];
-    $order_query = "SELECT * FROM `register_table` WHERE `register_id` = '$id'";
-    $users_list_result = mysqli_query($connection_database, $order_query);
-    $users_row = mysqli_fetch_assoc($users_list_result);
+    include("functions/process_users_edit_data.php");
 ?>
 
         <div class="container-fluid px-4 mt-4">

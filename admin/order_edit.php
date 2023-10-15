@@ -3,12 +3,7 @@
 
     include("includes/header.php");
     include("../includes/connection.php");
-
-    $id = $_GET['id'];
-
-    $order_query = "SELECT * FROM `order_table` WHERE `order_id` = '$id'";
-    $result = mysqli_query($connection_database, $order_query);
-    $order_row = mysqli_fetch_assoc($result);
+    include("functions/process_order_edit_data.php");
 ?>
 
         <div class="container-fluid px-4 mt-4">

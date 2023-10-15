@@ -1,6 +1,12 @@
 <?php
     include("includes/header.php");
     include("../includes/connection.php");
+    include("functions/process_category_view_data.php");
+
+    $search = $_GET['search'];
+    $category_query = "SELECT * FROM `category_table` WHERE `category_name` LIKE '%$search%'";
+    $category_result = mysqli_query($connection_database, $category_query);
+    $count = 1;
 ?>
         <div class="px-md-4">
             <h2>View Category</h2>
@@ -22,25 +28,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php
-                        $search = $_GET['search'];
-                        $category_query = "SELECT * FROM `category_table` WHERE `category_name` LIKE '%$search%'";
-                        $category_result = mysqli_query($connection_database, $category_query);
-                        $count = 1;
-
-                        while($category_row = mysqli_fetch_assoc($category_result))
-                        {
-                            echo '
-                                <tr class="odd gradeX">
-                                    <td>' . $count . '</td>
-                                    <td>' . $category_row['category_name'] . '</td>
-                                    <td><a class="btn btn-info btn-sm" href="category_edit.php?id=' . $category_row['category_id'] . '">Edit</a></td>
-                                    <td><a class="btn btn-danger btn-sm" href="functions/process_category_del.php?id=' . $category_row['category_id'] . '">Delate</a></td>
-                                </tr>';
-
-                            $count++;
-                        }
-                            
+                    <?php 
+                        display_data($count, $category_result);
                     ?>                        
                 </tbody>
             </table>

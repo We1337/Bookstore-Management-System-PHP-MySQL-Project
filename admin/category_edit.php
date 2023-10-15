@@ -1,12 +1,7 @@
 <?php
     include("includes/header.php");
     include("../includes/connection.php");
-
-    $id = $_GET['id'];
-
-    $query = "SELECT * FROM `category_table` WHERE `category_id` = '$id'"; 
-    $category_result = mysqli_query($connection_database, $query);
-    $row = mysqli_fetch_assoc($category_result);
+    include("functions/process_category_edit_data.php");
 ?>
         <div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
