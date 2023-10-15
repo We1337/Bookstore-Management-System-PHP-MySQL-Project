@@ -19,7 +19,7 @@
     // Check if the backup was successful
     if ($returnCode === 0) 
     {
-        header("location: ../backup_panel.php?saved=good");
+        header("location: ../backup_panel.php");
         exit();
     } 
 
