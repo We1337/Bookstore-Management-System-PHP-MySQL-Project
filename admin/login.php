@@ -34,7 +34,7 @@
                     </div>
 
                     <div class="modal-body p-5 pt-0">
-                        <form class="login" action="login_process.php" method="POST">
+                        <form class="login" action="functions/login_process.php" method="POST">
                             
                             <div class="form-floating mb-3">
                                 <input name="username" type="text" class="form-control rounded-3" id="floatingInput" placeholder="Admin name">
