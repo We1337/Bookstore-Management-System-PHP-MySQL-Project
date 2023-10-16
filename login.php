@@ -35,7 +35,11 @@
                             <!-- Admin Section -->
                             <h2 class="fs-5 fw-bold mb-3">For Admins</h2>
                             <a href="admin/index.php" class="w-100 mb-2 btn btn-outline-info btn-sm rounded-3" role="button">Admin Login</a>
-                            
+                           
+                            <!-- Support Section -->
+                            <h2 class="fs-5 fw-bold mb-3">For Support team</h2>
+                            <a href="support/index.php" class="w-100 mb-2 btn btn-outline-info btn-sm rounded-3" role="button">Support Login</a>
+
                         </form>
                     </div>
                 </div>
