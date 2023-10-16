@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `admin_table` (
   	`admin_user_name` VARCHAR(30) NOT NULL,
   	`admin_password` VARCHAR(30) NOT NULL,
   	PRIMARY KEY (`admin_id`)
-) ENGINE = InnoDB  DEFAULT CHARSET = utf8mb4 AUTO_INCREMENT = 1;
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 AUTO_INCREMENT = 1;
 
 --
 -- Dumping data for table `admin_table`
@@ -39,6 +39,23 @@ CREATE TABLE IF NOT EXISTS `admin_table` (
 INSERT INTO `admin_table` (`admin_user_name`, `admin_password`) VALUES 
 ('admin', 'admin'), 
 ('root', 'root');
+
+-- --------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS `support_team_table` (
+	`support_id` INT(10) NOT NULL AUTO_INCREMENT,
+	`support_user_name` VARCHAR(30) NOT NULL,
+	`support_password` VARCHAR(30) NOT NULL,
+	PRIMARY KEY (`support_id`)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 AUTO_INCREMENT = 1;
+
+-- 
+-- Dumping data for table `support_team_table`
+--
+
+INSERT INTO `support_team_table` (`support_user_name`, `support_password`) VALUES
+('support', 'support'),
+('support1', 'support2');
 
 -- --------------------------------------------------------
 
@@ -55,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `book_table` (
   	`book_img` VARCHAR(50) NOT NULL,
   	`book_time` INT(20) NOT NULL,
   	PRIMARY KEY (`book_id`)
-) ENGINE = InnoDB  DEFAULT CHARSET = utf8mb4 AUTO_INCREMENT = 1;
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 AUTO_INCREMENT = 1;
 
 --
 -- Dumping data for table `book_table`
