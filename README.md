@@ -4,6 +4,8 @@
 A Bookstore Management System aims to eliminate paperwork and streamline book-related tasks. It centralizes all activities and allows for multi-tasking. Records are kept securely, and the system prioritizes user experience. Continuous improvement is a priority.
 
 ![image](https://github.com/We1337/Bookstore-Management-System-PHP-MySQL-Project/blob/main/preview_images/Screenshot%20from%202023-10-22%2020-13-22.png)
+![image](https://github.com/We1337/Bookstore-Management-System-PHP-MySQL-Project/blob/main/preview_images/Screenshot%20from%202023-10-22%2020-15-08.png)
+![iamge](https://github.com/We1337/Bookstore-Management-System-PHP-MySQL-Project/blob/main/preview_images/Screenshot%20from%202023-10-22%2020-17-12.png)
 
 **Bookstore Management System Project Summary:**
 
